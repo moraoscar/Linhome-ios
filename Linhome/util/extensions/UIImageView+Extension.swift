@@ -67,7 +67,9 @@ extension UIImageView {
 			svgImageView.contentMode = .scaleAspectFit
 			if (fillColor != nil) {
 				svgImageView.fillColor = Theme.getColor(fillColor!)
-			}
+            } else {
+                svgImageView.fillColor = ColorManager.color_primary
+            }
 			if (bgColor != nil) {
 				svgImageView.backgroundColor = Theme.getColor(bgColor!)
 			}

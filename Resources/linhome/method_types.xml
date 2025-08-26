@@ -1,0 +1,12 @@
+<config xmlns="http://www.linphone.org/xsds/lpconfig.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.linphone.org/xsds/lpconfig.xsd lpconfig.xsd">
+	<section name="method_dtmf_sip_info">
+		<entry name="textkey">method_dtmf_sip_info</entry>
+	</section>
+	<section name="method_dtmf_rfc_4733">
+		<entry name="textkey">method_dtmf_rfc_4733</entry>
+	</section>
+	<section name="method_sip_message">
+		<entry name="textkey">method_sip_message</entry>
+	</section>
+
+</config>

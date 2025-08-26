@@ -33,13 +33,20 @@ class MainView: ViewWithModel, UIDynamicAnimatorDelegate {
 	@IBOutlet weak var right: UIButton!
 	@IBOutlet weak var devicesTab: UIView!
 	@IBOutlet weak var devicesLabel: UILabel!
-	@IBOutlet weak var devicesIcon: UIImageView!
+//	@IBOutlet weak var devicesIcon: UIImageView!
 	@IBOutlet weak var historyTab: UIView!
 	@IBOutlet weak var historyLabel: UILabel!
-	@IBOutlet weak var historyIcon: UIImageView!
+//	@IBOutlet weak var historyIcon: UIImageView!
 	@IBOutlet weak var navigationTitle: UILabel!
 	@IBOutlet weak var unreadCount: UILabel!
-	
+    @IBOutlet weak var nuoTitle: UILabel!
+    @IBOutlet weak var welcomeLabel: UILabel!
+    @IBOutlet weak var welcomeDescriptionLabel: UILabel!
+    @IBOutlet weak var borderHistory: UIView!
+    @IBOutlet weak var borderDevices: UIView!
+    
+    
+    
 	var toolbarViewModel = ToolbarViewModel()
 	var tabbarViewModel = TabbarViewModel()
 	var toobarButtonClickedListener: ToobarButtonClickedListener? = nil
@@ -53,9 +60,8 @@ class MainView: ViewWithModel, UIDynamicAnimatorDelegate {
 		NavigationManager.it.mainView  = self
 		
 		topBar.snp.makeConstraints { (make) in
-			make.size.height.equalTo(UIDevice.hasNotch() ? 104 : 70)
+			make.size.height.equalTo(UIDevice.hasNotch() ? 174 : 117)
 			make.left.right.top.equalToSuperview()
-			
 		}
 		
 		bottomBar.snp.makeConstraints { (make) in
@@ -71,11 +77,10 @@ class MainView: ViewWithModel, UIDynamicAnimatorDelegate {
 		
 		// Top / Status bar
 		
-		topBar.backgroundColor = Theme.getColor("color_a")
-		
-		burger.prepare(iconName: "icons/burger_menu",effectKey: "primary_color",tintColor: "color_c")
-		back.prepare(iconName: "icons/back",effectKey: "primary_color",tintColor: "color_c")
-		
+        topBar.backgroundColor = ColorManager.color_a
+        
+//		back.prepare(iconName: "icons/back",effectKey: "primary_color",tintColor: "color_c")
+//		
 		burger.onClick {
 			NavigationManager.it.navigateTo(childClass: SideMenu.self)
 		}
@@ -87,16 +92,33 @@ class MainView: ViewWithModel, UIDynamicAnimatorDelegate {
 		toolbarViewModel.burgerButtonVisible.observe { (visible) in
 			self.burger.isHidden = !visible!
 		}
-		toolbarViewModel.leftButtonVisible.observe { (visible) in
+		
+        toolbarViewModel.leftButtonVisible.observe { (visible) in
 			self.left.isHidden = !visible!
 			self.burger.isHidden = !self.left.isHidden
 		}
-		toolbarViewModel.backButtonVisible.observe { (visible) in
-			self.back.isHidden = !visible!
-		}
-		toolbarViewModel.rightButtonVisible.observe { (visible) in
-			self.right.isHidden = !visible!
-		}
+        
+        toolbarViewModel.titleVisible.observe { (visible) in
+            self.nuoTitle.isHidden = !visible!
+            self.welcomeDescriptionLabel.isHidden = !visible!
+            self.welcomeLabel.isHidden = !visible!
+            self.burger.isHidden = !visible!
+            
+            let newHeight = visible! ? (UIDevice.hasNotch() ? 174 : 117) : 100
+            self.topBar.snp.remakeConstraints { (make) in
+                make.top.left.right.equalToSuperview()
+                make.height.equalTo(newHeight)
+            }
+            self.view.layoutIfNeeded()
+        }
+        
+//      mostrar u ocultar botones izquierda y derecha
+//		toolbarViewModel.backButtonVisible.observe { (visible) in
+//			self.back.isHidden = !visible!
+//		}
+//		toolbarViewModel.rightButtonVisible.observe { (visible) in
+//			self.right.isHidden = !visible!
+//		}
 		
 		left.onClick {
 			self.toobarButtonClickedListener.map{$0.onToolbarLeftButtonClicked()}
@@ -105,27 +127,41 @@ class MainView: ViewWithModel, UIDynamicAnimatorDelegate {
 		right.onClick {
 			self.toobarButtonClickedListener.map{$0.onToolbarRightButtonClicked()}
 		}
-		
-		
-		navigationTitle.prepare(styleKey: "toolbar_title")
-		
+    
+        nuoTitle.textColor = ColorManager.color_primary
+        nuoTitle.text = "NÜO W&M"
+        nuoTitle.font = UIFont(name: FontKey.SEMIBOLD.rawValue, size: 16)
+        
+        welcomeLabel.textColor = ColorManager.color_tertiary
+        welcomeLabel.text = "Bienvenido"
+        welcomeLabel.font = UIFont(name: FontKey.BOLD.rawValue, size: 30)
+        
+        welcomeDescriptionLabel.textColor = ColorManager.color_secondary
+        welcomeDescriptionLabel.text = "Consulta tus dispositivos y tu historial"
+        welcomeDescriptionLabel.font = UIFont(name: FontKey.REGULAR.rawValue, size: 14)
+        
+        self.borderHistory.backgroundColor = ColorManager.color_primary
+        self.borderDevices.backgroundColor = ColorManager.color_primary
 		
 		// Bottom/Tab bar
 		
-		bottomBar.backgroundColor = Theme.getColor("color_j")
+		bottomBar.backgroundColor = ColorManager.color_a
 		
 		devicesLabel.prepare(styleKey: "tabbar_option",textKey: "devices")
-		devicesIcon.prepare(iconName: "icons/footer_devices.png",fillColor: "color_c",bgColor: "color_j") //  the Linhome stock SVG does not render well, added png fallback
 		
 		historyLabel.prepare(styleKey: "tabbar_option",textKey: "history")
-		historyIcon.prepare(iconName: "icons/footer_history",fillColor: "color_c",bgColor: "color_j")
 		unreadCount.prepare(styleKey: "tabbar_unread_count")
-		
+        
+        devicesLabel.textAlignment = .center
+        historyLabel.textAlignment = .center
+        
 		unreadCount.backgroundColor = Theme.getColor("color_a")
 		unreadCount.layer.masksToBounds = true
 		unreadCount.layer.cornerRadius = 10.0
 		
-		
+        historyLabel.font = UIFont(name: FontKey.SEMIBOLD.rawValue, size: 14)
+        devicesLabel.font = UIFont(name: FontKey.SEMIBOLD.rawValue, size: 14)
+        
 		manageModel(tabbarViewModel)
 		tabbarViewModel.unreadCount.readCurrentAndObserve{ (unread) in
 			if (unread! > 0) {
@@ -141,20 +177,26 @@ class MainView: ViewWithModel, UIDynamicAnimatorDelegate {
 		
 		
 		devicesTab.onClick {
-			self.bottomBarButtonClicked(self.devicesTab,self.historyTab)
 			NavigationManager.it.navigateTo(childClass: DevicesView.self)
+            self.devicesLabel.textColor = ColorManager.color_primary
+            self.historyLabel.textColor = ColorManager.color_secondary
+            self.borderHistory.isHidden = true
+            self.borderDevices.isHidden = false
 		}
 		historyTab.onClick {
-			self.bottomBarButtonClicked(self.historyTab,self.devicesTab)
-			NavigationManager.it.navigateTo(childClass: HistoryView.self)
+            NavigationManager.it.navigateTo(childClass: HistoryView.self)
+            self.historyLabel.textColor = ColorManager.color_primary
+            self.devicesLabel.textColor = ColorManager.color_secondary
+            self.borderHistory.isHidden = false
+            self.borderDevices.isHidden = true
 		}
 		
-		bottomBarButtonClicked(devicesTab,historyTab)
+		
 		
 		
 		// Content
 		
-		self.content.backgroundColor = Theme.getColor("color_c")
+        self.content.backgroundColor = ColorManager.color_c
 		
 		observer = MutableLiveDataOnChangeClosure<GlobalState> { state in
 			if (state == .On) {
@@ -174,14 +216,19 @@ class MainView: ViewWithModel, UIDynamicAnimatorDelegate {
 			self.historyTab.performTap()
 			(UIApplication.shared.delegate as! AppDelegate).historyNotifTapped = false
 		} else {
-			devicesTab.performTap()
+            self.historyTab.performTap()
 		}
-		
-		if (!LinhomeAccount.it.configured()) {
-			DispatchQueue.main.asyncAfter(deadline: .now() + .milliseconds(20)) {
-				NavigationManager.it.navigateTo(childClass: AssistantRoot.self)
-			}
-		}
+        
+        self.historyTab.performTap()
+        self.historyTab.performTap()
+        
+        NavigationManager.it.showHomeOptions()
+		// Configuración inicial no realizada de momento comentada TODO
+//		if (!LinhomeAccount.it.configured()) {
+//			DispatchQueue.main.asyncAfter(deadline: .now() + .milliseconds(20)) {
+//				NavigationManager.it.navigateTo(childClass: AssistantRoot.self)
+//			}
+//		}
 	}
 	
 	override func viewWillDisappear(_ animated: Bool) {

@@ -1,0 +1,21 @@
+<config xmlns="http://www.linphone.org/xsds/lpconfig.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.linphone.org/xsds/lpconfig.xsd lpconfig.xsd">
+
+	<section name="action_open_door">
+		<entry name="textkey">action_open_door</entry>
+		<entry name="icon">icons/door</entry>
+	</section>
+	<section name="action_open_gate">
+		<entry name="textkey">action_open_gate</entry>
+		<entry name="icon">icons/gate</entry>
+	</section>
+	<section name="action_lightup">
+		<entry name="textkey">action_lightup</entry>
+		<entry name="icon">icons/light</entry>
+	</section>
+
+	<section name="action_unlock">
+		<entry name="textkey">action_unlock</entry>
+		<entry name="icon">icons/unlock</entry>
+	</section>
+
+</config>

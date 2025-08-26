@@ -105,7 +105,7 @@ extension UIButton {
 		})
 	}
 	
-	func prepareRoundRectWihIcon(effectKey:String, tintColor:String, textKey:String, iconName:String) {
+	func prepareRoundRectWihIcon(effectKey:String, tintColor:String, textKey:String, iconName:String, iconSizeWidth:CGFloat = 20, iconSizeHeight:CGFloat = 20) {
 		let tintColor = Theme.getColor(tintColor)
 		self.tintColor = tintColor
 		setTitleColor(tintColor, for: .normal)
@@ -114,7 +114,7 @@ extension UIButton {
 		layer.cornerRadius = CGFloat(Customisation.it.themeConfig.getFloat(section: "arbitrary-values", key: "round_rect_button_corner_radius", defaultValue: 0.0))
 		clipsToBounds = true
 		imageView!.contentMode = .scaleAspectFit
-		Theme.svgToUiImage(iconName,CGSize(width: 20,height: 20),UIColor.clear,tintColor).map { setImage($0,for: .normal)}
+        Theme.svgToUiImage(iconName,CGSize(width: iconSizeWidth,height: iconSizeHeight),UIColor.clear,tintColor).map { setImage($0,for: .normal)}
 		Theme.selectionEffectColors(effectKey: effectKey).map { colors in
 			setBackgroundColor(color: colors[0],forState: .normal)
 			setBackgroundColor(color: colors[1],forState: .highlighted)

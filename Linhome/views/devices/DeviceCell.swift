@@ -35,13 +35,19 @@ class DeviceCell: UITableViewCell {
 	
 	override func awakeFromNib() {
 		super.awakeFromNib()
-		contentView.backgroundColor = UIDevice.ipad() ? .clear : Theme.getColor("color_i")
-		name.prepare(styleKey: "device_list_device_name")
-		address.prepare(styleKey: "device_list_device_address")
-		
+		contentView.backgroundColor = UIDevice.ipad() ? .clear : .clear
+        
+        name.textColor = ColorManager.color_tertiary
+        name.font = UIFont(name: FontKey.SEMIBOLD.rawValue, size: 16)
+        
+        address.textColor = ColorManager.color_secondary
+        address.font = UIFont(name: FontKey.REGULAR.rawValue, size: 12)
+        deviceImage?.layer.cornerRadius = 8
+        
+        name.textAlignment = .left
+        address.textAlignment = .left
+        
 		if (!UIDevice.ipad()) {
-			callVideo?.prepareRoundIcon(effectKey: "primary_color", tintColor: "color_c", iconName: "icons/eye", padding: 12)
-			callAudio?.prepareRoundIcon(effectKey: "primary_color", tintColor: "color_c", iconName: "icons/phone.png", padding: 12) // Fall back, unhandled svg
 			contentView.layer.cornerRadius = CGFloat(Customisation.it.themeConfig.getFloat(section: "arbitrary-values", key: "device_in_device_list_corner_radius", defaultValue: 0.0))
 			contentView.clipsToBounds = true
 		}
@@ -49,27 +55,27 @@ class DeviceCell: UITableViewCell {
 		
 		contentView.snp.makeConstraints { (make) in
 			make.height.greaterThanOrEqualTo(120)
-			make.centerX.equalToSuperview()
-			make.left.equalToSuperview().offset(UIDevice.ipad()  ? 0 : 50)
+			make.left.equalToSuperview().offset(UIDevice.ipad()  ? 0 : 20)
+            make.right.equalToSuperview().offset(UIDevice.ipad()  ? 0 :-30)
 		}
 		
 		if (!UIDevice.ipad()) {
 			name.snp.makeConstraints { (make) in
-				make.left.equalToSuperview().offset(20)
+				make.left.equalToSuperview().offset(6)
 				make.bottom.equalTo(address.snp.top).offset(-1)
 			}
 			address.snp.makeConstraints { (make) in
-				make.left.equalToSuperview().offset(20)
+				make.left.equalToSuperview().offset(6)
 				make.bottom.equalToSuperview().offset(-17)
 			}
 		} else {
 			name.snp.makeConstraints { (make) in
-				make.left.equalTo(typeIcon.snp.right).offset(20)
-				make.top.equalTo(typeIcon.snp.top).offset(1)
+				make.left.equalTo(typeIcon.snp.right).offset(6)
+				make.top.equalTo(typeIcon.snp.top).offset(20)
 			}
 			
 			address.snp.makeConstraints { (make) in
-				make.left.equalTo(typeIcon.snp.right).offset(20)
+				make.left.equalTo(typeIcon.snp.right).offset(6)
 				make.bottom.equalTo(typeIcon.snp.bottom).offset(-1)
 			}
 			ipadSeparator?.backgroundColor = Theme.getColor("color_h")
@@ -98,15 +104,14 @@ class DeviceCell: UITableViewCell {
 			deviceImage?.image = UIImage(contentsOfFile: device.thumbNail)
 			deviceImage?.isHidden = false
 			if let thumb = UIImage(contentsOfFile: device.thumbNail) {
-				let ratio = thumb.size.height / thumb.size.width
 				contentView.snp.updateConstraints { (make) in
-					make.height.greaterThanOrEqualTo(contentView.frame.size.width * ratio)
+					make.height.greaterThanOrEqualTo(158)
 				}
 			}
 		} else {
 			deviceImage?.isHidden = true
 			contentView.snp.updateConstraints { (make) in
-				make.height.greaterThanOrEqualTo(120)
+				make.height.greaterThanOrEqualTo(158)
 			}
 		}
 	}

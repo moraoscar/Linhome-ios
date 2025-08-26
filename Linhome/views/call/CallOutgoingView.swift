@@ -41,16 +41,28 @@ class CallOutgoingView : GenericCallView {
 		}
 		
 		
-		let spinner = DotsSpinner()
-		spinner.frame = CGRect(x: 0,y: 0,width: 100,height: 30)
-		spinner.tintColor = Theme.getColor("color_c")
-		self.view.addSubview(spinner)
-		spinner.snp.makeConstraints { (make) in
-			make.centerX.equalToSuperview()
-			make.top.equalTo(chunkVideoOrIcon.view.snp.bottom).offset(54)
-			make.height.equalTo(spinner.frame.size.height)
-		}
-		
+//		let spinner = DotsSpinner()
+//		spinner.frame = CGRect(x: 0,y: 0,width: 100,height: 30)
+//		spinner.tintColor = Theme.getColor("color_c")
+//		self.view.addSubview(spinner)
+//		spinner.snp.makeConstraints { (make) in
+//			make.centerX.equalToSuperview()
+//			make.top.equalTo(chunkVideoOrIcon.view.snp.bottom).offset(54)
+//			make.height.equalTo(spinner.frame.size.height)
+//		}
+        
+        let calling = UILabel()
+        calling.frame = CGRect(x: 0,y: 0,width: 100,height: 30)
+        calling.textColor = ColorManager.color_a
+        calling.textAlignment = .center
+        calling.text = Texts.get("calling...")
+        self.view.addSubview(calling)
+        calling.snp.makeConstraints { (make) in
+            make.centerX.equalToSuperview()
+            make.top.equalTo(chunkVideoOrIcon.view.snp.bottom).offset(20)
+            make.height.equalTo(calling.frame.size.height)
+        }
+            
 		let cancel = CallButton.addOne(targetVC: self, iconName: "icons/decline", textKey: "call_button_cancel", effectKey: "decline_call_button", tintColor: "color_c", action: {self.callViewModel?.cancel()})
 		cancel.view.snp.makeConstraints { (make) in
 			make.centerX.equalToSuperview()

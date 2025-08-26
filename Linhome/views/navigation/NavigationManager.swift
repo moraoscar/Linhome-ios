@@ -78,6 +78,7 @@ class NavigationManager {
 				viewStack.removeAll()
 			}
 			viewStack.append(child)
+            print("cantidad en viewStack: \(viewStack.count)")
 			updateNavigationComponents()
 		} catch {
 			Log.error("Exception occured in navigation : \(error)")
@@ -85,24 +86,34 @@ class NavigationManager {
 	}
 	
 	func navigateUp(completion : (()->Void)? = nil) {
+        if (viewStack.count == 3 || viewStack.count == 2) {
+            self.showHomeOptions()
+            self.doNavigateUp()
+            completion?()
+        }
+        
+        print("cantidad en viewStack: \(viewStack.count)")
 		if let child = viewStack.last {
 			if (type(of: child) == SideMenu.self) {
 				mainView?.back.isUserInteractionEnabled = false
 				mainView?.burger.isUserInteractionEnabled = false
-				UIView.animate(withDuration: 0.2, animations: {
-					child.view.snp.removeConstraints()
-					child.view.snp.makeConstraints { make in
-						make.left.equalTo(-child.view.frame.size.width)
-						make.top.bottom.equalToSuperview()
-					}
-					child.view.superview?.layoutIfNeeded()
-				}, completion: { finished in
-					self.mainView?.back.isUserInteractionEnabled = true
-					self.mainView?.burger.isUserInteractionEnabled = true
-					self.doNavigateUp()
-					completion?()
-				})
+                UIView.animate(withDuration: 0.2, animations: {
+                    // ✅ Animación de salida hacia la DERECHA
+                    child.view.snp.remakeConstraints { make in
+                        // Movemos el borde izquierdo (leading) del menú al borde derecho (trailing) de la pantalla
+                        make.leading.equalTo(child.view.superview!.snp.trailing)
+                        make.width.equalTo(child.view.frame.width) // Mantenemos el ancho
+                        make.top.bottom.equalToSuperview() // Mantenemos la posición vertical
+                    }
+                    child.view.superview?.layoutIfNeeded()
+                }, completion: { finished in
+                    self.mainView?.back.isUserInteractionEnabled = true
+                    self.mainView?.burger.isUserInteractionEnabled = true
+                    self.doNavigateUp()
+                    completion?()
+                })
 			} else {
+                completion?()
 				doNavigateUp()
 			}
 		}
@@ -159,6 +170,20 @@ class NavigationManager {
 	func pauseNavigation() {
 		mainView!.toolbarViewModel.backButtonVisible.value = false
 	}
+    
+    func hiddenHomeOptions() {
+        mainView!.toolbarViewModel.rightButtonVisible.value = false
+        mainView!.toolbarViewModel.leftButtonVisible.value = false
+        mainView!.toolbarViewModel.titleVisible.value = false
+        mainView!.toolbarViewModel.burgerButtonVisible.value = false
+    }
+    
+    func showHomeOptions() {
+        mainView!.toolbarViewModel.rightButtonVisible.value = false
+        mainView!.toolbarViewModel.leftButtonVisible.value = false
+        mainView!.toolbarViewModel.titleVisible.value = true
+        mainView!.toolbarViewModel.burgerButtonVisible.value = true
+    }
 	
 	func resumeNavigation() {
 		mainView!.toolbarViewModel.backButtonVisible.value = true

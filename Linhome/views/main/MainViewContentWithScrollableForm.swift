@@ -61,17 +61,16 @@ class MainViewContentWithScrollableForm : MainViewContent {
 		contentView.addSubview(viewTitle)
 		viewTitle.snp.makeConstraints { make in
 			make.top.equalTo(contentView).offset(40)
-			make.centerX.equalTo(view.snp.centerX)
-			make.left.equalTo(contentView).offset(20)
-			make.right.equalTo(contentView).offset(-20)
+			make.left.equalTo(contentView).offset(23)
+			make.right.equalTo(contentView).offset(-23)
 		}
 		
 		contentView.addSubview(viewSubtitle)
 		viewSubtitle.snp.makeConstraints { make in
 			make.top.equalTo(viewTitle.snp.bottom).offset(33)
 			make.centerX.equalTo(view.snp.centerX)
-			make.left.equalTo(contentView).offset((20))
-			make.right.equalTo(contentView).offset(-20)
+			make.left.equalTo(contentView).offset((23))
+			make.right.equalTo(contentView).offset(-23)
 		}
 		
 		form.axis = .vertical
@@ -138,6 +137,5 @@ class MainViewContentWithScrollableForm : MainViewContent {
 		}
 		
 	}
-
 	
 }

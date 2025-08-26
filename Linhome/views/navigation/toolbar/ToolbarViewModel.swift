@@ -5,4 +5,6 @@ class ToolbarViewModel : ViewModel {
     var burgerButtonVisible = MutableLiveData(true)
     var leftButtonVisible = MutableLiveData(false)
     var rightButtonVisible = MutableLiveData(false)
+    var titleVisible = MutableLiveData(true)
+    var welcomeVisible = MutableLiveData(true)
 }

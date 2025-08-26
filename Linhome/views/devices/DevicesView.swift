@@ -31,7 +31,8 @@ class DevicesView: MainViewContent, UITableViewDataSource, UITableViewDelegate  
 	@IBOutlet weak var ipadSelectedItemView: UIView!
 	@IBOutlet var ipadEditDevice: UIButton!
 	@IBOutlet weak var ipadLeftColumn: UIView!
-	var deviceInfoViewIpad:DeviceInfoViewIpad? = nil
+    @IBOutlet weak var newDeviceViewContent: UIView!
+    var deviceInfoViewIpad:DeviceInfoViewIpad? = nil
 	
 	var friendListDelegate : FriendListDelegateStub? = nil
 	
@@ -46,11 +47,20 @@ class DevicesView: MainViewContent, UITableViewDataSource, UITableViewDelegate  
 		
 		manageModel(model)
 		
-		newDevice.prepareRoundIcon(effectKey: "primary_color", tintColor: "color_c", iconName: "icons/more", padding: 16)
+        newDevice.prepareRoundRectWihIcon(effectKey: "white", tintColor: "primary", textKey: Texts.get("new_device"), iconName: "icons/more", iconSizeWidth: 12, iconSizeHeight: 12)
+        
+        newDevice.setTitle(Texts.get("new_device"), for: .normal)
 		newDevice.onClick {
 			NavigationManager.it.navigateTo(childClass: DeviceEditorView.self)
 		}
-		
+        
+        newDeviceViewContent.layer.shadowColor = UIColor.black.cgColor
+        newDeviceViewContent.layer.shadowOpacity = 0.4
+        newDeviceViewContent.layer.shadowOffset = CGSize(width: 0, height: 10)
+        newDeviceViewContent.layer.shadowRadius = 8
+        newDeviceViewContent.layer.cornerRadius = 25
+        newDeviceViewContent.layer.masksToBounds = false
+        
 		if (UIDevice.ipad()) {
 			
 		}
@@ -136,6 +146,9 @@ class DevicesView: MainViewContent, UITableViewDataSource, UITableViewDelegate  
 	
 	override func viewWillAppear(_ animated: Bool) {
 		super.viewWillAppear(animated)
+        
+        NavigationManager.it.showHomeOptions()
+        
 		noDevices.isHidden = DeviceStore.it.devices.count > 0
 		DispatchQueue.main.asyncAfter(deadline: .now() + .milliseconds(50)) {
 			self.devices.reloadData()

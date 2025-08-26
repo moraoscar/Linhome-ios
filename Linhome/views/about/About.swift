@@ -29,34 +29,32 @@ class About: MainViewContent {
 	@IBOutlet weak var linhomeText: UIImageView!
 	@IBOutlet weak var linhomeTitle: UILabel!
 	@IBOutlet weak var appVersion: UILabel!
-	@IBOutlet weak var coreVersion: UILabel!
 	@IBOutlet weak var linhomeOrg: UILabel!
-	@IBOutlet weak var license: UILabel!
-	@IBOutlet weak var copyRight: UILabel!
-	@IBOutlet weak var privacyPolicy: UILabel!
-	
+    @IBOutlet weak var btnBack: UIButton!
+    @IBOutlet weak var lblTitle: UILabel!
+    
 	override func viewDidLoad() {
         super.viewDidLoad()
 		
 		isRoot = false
 		onTopOfBottomBar = true
-		titleTextKey = "about"
+		titleTextKey = "About"
 		
-		setGradientBg()
+        lblTitle.text = titleTextKey
+        lblTitle.font = UIFont(name: FontKey.SEMIBOLD.rawValue, size: 26)
 
-		
-		linhomeIcon.prepare(iconName: "others/linhome_icon", fillColor: "color_c", bgColor: nil)
-		linhomeText.prepare(iconName: "others/linhome_text", fillColor: "color_c", bgColor: nil)
-		linhomeTitle.prepare(styleKey: "splash_title",textKey: "splash_title")
-		
-		appVersion.prepare(styleKey: "about_text",textKey:"app_version",arg1:"iOS", arg2:"\(GIT_VERSION) - \(Bundle.main.desc())")
-		coreVersion.prepare(styleKey: "about_text",textKey:"sdk_version",arg1:Core.getVersion)
+        linhomeTitle.text = "NÜO WyM es la aplicación que te permite hacer y recibir llamadas de tus videointercomunicadores"
+        linhomeTitle.textColor = ColorManager.color_secondary
+        linhomeTitle.font = UIFont(name: FontKey.REGULAR.rawValue, size: 14)
+    
 
-		linhomeOrg.prepare(styleKey: "about_link",textKey: "about_link")
-		license.prepare(styleKey: "about_text",textKey: "license_text")
-		copyRight.prepare(styleKey: "about_text",textKey: "copyright_text")
-		privacyPolicy.prepare(styleKey: "about_text",textKey: "privacy_policy_text")
-
+        appVersion.text = "Versión \(GIT_VERSION)"
+        appVersion.font = UIFont(name: FontKey.REGULAR.rawValue, size: 14)
+        appVersion.textColor = ColorManager.color_secondary
+        
+        linhomeOrg.font = UIFont(name: FontKey.BOLD.rawValue, size: 14)
+        linhomeOrg.textColor = ColorManager.color_primary
+        linhomeOrg.text = "www.nuoplanet.com"
 		
 		linhomeOrg.onClick {
 			self.linhomeOrg.text.map { urlString in
@@ -66,18 +64,14 @@ class About: MainViewContent {
 			}
 		}
 		
-		license.onClick {
-			if let url = URL(string:Texts.get("license_link")) {
-				UIApplication.shared.open(url)
-			}
-		}
-		privacyPolicy.onClick {
-			if let url = URL(string:Texts.get("privacy_policy_link")) {
-				UIApplication.shared.open(url)
-			}
-		}
-		
+    }
+    
+    override func isCallView() -> Bool {
+        return true
     }
 	
-	
+    @IBAction func back(_ sender: Any) {
+        NavigationManager.it.navigateUp()
+    }
+    
 }

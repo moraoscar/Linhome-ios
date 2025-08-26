@@ -37,37 +37,56 @@ class HistoryCell: UITableViewCell {
 	@IBOutlet weak var typeicon: UIImageView!
 	@IBOutlet weak var checkbox: UIButton!
 	@IBOutlet weak var ipadSeparator: UIView!
-	
+    @IBOutlet weak var viewNew: UIView!
+    @IBOutlet weak var separatorView: UIView!
+    
 	override func awakeFromNib() {
 		super.awakeFromNib()
 		
 		contentView.backgroundColor = Theme.getColor("color_c")
 		contentView.layer.cornerRadius = CGFloat(Customisation.it.themeConfig.getFloat(section: "arbitrary-values", key: "call_in_history_list_corner_radius", defaultValue: 0.0))
 		contentView.clipsToBounds = true
-		contentView.layer.borderWidth = 2
-		
-		layer.shadowOffset = CGSize(width: 0, height: 5)
-		layer.shadowRadius = contentView.layer.cornerRadius
-		layer.shadowColor = UIColor.lightGray.cgColor
-		layer.shadowOpacity = 0.3
-		layer.frame = frame
+//		contentView.layer.borderWidth = 2
+//		
+//		layer.shadowOffset = CGSize(width: 0, height: 5)
+//		layer.shadowRadius = contentView.layer.cornerRadius
+//		layer.shadowColor = UIColor.lightGray.cgColor
+//		layer.shadowOpacity = 0.3
+//		layer.frame = frame
+        
+        viewNew.backgroundColor = ColorManager.color_primary
+        viewNew.layer.cornerRadius = 12
 		
 		name.prepare(styleKey: "history_list_device_name")
+        name.textColor = ColorManager.color_tertiary
+        name.font = UIFont(name: FontKey.SEMIBOLD.rawValue, size: 16)
+        
+        newtag.textColor = .white
+        newtag.font = UIFont(name: FontKey.MEDIUM.rawValue, size: 10)
+        
 		address.prepare(styleKey: "history_list_device_address")
-		newtag.prepare(styleKey: "history_list_new_tag", textKey:"history_call_new")
+        
 		typedate.prepare(styleKey: "history_list_call_date")
+        typedate.textColor = ColorManager.color_secondary
+        typedate.font = UIFont(name: FontKey.MEDIUM.rawValue, size: 14)
+        
 		ipadSeparator?.backgroundColor = Theme.getColor("color_h")
 		
-		thumbnail.layer.cornerRadius = contentView.layer.cornerRadius
+		thumbnail.layer.cornerRadius = 8
 		thumbnail.clipsToBounds = true
 		
 		nomedia.prepare(styleKey: "history_no_media_found", textKey: "history_no_media_found" )
 		nomedia.backgroundColor = Theme.getColor("color_u")
+        
+        nomedia.layer.cornerRadius = 8
+        nomedia.layer.masksToBounds = true
 		
 		play.prepareRoundIcon(effectKey: "primary_color", tintColor: "color_c", iconName: "icons/play.png", padding: 10)
 		play.tintColor = Theme.getColor("color_c")
 		
 		checkbox.makeCheckBox()
+        
+        separatorView.backgroundColor = ColorManager.color_separator_history
 		
 		contentView.snp.makeConstraints { (make) in
 			make.edges.equalToSuperview().inset(5)
@@ -129,7 +148,8 @@ class HistoryCell: UITableViewCell {
 		contentView.alpha = model.historyViewModel.editing.value! && !selected  ? 0.3 : 1.0
 		play.tintColor = model.historyViewModel.editing.value! ? Theme.getColor("color_b") : Theme.getColor("color_c")
 		self.checkbox.isHidden = !model.historyViewModel.editing.value!
-		self.newtag.isHidden = !self.checkbox.isHidden || !model.isNew()
+        self.viewNew.isHidden = !self.checkbox.isHidden || !model.isNew()
+        
 		self.checkbox.isSelected = selected
 	}
 	

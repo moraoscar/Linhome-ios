@@ -44,6 +44,8 @@ class ChunkNameAddress: UIViewController {
 		name.prepare(styleKey: "view_call_device_name")
 		name.text = callViewModel.device != nil ? callViewModel.device?.name : callViewModel.call.remoteAddress?.username
 		
+        name.font = UIFont.init(name: FontKey.SEMIBOLD.rawValue, size: 32)
+        
 		let address = UILabel()
 		self.view.addSubview(address)
 		address.snp.makeConstraints { (make) in
@@ -53,6 +55,9 @@ class ChunkNameAddress: UIViewController {
 		address.prepare(styleKey: "view_call_device_address")
 		address.text = callViewModel.call.remoteAddress?.asStringUriOnly()
 		
+        address.font = UIFont.init(name: FontKey.REGULAR.rawValue, size: 16)
+        address.textColor = ColorManager.color_secondary
+        
 		self.view.snp.makeConstraints { (make) in
 			make.height.equalTo(address.intrinsicContentSize.height + name.intrinsicContentSize.height + 5)
 		}

@@ -29,7 +29,7 @@ class LSpinnerCell: DropDownCell {
 	
 	func setContent(item:SpinnerItem) {
 		optionLabel.prepare(styleKey: "text_input_text")
-		separator.backgroundColor = Theme.getColor("color_h")
+		separator.backgroundColor = ColorManager.color_c
 		optionLabel.text = Texts.get(item.textKey)
 		if (item.iconFile != nil) {
 			icon.prepareSwiftSVG(iconName:item.iconFile!, fillColor: nil, bgColor: "nil")

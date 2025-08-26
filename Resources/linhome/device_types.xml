@@ -1,0 +1,39 @@
+<config xmlns="http://www.linphone.org/xsds/lpconfig.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.linphone.org/xsds/lpconfig.xsd lpconfig.xsd">
+
+
+	<!-- Attention all entries for a device are mandatory, except "default" property - only for the default device -->
+
+	<section name="device_audio_intercom">
+		<entry name="textkey">device_audio_intercom</entry>
+		<entry name="icon">icons/device_audio_intercom</entry>
+		<entry name="icon_circle">icons/icon_device_audio_intercom_circle</entry> <!-- for call views -->
+		<entry name="hasvideo">0</entry>
+		<entry name="hasaudio">1</entry>
+		<entry name="default">1</entry>
+	</section>
+	<section name="device_video_intercom">
+		<entry name="textkey">device_video_intercom</entry>
+		<entry name="icon">icons/device_video_intercom</entry>
+		<entry name="icon_circle">icons/icon_device_video_intercom_circle</entry> <!-- for call views -->
+		<entry name="hasvideo">1</entry>
+		<entry name="hasaudio">1</entry>
+	</section>
+	<section name="device_security_camera">
+		<entry name="textkey">device_security_camera</entry>
+		<entry name="icon">icons/device_security_camera</entry>
+		<entry name="icon_circle">icons/icon_device_camera_circle</entry> <!-- for call views -->
+		<entry name="hasvideo">1</entry>
+		<entry name="hasaudio">1</entry>
+	</section>
+	<section name="device_internal_unit">
+		<entry name="textkey">device_internal_unit</entry>
+		<entry name="icon">icons/device_internal_unit</entry>
+		<entry name="icon_circle">icons/icon_device_internal_unit_circle</entry> <!-- for call views -->
+		<entry name="hasvideo">0</entry>
+		<entry name="hasaudio">1</entry>
+	</section>
+
+
+
+
+</config>

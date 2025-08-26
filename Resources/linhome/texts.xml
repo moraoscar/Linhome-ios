@@ -1,0 +1,1657 @@
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.linphone.org/xsds/lpconfig.xsd lpconfig.xsd">
+	
+	
+	<!--
+	 
+	 <section name="text_key">
+		<entry name="default">Text displayed if no translation found</entry>
+		<entry name="fr">French translation  </entry>
+		<entry name="en">English translation  </entry>
+		<entry name="pl">Polish translation  </entry>
+		<entry name="de">German translation  </entry>
+		<entry name="bg">Bulgarian translation  </entry>
+		.....
+	 </section>
+	 
+	 -->
+	
+	<section name="appname">
+		<entry name="default">Linhome</entry>
+	</section>
+
+	<section name="splash_title">
+		<entry name="default">The white label app for IP intercom systems</entry>
+		<entry name="fr">L'app customisable pour les interphones IP</entry>
+		<entry name="pl">Konfigurowalna aplikacja dla domofonów IP</entry>
+		<entry name="de">Die frei konfigurierbare App für IP-Gegensprechanlagen</entry>
+		<entry name="bg">Приложението с бял етикет за IP домофонни системи</entry>
+	</section>
+
+	<section name="devices">
+		<entry name="default">Devices</entry>
+		<entry name="fr">Appareils</entry>
+		<entry name="pl">Urządzenia</entry>
+		<entry name="de">Geräte</entry>
+		<entry name="bg">Устройства</entry>
+	</section>
+
+	<section name="history">
+		<entry name="default">History</entry>
+		<entry name="fr">Historique</entry>
+		<entry name="pl">Historia</entry>
+		<entry name="de">Geschichte</entry>
+		<entry name="bg">История</entry>
+	</section>
+
+	<section name="assistant">
+		<entry name="default">Assistant</entry>
+		<entry name="fr">Assistant</entry>
+		<entry name="pl">Asystent</entry>
+		<entry name="de">Assistent</entry>
+		<entry name="bg">Асистент</entry>
+	</section>
+
+	<!-- history -->
+
+	<section name="history_no_media_found">
+		<entry name="default">No audio or video recording</entry>
+		<entry name="fr">Aucun enregistrement audio ou vidéo disponible</entry>
+		<entry name="pl">Brak nagrań audio lub wideo</entry>
+		<entry name="de">Keine Audio- oder Videoaufnahmen</entry>
+		<entry name="bg">Няма запис на звук или картина</entry>
+	</section>
+
+
+	<section name="history_unregistered_device">
+		<entry name="default">Unregistered device</entry>
+		<entry name="fr">Appareil non enregistré</entry>
+		<entry name="pl">Niezarejestrowano urządzenia</entry>
+		<entry name="de">Nicht registriertes Gerät</entry>
+		<entry name="bg">Нерегистрирано устройство</entry>
+	</section>
+
+	<section name="history_call_new">
+		<entry name="default">new</entry>
+		<entry name="fr">nouveau</entry>
+		<entry name="pl">nowy</entry>
+		<entry name="de">Neu</entry>
+		<entry name="bg">нов</entry>
+	</section>
+
+	<section name="history_list_call_date_type">
+		<entry name="default">{0} at {1}</entry>
+		<entry name="fr">{0} à {1}</entry>
+		<entry name="pl">{0} w {1}</entry>
+		<entry name="de">{0} auf {1}</entry>
+		<entry name="bg">{0} в {1}</entry>
+	</section>
+
+	<section name="history_list_call_type_missed">
+		<entry name="default">Missed</entry>
+		<entry name="fr">Manqué</entry>
+		<entry name="pl">Nieodebrane</entry>
+		<entry name="de">Verpasst</entry>
+		<entry name="bg">Пропуснат</entry>
+	</section>
+
+	<section name="history_list_call_type_declined">
+		<entry name="default">Declined</entry>
+		<entry name="fr">Décliné</entry>
+		<entry name="pl">Odrzucone</entry>
+		<entry name="de">Abgelehnte</entry>
+		<entry name="bg">Отхвърлен</entry>
+	</section>
+
+	<section name="history_list_call_type_accepted">
+		<entry name="default">Accepted</entry>
+		<entry name="fr">Accepté</entry>
+		<entry name="pl">Zaakceptowane</entry>
+		<entry name="de">Angenommene</entry>
+		<entry name="bg">Приет</entry>
+	</section>
+
+	<section name="history_list_call_type_called">
+		<entry name="default">Called</entry>
+		<entry name="fr">Appelé</entry>
+		<entry name="pl">Połączenia</entry>
+		<entry name="de">Angerufene</entry>
+		<entry name="bg">Набран</entry>
+	</section>
+
+	<section name="history_list_call_type_aborted">
+		<entry name="default">Aborted</entry>
+		<entry name="fr">Annulé</entry>
+		<entry name="pl">Przerwano</entry>
+		<entry name="de">Abgebrochene</entry>
+		<entry name="bg">Отказан</entry>
+	</section>
+	
+	<section name="history_select_all">
+		<entry name="default">Select all</entry>
+		<entry name="fr">Tout sélectionner</entry>
+		<entry name="pl">Zaznacz wszystko</entry>
+		<entry name="de">Alle auswählen</entry>
+		<entry name="bg">Избери всички</entry>
+	</section>
+
+	<section name="history_deselect_all">
+		<entry name="default">Deselect all</entry>
+		<entry name="fr">Tout désélectionner</entry>
+		<entry name="pl">Odznacz wszystko</entry>
+		<entry name="de">Alle abwählen</entry>
+		<entry name="bg">Изчисти всички</entry>
+	</section>
+	
+	<section name="delete_history_confirm_message">
+		<entry name="default">Delete {0} event(s) ?</entry>
+		<entry name="fr">Supprimer {0} évènement(s) ?</entry>
+		<entry name="pl">Usunąć {0} zdarzeń ?</entry>
+		<entry name="de">Lösche {0} Einträge ?</entry>
+		<entry name="bg">Изтрий {0} събития ?</entry>
+	</section>
+	
+	<section name="history_empty_list_title">
+		<entry name="default">No history event yet</entry>
+		<entry name="fr">Aucun évènement dans l'historique</entry>
+		<entry name="pl">Nie ma jeszcze dostępnych zdarzeń</entry>
+		<entry name="de">Noch kein Ereignis</entry>
+		<entry name="bg">Все още няма събития</entry>
+	</section>
+	
+	<!--  Menus  -->
+
+	<section name="menu_assistant">
+		<entry name="default">Account assistant</entry>
+		<entry name="fr">Assistant de compte</entry>
+		<entry name="pl">Asystent konta</entry>
+		<entry name="de">Kontoassistent</entry>
+		<entry name="bg">Асистент за профил</entry>
+	</section>
+
+	<section name="menu_account">
+		<entry name="default">My account</entry>
+		<entry name="fr">Mon compte</entry>
+		<entry name="pl">Moje konto</entry>
+		<entry name="de">Mein Konto</entry>
+		<entry name="bg">Мой профил</entry>
+	</section>
+
+	<section name="menu_settings">
+		<entry name="default">Settings</entry>
+		<entry name="fr">Réglages</entry>
+		<entry name="pl">Ustawienia</entry>
+		<entry name="de">Einstellungen</entry>
+		<entry name="bg">Настройки</entry>
+	</section>
+
+	<section name="menu_about">
+		<entry name="default">About</entry>
+		<entry name="fr">À propos</entry>
+		<entry name="pl">O nas</entry>
+		<entry name="de">Über</entry>
+		<entry name="bg">Относно</entry>
+	</section>
+
+	<section name="menu_disconnect">
+		<entry name="default">Disconnect account</entry>
+		<entry name="fr">Déconnexion du compte</entry>
+		<entry name="pl">Rozłącz konto</entry>
+		<entry name="de">Konto trennen</entry>
+		<entry name="bg">Излизане от профила</entry>
+	</section>
+		
+	<section name="disconnect_confirm_message">
+		<entry name="default">Would you like to disconnect your account?</entry>
+		<entry name="fr">Voulez-vous déconnecter votre compte ?</entry>
+		<entry name="pl">Czy chcesz rozłączyć swoje konto?</entry>
+		<entry name="de">Möchten Sie die Verbindung zu Ihrem Konto trennen?</entry>
+		<entry name="bg">Желаете ли да излезете от профила си?</entry>
+	</section>
+		
+	<!--  Assistant  -->
+	
+	<section name="assistant_welcome_title">
+		<entry name="default">Welcome</entry>
+		<entry name="fr">Bienvenue</entry>
+		<entry name="pl">Witamy</entry>
+		<entry name="de">Willkommen</entry>
+		<entry name="bg">Добре дошли</entry>
+	</section>
+
+	<section name="assistant_welcome_subtitle">
+		<entry name="default">This assistant will help you configure your account.</entry>
+		<entry name="fr">Cet assistant vous permet de configurer votre compte.</entry>
+		<entry name="pl">Ten asystent pomoże Ci skonfigurować konto.</entry>
+		<entry name="de">Dieser Assistent hilft Ihnen bei der Konfiguration Ihres Kontos.</entry>
+		<entry name="bg">Този асистент ще ви помогне да настроите профила си.</entry>
+	</section>
+
+	<section name="assistant_create_linhome_account">
+		<entry name="default">Create a {appname} account</entry>
+		<entry name="fr">Créer un compte {appname}</entry>
+		<entry name="pl">Utwórz konto {appname}</entry>
+		<entry name="de">Erstelle ein {appname} Konto</entry>
+		<entry name="bg">Създайте {appname} профил</entry>
+	</section>
+
+	<section name="assistant_use_linhome_account">
+		<entry name="default">Use a {appname} account</entry>
+		<entry name="fr">Utiliser un compte {appname}</entry>
+		<entry name="pl">Użyj konta {appname}</entry>
+		<entry name="de">Benutze ein {appname} Konto</entry>
+		<entry name="bg">Използвайте {appname} профил</entry>
+	</section>
+
+	<section name="assistant_use_sip_account">
+		<entry name="default">Use your SIP account</entry>
+		<entry name="fr">Utiliser votre compte SIP</entry>
+		<entry name="pl">Użyj własnego konta SIP</entry>
+		<entry name="de">Benutzen Sie Ihr SIP-Konto</entry>
+		<entry name="bg">Използвайте собствен SIP профил</entry>
+	</section>
+
+	<section name="assistant_remote_prov">
+		<entry name="default">Remote configuration</entry>
+		<entry name="fr">Configuration distante</entry>
+		<entry name="pl">Zdalna konfiguracja</entry>
+		<entry name="de">Fern-Konfiguration</entry>
+		<entry name="bg">Отдалечена настройка</entry>
+	</section>
+
+	<section name="assistant_remote_url">
+		<entry name="default">From a URL</entry>
+		<entry name="fr">Depuis une URL</entry>
+		<entry name="pl">Z adresu URL</entry>
+		<entry name="de">Von der URL</entry>
+		<entry name="bg">От URL</entry>
+	</section>
+	
+	<section name="assistant_remote_prov_from_url">
+		<entry name="default">Remote configuration from a URL</entry>
+		<entry name="fr">Configuration distante depuis une URL</entry>
+		<entry name="pl">Zdalna konfiguracja z adresu URL</entry>
+		<entry name="de">Fern-Konfiguration von der URL</entry>
+		<entry name="bg">Отдалечена настройка от URL</entry>
+	</section>
+
+
+	<section name="assistant_remote_prov_infobubble">
+		<entry name="default">Automatically configure the app by downloading the configuration file that you have generated. The file must follow Linhome's format. More info at https://www.wiki.linphone.org.</entry>
+		<entry name="fr">Configurez automatiquement l'application en téléchargeant le fichier de configuration que vous avez généré. Ce fichier doit suivre le format spécifique Linhome. Plus d'infos sur https://wiki.linphone.org.</entry>
+		<entry name="pl">Automatycznie skonfiguruj aplikację, pobierając wygenerowany plik konfiguracyjny. Plik musi być zgodny z formatem Linhome. Więcej informacji na https://www.wiki.linphone.org.</entry>
+		<entry name="de">Konfigurieren Sie die App automatisch, indem Sie die von Ihnen generierte Konfigurationsdatei herunterladen. Die Datei muss dem Linhome-Format folgen. Mehr Informationen unter https://www.wiki.linphone.org.</entry>
+		<entry name="bg">Настройте приложението автоматично, като изтеглите генерирания от вас конфигурационен файл. Файлът трябва да следва формата на Linhome. Повече информация на https://www.wiki.linphone.org.</entry>
+	</section>
+	
+	
+	<section name="assistant_remote_prov_from_qr_infobubble">
+		<entry name="default">Flash the QR code that you generated to download the app configuration from your remote configuration server.</entry>
+		<entry name="fr">Flashez le QR Code que vous avez généré pour télécharger la configuration de l'app depuis votre serveur de configuration distante.</entry>
+		<entry name="pl">Zapisz wygenerowany kod QR, aby pobrać konfigurację aplikacji ze zdalnego serwera.</entry>
+		<entry name="de">Flashen Sie den QR-Code, den Sie generiert haben, um die App-Konfiguration von Ihrem Remote-Konfigurationsserver herunterzuladen.</entry>
+		<entry name="bg">Запишете генерирания от вас QR код, за да изтеглите настройките на приложението от вашия конфигурационен сървър.</entry>
+	</section>
+	
+
+	<section name="remote_configuration_success">
+		<entry name="default">Remote configuration successfully applied</entry>
+		<entry name="fr">La configuration a été effectuée avec succès</entry>
+		<entry name="pl">Konfiguracja zdalna została pomyślnie zastosowana</entry>
+		<entry name="de">Fern-Konfiguration erfolgreich angewendet</entry>
+		<entry name="bg">Отдалечената настройка беше успешно приложена</entry>
+	</section>
+	
+	<section name="remote_configuration_failed">
+		<entry name="default">Remote configuration failed</entry>
+		<entry name="fr">La configuration a échoué</entry>
+		<entry name="pl">Konfiguracja zdalna nie powiodła się</entry>
+		<entry name="de">Fern-Konfiguration fehlgeschlagen</entry>
+		<entry name="bg">Отдалечената настройка не беше успешна</entry>
+	</section>
+	
+	<section name="remote_configuration_skipped">
+		<entry name="default">Remote configuration skipped</entry>
+		<entry name="pl">Pominięto konfigurację zdalną</entry>
+		<entry name="de">Fern-Konfiguration abgebrochen</entry>
+		<entry name="bg">Отдалечената настройка бе прескочена</entry>
+	</section>
+
+	<section name="url">
+		<entry name="default">URL</entry>
+		<entry name="fr">URL</entry>
+		<entry name="pl">URL</entry>
+		<entry name="de">URL</entry>
+		<entry name="bg">URL</entry>
+	</section>
+	
+	<section name="assistant_remote_qr">
+		<entry name="default">From a QR code</entry>
+		<entry name="fr">Via un QR Code</entry>
+		<entry name="pl">Z kodu QR</entry>
+		<entry name="de">Von einem QR Code</entry>
+		<entry name="bg">От QR код</entry>
+	</section>
+	
+	<section name="assistant_remote_from_qr">
+		<entry name="default">Remote configuration from a QR code</entry>
+		<entry name="fr">Configuration distante via un QR Code</entry>
+		<entry name="pl">Zdalna konfiguracja z kodu QR</entry>
+		<entry name="de">Fern-Konfiguration von einem QR Code</entry>
+		<entry name="bg">Отдалечена настройка от QR код</entry>
+	</section>
+	
+	<section name="assistant_remote_from_qr_desc">
+		<entry name="default">Please scan the QR code that you generated.</entry>
+		<entry name="fr">Scannez le QR code que vous avez généré.</entry>
+		<entry name="pl">Zeskanuj wygenerowany kod QR.</entry>
+		<entry name="de">Bitte scannen Sie den QR Code ein, den Sie generiert haben.</entry>
+		<entry name="bg">Моля, сканирайте генерирания QR код.</entry>
+	</section>
+
+	
+	<section name="assistant_using_will_disconnect_title">
+		<entry name="default">Existing account</entry>
+		<entry name="fr">Ce compte existe déjà</entry>
+		<entry name="pl">Istniejące konto</entry>
+		<entry name="de">Vorhandenes Konto</entry>
+		<entry name="bg">Съществуващ профил</entry>
+	</section>
+	
+	<section name="assistant_using_will_disconnect_message">
+		<entry name="default">If you continue, your current account will be disconnected. Do you want to continue?</entry>
+		<entry name="fr">Si vous continuez, votre compte sera déconnecté. Souhaitez-vous continuer ?</entry>
+		<entry name="pl">Jeśli będziesz kontynuować, Twoje obecne konto zostanie odłączone. Czy chcesz kontynuować?</entry>
+		<entry name="de">Wenn Sie fortfahren, wird die Verbindung zu Ihrem aktuellen Konto getrennt. Möchten Sie fortfahren?</entry>
+		<entry name="bg">Ако продължите, ще излезете от профила си. Желаете ли да продължите?</entry>
+	</section>
+	
+	<section name="username">
+		<entry name="default">Username</entry>
+		<entry name="fr">Nom d'utilisateur</entry>
+		<entry name="pl">Nazwa użytkownika</entry>
+		<entry name="de">Benutzername</entry>
+		<entry name="bg">Потребителско име</entry>
+	</section>
+
+	<section name="email">
+		<entry name="default">E-mail</entry>
+		<entry name="fr">E-Mail</entry>
+		<entry name="pl">E-mail</entry>
+		<entry name="de">E-Mail</entry>
+		<entry name="bg">Имейл</entry>
+	</section>
+
+	<section name="password">
+		<entry name="default">Password</entry>
+		<entry name="fr">Mot de passe</entry>
+		<entry name="pl">Hasło</entry>
+		<entry name="de">Passwort</entry>
+		<entry name="bg">Парола</entry>
+	</section>
+
+	<section name="password_confirmation">
+		<entry name="default">Password confirmation</entry>
+		<entry name="fr">Confirmation du mot de passe</entry>
+		<entry name="pl">Potwierdź hasło</entry>
+		<entry name="de">Passwort wiederholen</entry>
+		<entry name="bg">Потвърждаване на паролата</entry>
+	</section>
+
+	<section name="create_account">
+		<entry name="default">Create account</entry>
+		<entry name="fr">Créer le compte</entry>
+		<entry name="pl">Utwórz konto</entry>
+		<entry name="de">Konto erstellen</entry>
+		<entry name="bg">Създайте профил</entry>
+	</section>
+	
+	<section name="login">
+		<entry name="default">Login</entry>
+		<entry name="fr">Se connecter</entry>
+		<entry name="pl">Login</entry>
+		<entry name="de">Login</entry>
+		<entry name="bg">Вход</entry>
+	</section>
+
+	<section name="input_invalid_empty_field">
+		<entry name="default">Mandatory field</entry>
+		<entry name="fr">Ce champ est obligatoire</entry>
+		<entry name="pl">Pole obowiązkowe</entry>
+		<entry name="de">Pflichtfeld</entry>
+		<entry name="bg">Задължително поле</entry>
+	</section>
+	
+	<section name="input_invalid_format_uri">
+		<entry name="default">Invalid URI format</entry>
+		<entry name="fr">Format d'url invalide</entry>
+		<entry name="pl">Nieprawidłowy format URI</entry>
+		<entry name="de">Ungültiges URL-Format</entry>
+		<entry name="bg">Невалиден URI формат</entry>
+	</section>
+	
+	<section name="invalid_host_name">
+		<entry name="default">Invalid address format</entry>
+		<entry name="fr">Format d'adresse invalide</entry>
+		<entry name="pl">Nieprawidłowy format adresu</entry>
+		<entry name="de">Ungültiges Adress-Format</entry>
+		<entry name="bg">Невалиден формат на адреса</entry>
+	</section>
+		
+	<section name="invalid_number">
+		<entry name="default">Invalid number format</entry>
+		<entry name="fr">Valeur incorrecte</entry>
+		<entry name="pl">Nieprawidłowy format numeru</entry>
+		<entry name="de">Ungültiges Nummernformat</entry>
+		<entry name="bg">Невалиден формат на номера</entry>
+	</section>
+	
+	<section name="invalid_sip_uri">
+		<entry name="default">Invalid SIP Format (sip: or sips:...) </entry>
+		<entry name="fr">Format SIP invalide  (sip: ou sips:...)</entry>
+		<entry name="pl">Nieprawidłowy format SIP (sip: lub sips: ...)</entry>
+		<entry name="de">Ungültiges SIP-Format</entry>
+		<entry name="bg">Невалиден SIP формат (sip: или sips:...) </entry>
+	</section>
+	
+	<section name="invalid_action_code">
+		<entry name="default">0-9 # *</entry>
+		<entry name="fr">0-9 # *</entry>
+		<entry name="pl">0-9 # *</entry>
+		<entry name="de">0-9 # *</entry>
+		<entry name="bg">0-9 # *</entry>
+	</section>
+	
+	<section name="action_type_missing">
+		<entry name="default">Select an action</entry>
+		<entry name="fr">Selectionner une action</entry>
+		<entry name="pl">Wybierz akcję</entry>
+		<entry name="de">Wähle eine Aktion</entry>
+		<entry name="bg">Изберете профил</entry>
+	</section>
+		
+	<section name="proxy">
+		<entry name="default">proxy</entry>
+		<entry name="fr">proxy</entry>
+		<entry name="pl">proxy</entry>
+		<entry name="de">proxy</entry>
+		<entry name="bg">прокси</entry>
+	</section>
+	
+	<section name="register_expiration">
+		<entry name="default">Registration expiration</entry>
+		<entry name="fr">Expiration de l'enregistrement</entry>
+		<entry name="pl">Wygaszenie rejestracji</entry>
+		<entry name="de">Ablauf der Registrierung</entry>
+		<entry name="bg">Изтичане на регистрацията</entry>
+	</section>
+			
+	<section name="account_creator_username_too_short">
+		<entry name="default">Username too short</entry>
+		<entry name="fr">Nom d'utilisateur trop court</entry>
+		<entry name="pl">Nazwa użytkownika jest zbyt krótka</entry>
+		<entry name="de">Benutzername zu kurz</entry>
+		<entry name="bg">Потребителското име е твърде кратко</entry>
+	</section>
+		
+	<section name="account_creator_username_too_long">
+		<entry name="default">Username too long</entry>
+		<entry name="fr">Nom d'utilisateur trop long</entry>
+		<entry name="pl">Nazwa użytkownika jest za długa</entry>
+		<entry name="de">Benutzername zu lang</entry>
+		<entry name="bg">Потребителското име е твърде дълго</entry>
+	</section>
+		
+	<section name="account_creator_username_invalid_characters">
+		<entry name="default">Invalid characters</entry>
+		<entry name="fr">Caractètres invalides</entry>
+		<entry name="pl">Nieprawidłowe znaki</entry>
+		<entry name="de">Ungültige Zeichen</entry>
+		<entry name="bg">Невалидни символи</entry>
+	</section>
+		
+	<section name="account_creator_username_invalid">
+		<entry name="default">Invalid username</entry>
+		<entry name="fr">Nom d'utilisateur invalide</entry>
+		<entry name="pl">Zła nazwa użytkownika</entry>
+		<entry name="de">Ungültiger Benutzername</entry>
+		<entry name="bg">Невалидно потребителско име</entry>
+	</section>
+		
+	<section name="account_creator_password_too_short">
+		<entry name="default">Password too short</entry>
+		<entry name="fr">Mot de passe trop court</entry>
+		<entry name="pl">Hasło jest zbyt krótkie</entry>
+		<entry name="de">Passwort zu kurz</entry>
+		<entry name="bg">Прекалено къса парола</entry>
+	</section>
+		
+	<section name="account_creator_password_too_long">
+		<entry name="default">Password too long</entry>
+		<entry name="fr">Mot de passe trop long</entry>
+		<entry name="pl">Hasło jest zbyt długie</entry>
+		<entry name="de">Passwort zu lang</entry>
+		<entry name="bg">Прекалено дълга парола</entry>
+	</section>
+		
+	<section name="account_creator_password_invalid_characters">
+		<entry name="default">Invalid characters</entry>
+		<entry name="fr">Caractères invalides</entry>
+		<entry name="pl">Nieprawidłowe znaki</entry>
+		<entry name="de">Ungültige Zeichen</entry>
+		<entry name="bg">Невалидни символи</entry>
+	</section>
+		
+	<section name="account_creator_password_missingchars">
+		<entry name="default">Missing characters</entry>
+		<entry name="fr">Caractères manquants</entry>
+		<entry name="pl">Brakujące znaki</entry>
+		<entry name="de">Fehlende Zeichen</entry>
+		<entry name="bg">Липсващи символи</entry>
+	</section>
+		
+	<section name="account_creator_email_malformed">
+		<entry name="default">Invalid e-mail format</entry>
+		<entry name="fr">Format d'e-mail invalide</entry>
+		<entry name="pl">Niewłaściwy format e-mail</entry>
+		<entry name="de">Ungültiges E-Mail-Format</entry>
+		<entry name="bg">Невалиден имейл формат</entry>
+	</section>
+	
+	<section name="account_creator_email_invalid_characters">
+		<entry name="default">Invalid characters</entry>
+		<entry name="fr">Caractères invalides</entry>
+		<entry name="pl">Nieprawidłowe znaki</entry>
+		<entry name="de">Ungültige Zeichen</entry>
+		<entry name="bg">Невалидни символи</entry>
+	</section>
+	
+	<section name="account_creator_domain_invalid">
+		<entry name="default">Invalid domain name</entry>
+		<entry name="fr">Nom de domaine invalide</entry>
+		<entry name="pl">Nieprawidłowa nazwa domeny</entry>
+		<entry name="de">Ungültiger Domain-Name</entry>
+		<entry name="bg">Невалиден домейн</entry>
+	</section>
+		
+	<section name="input_password_do_not_match">
+		<entry name="default">Passwords do not match</entry>
+		<entry name="fr">Les mots de passe ne correspondent pas</entry>
+		<entry name="pl">Hasła nie pasują do siebie</entry>
+		<entry name="de">Passwörter stimmen nicht überein</entry>
+		<entry name="bg">Паролите не съвпадат</entry>
+	</section>
+
+	<section name="linhome_account_username_already_exists">
+		<entry name="default">This username is already in use</entry>
+		<entry name="fr">Ce nom d’utilisateur est déjà utilisé</entry>
+		<entry name="pl">Nazwa użytkownika jest zajęta</entry>
+		<entry name="de">Dieser Benutzername wird bereits genutzt</entry>
+		<entry name="bg">Потребителското име е заето</entry>
+	</section>
+		
+	<section name="linhome_account_loggedin">
+		<entry name="default">{appname} account connected</entry>
+		<entry name="fr">Compte {appname} connecté</entry>
+		<entry name="pl">Połączono konto {appname}</entry>
+		<entry name="de">{appname} Konto verbunden</entry>
+		<entry name="bg">Профила на {appname} е свързан</entry>
+	</section>
+	
+	<section name="linhome_account_login_failed_unknown_user_or_wroong_password">
+		<entry name="default">Unknown username or incorrect password</entry>
+		<entry name="fr">Utilisateur inconnu ou mot de passe incorrect</entry>
+		<entry name="pl">Nieznana nazwa użytkownika lub nieprawidłowe hasło</entry>
+		<entry name="de">Unbekannter Benutzername oder falsches Passwort</entry>
+		<entry name="bg">Неизвестно потребителско име или неправилна парола</entry>
+	</section>
+		
+	<section name="sip_account_created">
+		<entry name="default">SIP account configured</entry>
+		<entry name="fr">Compte SIP configuré</entry>
+		<entry name="pl">Skonfigurowano konto SIP</entry>
+		<entry name="de">SIP Konto konfiguriert</entry>
+		<entry name="bg">SIP профилът е настроен</entry>
+	</section>
+	
+	<section name="failed_creating_pushgateway">
+		<entry name="default">Push notifications could not be configured. For this reason, you will receive incoming calls only when the app is running in the foreground.</entry>
+		<entry name="fr">Les notifications "push" n'ont pas pu être activées. Attention, vous ne pourrez recevoir les appels entrants que lorsque l'application est au premier plan.</entry>
+		<entry name="pl">Nie można skonfigurować powiadomień push. Z tego powodu połączenia przychodzące będą odbierane tylko wtedy, gdy aplikacja jest uruchomiona na pierwszym planie.</entry>
+		<entry name="de">Push-Benachrichtigungen konnten nicht konfiguriert werden. Aus diesem Grund erhalten Sie eingehende Anrufe nur, wenn die App im Vordergrund ausgeführt wird.</entry>
+		<entry name="bg">Известията не можаха да бъдат настроени. Поради тази причина ще получавате входящи повиквания, само когато приложението работи.</entry>
+	</section>
+	
+	<section name="failed_sip_login_modify_parameters">
+		<entry name="default">SIP Registration failed. Do you want to modify parameters ?</entry>
+		<entry name="fr">Enregistrement SIP échoué, souhaitez-vous modifier les paramètres ?</entry>
+		<entry name="bg">Регистрацията на SIP се провали. Желаете ли да промените параметрите?</entry>
+	</section>
+		
+	<section name="more_settings">
+		<entry name="default">More settings</entry>
+		<entry name="fr">Plus d'options</entry>
+		<entry name="pl">Więcej ustawień</entry>
+		<entry name="de">Mehr Einstellungen</entry>
+		<entry name="bg">Повече настройки</entry>
+	</section>
+	
+	<section name="domain">
+		<entry name="default">SIP Domain</entry>
+		<entry name="fr">Domaine SIP</entry>
+		<entry name="pl">Domena SIP</entry>
+		<entry name="de">SIP Domain</entry>
+		<entry name="bg">SIP домейн</entry>
+	</section>
+	
+	<section name="transport">
+		<entry name="default">Transport</entry>
+		<entry name="fr">Transport</entry>
+		<entry name="pl">Transport</entry>
+		<entry name="de">Transport</entry>
+		<entry name="bg">Протокол</entry>
+	</section>
+	
+	<section name="sip_user_hint">
+		<entry name="default">jon</entry>
+		<entry name="bg">Иван</entry>
+	</section>
+	
+	<section name="sip_domain_hint">
+		<entry name="default">sip.linhome.org</entry>
+	</section>
+		
+	<section name="sip_proxy_hint">
+		<entry name="default">sip:192.168.1.1:5061</entry>
+	</section>
+	
+	<section name="sip_proxy">
+		<entry name="default">PROXY URI (optional)</entry>
+		<entry name="fr">URI DU PROXY (optionnel)</entry>
+		<entry name="bg">Прокси URI (по желание)</entry>
+	</section>
+	
+	<section name="account_creator_token_requests_failed_too_many">
+		<entry name="default">Too many creation token requests. Try again later</entry>
+		<entry name="fr">Nombre de requêtes de "token" trop importantes. Réessayer plus tard.</entry>
+		<entry name="bg">Твърде много заявки за създаване на ключ. Опитайте отново по-късно.</entry>
+	</section>
+	
+	<section name="account_creator_token_requests_failed_generic">
+		<entry name="default">Failed getting a token. Try again later</entry>
+		<entry name="fr">Token de création non reçu. Réessayer plus tard.</entry>
+		<entry name="bg">Получаването на ключ не бе успешно. Опитайте отново по-късно.</entry>
+	</section>
+	
+	<!-- permissions -->
+	
+	<section name="camera_permission_denied_dont_ask_again">
+		<entry name="default">Camera permission is required for {appname}.</entry>
+		<entry name="fr">Vous devez autoriser l'utilisation de l'appareil photo dans {appname}.</entry>
+		<entry name="pl">{Appname} wymaga pozwolenia na aparat.</entry>
+		<entry name="de">Die Kameraberechtigung ist für {appname} erforderlich.</entry>
+		<entry name="bg">Необходимо е разрешение за достъп до камерата за {appname}.</entry>
+	</section>
+	
+	<section name="camera_permission_denied">
+		<entry name="default">Camera permission is required for QR code scanning.</entry>
+		<entry name="fr">Vous devez autoriser l'accès à l'appareil photo pour scanner un code QR.</entry>
+		<entry name="pl">Do skanowania kodu QR wymagane jest zezwolenie na aparat.</entry>
+		<entry name="de">Die Kameraberechtigung ist für die Benutzung von QR codes erforderlich.</entry>
+		<entry name="bg">Необходимо е разрешение за достъп до камерата за сканиране на QR код.</entry>
+	</section>
+	
+	<section name="record_audio_permission_denied">
+		<entry name="default">Microphone access is required for outgoing calls.</entry>
+		<entry name="fr">Vous devez autoriser l'utilisation du microphone pour passer un appel.</entry>
+		<entry name="pl">W przypadku połączeń wychodzących wymagany jest dostęp do mikrofonu.</entry>
+		<entry name="de">Der Mikrofonzugriff ist ausgehende Anrufe erforderlich.</entry>
+		<entry name="bg">Необходимо е разрешение за достъп до микрофона за изходящи обаждания.</entry>
+	</section>
+	
+	<section name="record_audio_permission_denied_dont_ask_again">
+		<entry name="default">You need to give {appname} audio recording permission inside phone settings.</entry>
+		<entry name="fr">Vous devez autoriser {appname} à utiliser le microphone via les réglages de votre appareil.</entry>
+		<entry name="pl">Musisz zezwolić aplikacji {appname} na nagrywanie dźwięku w ustawieniach telefonu.</entry>
+		<entry name="de">Sie müssen in den Telefoneinstellungen die Audioaufnahmeberechtigung für {appname} erteilen.</entry>
+		<entry name="bg">Трябва да дадете разрешение за аудиозапис на {appname} в настройките на телефона.</entry>
+	</section>
+	
+	<section name="write_external_storage_permission_denied">
+		<entry name="default">Write access to external storage is required for call recordings.</entry>
+		<entry name="fr">Vous devez autoriser l'accès au répertoire de stockage pour les enregistrements audio.</entry>
+		<entry name="pl">Do nagrywania rozmów wymagany jest dostęp do pamięci zewnętrznej.</entry>
+		<entry name="de">Der Schreibzugriff auf externe Speicher ist für Anrufaufzeichnungen erforderlich.</entry>
+		<entry name="bg">За записите на разговори е необходим достъп за запис във външната памет.</entry>
+	</section>
+	
+	<section name="write_external_storage_permission_denied_dont_ask_again">
+		<entry name="default">You need to allow {appname} to have external storage write access via the phone settings to store call recordings.</entry>
+		<entry name="fr">Vous devez autoriser {appname} à accéder à l'espace de stockage externe via les réglales de votre appareil. </entry>
+		<entry name="pl">W ustawieniach telefonu musisz zezwolić aplikacji {appname} na zapisywanie nagrań rozmów w pamięci zewnętrznej.</entry>
+		<entry name="de">Sie müssen den Schreibzugriff auf externe Speicher für {appname} zulassen, um Anrufaufzeichnungen zu speichern.</entry>
+		<entry name="bg">Трябва да разрешите на {appname} достъп за запис до външна памет чрез настройките на телефона, за да съхранява записи на разговори.</entry>
+	</section>
+	
+	<section name="phone_state_permission_denied">
+		<entry name="default">Phone access is required to detect GSM calls.</entry>
+		<entry name="fr">L'accès à l'état du téléphone est nécessaire pour détecter les appels GSM.</entry>
+		<entry name="bg">Необходим е достъп до телефона, за да се засекат GSM разговори.</entry>
+	</section>
+	
+	<section name="phone_state_permission_denied_dont_ask_again">
+		<entry name="default">You need to allow {appname} to detect GSM calls.</entry>
+		<entry name="fr">Vous devez autoriser {appname} à accéder à l'état du téléphone pour détecter les appels GSM.</entry>
+		<entry name="bg">Трябва да разрешите на {appname} да открива GSM разговори.</entry>
+	</section>
+	
+	<section name="notifications_permission_denied">
+		<entry name="default">Notifications not allowed : you will not receive incoming call notifications</entry>
+		<entry name="fr">Notifications non autorisées : vous ne serez pas notifié des appels entrants</entry>
+		<entry name="bg">Известията са забранени: няма да получавате известия за входящи повиквания</entry>
+	</section>
+	
+	<section name="notifications_permission_denied_dont_ask_again">
+		<entry name="default">You need to allow {appname} to receive notifications inside phone settings.</entry>
+		<entry name="fr">Vous devez autoriser {appname} à recevoir des notifications dans les paramètres de votre appareil.</entry>
+		<entry name="bg">Трябва да разрешите на {appname} да получава известия в настройките на телефона.</entry>
+	</section>
+	
+	
+	
+		
+	<!-- Account -->
+	
+	<section name="delete_account">
+		<entry name="default">Delete account</entry>
+		<entry name="fr">Supprimer le compte</entry>
+		<entry name="pl">Usuń konto</entry>
+		<entry name="de">Konto löschen</entry>
+		<entry name="bg">Изтриване на профил</entry>
+	</section>
+	
+	<section name="change_password">
+		<entry name="default">Change password</entry>
+		<entry name="fr">Modifier le mot de passe</entry>
+		<entry name="pl">Zmień hasło</entry>
+		<entry name="de">Passwort ändern</entry>
+		<entry name="bg">Промяна на парола</entry>
+	</section>
+	
+	<section name="no_account_configured">
+		<entry name="default">No account configured.\nConfigure one via the account assistant.</entry>
+		<entry name="fr">Aucun compte configuré.\nConfigurez-en un via l'assistant de compte.</entry>
+		<entry name="pl">Żadne konto nie zostało skonfigurowane.\nSkonfiguruj je za pomocą asystenta konta.</entry>
+		<entry name="de">Kein Konto konfiguriert.\nKonfigurieren Sie ein Konto mit dem Assistenten.</entry>
+		<entry name="bg">Няма настроен профил.\nНастройте такъв чрез асистента за профили.</entry>
+	</section>
+		
+	<section name="account_info">
+		<entry name="default">Account: {0} \nSIP connection: {1}</entry>
+		<entry name="fr">Compte: {0} \nConnexion SIP: {1}</entry>
+		<entry name="pl">Konto: {0} \nPołączenie SIP: {1}</entry>
+		<entry name="de">Konto: {0} \nSIP Verbindung: {1}</entry>
+		<entry name="bg">Профил: {0} \nSIP връзка: {1}</entry>
+	</section>
+	
+	<section name="push_account_info">
+		<entry name="default">Push Account: {0} \n {1}</entry>
+		<entry name="fr">Compte de notifications push: {0} \n {1}</entry>
+		<entry name="pl">Konto PUSH: {0} \n {1}</entry>
+		<entry name="de">Push-Benachrichtigungskonto: {0} \n {1}</entry>
+		<entry name="bg">Пуш профил: {0} \n {1}</entry>
+	</section>
+	
+	<section name="refresh_registers">
+		<entry name="default">Refresh connection</entry>
+		<entry name="fr">Mettre à jour la connection</entry>
+		<entry name="pl">Odśwież połączenie</entry>
+		<entry name="de">Verbindung wiederherstellen</entry>
+		<entry name="bg">Презареждане на връзката</entry>
+	</section>
+	
+	<section name="account_manage_on_freesip_title">
+		<entry name="default">{appname} account management</entry>
+		<entry name="fr">Gestion du compte {appname}</entry>
+		<entry name="pl">Zarządzanie kontem {appname}</entry>
+		<entry name="de">{appname} Konto Management</entry>
+		<entry name="bg">{appname} управление на профил</entry>
+	</section>
+	
+	<section name="account_manage_on_freesip_message">
+		<entry name="default">{appname} accounts can be managed via Linhome's online SIP service. If you change your password or delete your account via the web platform, you will need to disconnect and reconnect your account inside the app to update your credentials.</entry>
+		<entry name="fr">La gestion du compte {appname} s'effectue via le service SIP en ligne de Linhome. Si vous modifiez votre de passe ou supprimez votre compte depuis la plateforme web, vous devrez déconnecter puis reconnecter votre compte depuis l'app pour mettre à jour vos identifiants.</entry>
+		<entry name="pl">Kontami {appname} można zarządzać za pośrednictwem internetowej usługi SIP firmy Linhome. Jeśli zmienisz hasło lub usuniesz konto za pośrednictwem platformy internetowej, będziesz musiał rozłączyć i ponownie połączyć swoje konto w aplikacji, aby zaktualizować swoje poświadczenia.</entry>
+		<entry name="de">Konten von {appname} können über den Online-SIP-Dienst von Linhome verwaltet werden. Wenn Sie Ihr Kennwort ändern oder Ihr Konto über die Webplattform löschen, müssen Sie die Verbindung zu Ihrem Konto innerhalb der App trennen und erneut verbinden, um Ihre Anmeldeinformationen zu aktualisieren.</entry>
+		<entry name="bg">Профилите в {appname} могат да се управляват чрез онлайн SIP услугата на Linhome. Ако промените паролата си или изтриете профила си чрез уеб платформата, ще трябва да прекъснете връзката с профила си в приложението и да го свържете отново, за да обновите данните си.</entry>
+	</section>
+	
+	<!-- Registration states -->
+	
+	<section name="registration_state_none">
+		<entry name="default">Not connected</entry>
+		<entry name="fr">Non connecté</entry>
+		<entry name="pl">Nie połączono</entry>
+		<entry name="de">Nicht verbunden</entry>
+		<entry name="bg">Няма връзка</entry>
+	</section>
+	
+	<section name="registration_state_progress">
+		<entry name="default">Connection in progress</entry>
+		<entry name="fr">Connexion en cours</entry>
+		<entry name="pl">Trwa łączenie</entry>
+		<entry name="de">Verbindung wird hergestellt</entry>
+		<entry name="bg">Осъществява се връзка</entry>
+	</section>
+	
+	<section name="registration_state_ok">
+		<entry name="default">Connected</entry>
+		<entry name="fr">Connecté</entry>
+		<entry name="pl">Połączono</entry>
+		<entry name="de">Verbunden</entry>
+		<entry name="bg">Свързан</entry>
+	</section>
+	
+	<section name="registration_state_failed">
+		<entry name="default">Connection failed</entry>
+		<entry name="fr">Échec de la connexion</entry>
+		<entry name="pl">Połączenie nieudane</entry>
+		<entry name="de">Verbindung fehlgeschlagen</entry>
+		<entry name="bg">Връзката не бе успешна</entry>
+	</section>
+	
+	<section name="registration_state_cleared">
+		<entry name="default">Not connected</entry>
+		<entry name="fr">Déconnecté</entry>
+		<entry name="pl">Niepołączono</entry>
+		<entry name="de">Nicht verbunden</entry>
+		<entry name="bg">Няма връзка</entry>
+	</section>
+	
+	<!-- Settings -->
+
+	<section name="audio_codecs">
+		<entry name="default">Audio codecs</entry>
+		<entry name="fr">Codecs audio</entry>
+		<entry name="pl">Kodeki audio</entry>
+		<entry name="de">Audio Codecs</entry>
+		<entry name="bg">Аудио кодеци</entry>
+	</section>
+
+	<section name="video_codecs">
+		<entry name="default">Video codecs</entry>
+		<entry name="fr">Codecs vidéo</entry>
+		<entry name="pl">Kodeki wideo</entry>
+		<entry name="de">Video Codecs</entry>
+		<entry name="bg">Видео кодеци</entry>
+	</section>
+	
+	<section name="log_upload_failed">
+		<entry name="default">An error has occurred, please try again later.</entry>
+		<entry name="fr">Une erreur est survenue. Rééssayez plus tard.</entry>
+		<entry name="pl">Wystąpił błąd, spróbuj ponownie później.</entry>
+		<entry name="de">Es ist ein Fehler aufgetreten, bitte versuchen Sie es später.</entry>
+		<entry name="bg">Възникна грешка, моля, опитайте по-късно.</entry>
+	</section>
+	
+	<section name="log_upload_success">
+		<entry name="default">Log successfully uploaded. URL copied to clipboard.</entry>
+		<entry name="fr">Le fichier de diagnostic a été téléchargé. L'URL a été copiée dans le presse-papier.</entry>
+		<entry name="pl">Dziennik został pomyślnie przesłany. URL skopiowany do schowka.</entry>
+		<entry name="de">Protokoll erfolgreich hochgeladen. URL in Zwischenablage kopiert.</entry>
+		<entry name="bg">Дневникът е качен успешно. URL адресът е копиран в клипборда.</entry>
+	</section>
+		
+	<section name="support_email_android">
+		<entry name="default">linhome-android@belledonne-communications.com</entry>
+	</section>
+	
+	<section name="support_email_ios">
+		<entry name="default">linhome-ios@belledonne-communications.com</entry>
+	</section>
+	
+	<section name="enable_debuglogs">
+		<entry name="default">Enable debug log</entry>
+		<entry name="fr">Activer le fichier de déboggage</entry>
+		<entry name="pl">Włącz dziennik debugowania</entry>
+		<entry name="de">Debugprotokoll aktivieren</entry>
+		<entry name="bg">Активиране на дневника за грешки</entry>
+	</section>
+	
+	<section name="clear_logs">
+		<entry name="default">Delete log file</entry>
+		<entry name="fr">Supprimer le fichier de déboggage</entry>
+		<entry name="pl">Usuń plik dziennika</entry>
+		<entry name="de">Lösche Protokoll-Datei</entry>
+		<entry name="bg">Изтриване на дневника</entry>
+	</section>
+	
+	<section name="log_clear_success">
+		<entry name="default">Log file deleted.</entry>
+		<entry name="fr">Fichier de déboggage supprimé.</entry>
+		<entry name="pl">Plik dziennika został usunięty.</entry>
+		<entry name="de">Protokoll-Datei gelöscht.</entry>
+		<entry name="bg">Дневникът е изтрит.</entry>
+	</section>
+		
+	<section name="send_logs">
+		<entry name="default">Send Log file</entry>
+		<entry name="fr">Envoyer le fichier de déboggage</entry>
+		<entry name="pl">Wyślij plik dziennika</entry>
+		<entry name="de">Sende Protokoll-Datei</entry>
+		<entry name="bg">Изпращане на дневник</entry>
+	</section>
+	
+	<section name="unable_to_sendMail_from_this_device">
+		<entry name="default">It seems that the e-mail could not be sent from this device. Logs can be retrieved at the following URL: {0}</entry>
+		<entry name="fr">Il semble impossible d'envoyer un e-mail depuis cet appareil. Les logs se trouvent à l'adresse suivante: {0}</entry>
+		<entry name="pl">Plik dziennika usunięty. Wygląda na to, że nie można wysłać wiadomości e-mail z tego urządzenia. Dzienniki można pobrać pod następującym adresem URL: {0}</entry>
+		<entry name="de">Es scheint, dass die E-Mail nicht von diesem Gerät gesendet werden konnte. Protokolle können unter folgender URL abgerufen werden: {0}</entry>
+		<entry name="bg">Изглежда, че имейлът не може да бъде изпратен от това устройство. Дневниците могат да бъдат извлечени на следния URL адрес: {0}</entry>
+	</section>
+	
+	<section name="copy_url_to_clipboard">
+		<entry name="default">Copy URL</entry>
+		<entry name="fr">Copier l'URL</entry>
+		<entry name="pl">Skopiuj link</entry>
+		<entry name="de">Kopiere URL</entry>
+		<entry name="bg">Копиране на URL</entry>
+	</section>
+	
+	<section name="enable_ipv6">
+		<entry name="default">Enable IPv6</entry>
+		<entry name="fr">Activer IPv6</entry>
+		<entry name="pl">Włącz IPv6</entry>
+		<entry name="de">Aktiviere IPv6</entry>
+		<entry name="bg">Активиране на IPv6</entry>
+	</section>
+
+	<section name="media_encryption">
+		<entry name="default">Media encryption</entry>
+		<entry name="fr">Chiffrement du média</entry>
+		<entry name="pl">Szyfrowanie multimediów</entry>
+		<entry name="de">Medienverschlüsselung</entry>
+		<entry name="bg">Криптиране на медия</entry>
+	</section>
+		
+	<section name="settings_device_show_latest_snapshot">
+		<entry name="default">Display the most recent image captures in the devices list.</entry>
+		<entry name="fr">Afficher les captures d'image les plus récentes dans la liste des appareils.</entry>
+		<entry name="pl">Wyświetla najnowsze przechwycone obrazy na liście urządzeń.</entry>
+		<entry name="de">Zeige die neuesten Bildaufnahmen in der Geräteliste an.</entry>
+		<entry name="bg">Показване на най-скорошните заснети изображения в списъка с устройства.</entry>
+	</section>
+	
+	<section name="settings_background_mode">
+		<entry name="default">Background mode : shows a notification to keep the app alive.</entry>
+		<entry name="fr">Mode arrière-plan : affiche une notification pour maintenir l'app active.</entry>
+		<entry name="bg">Фонов режим: показва известие, за да поддържа приложението активно.</entry>
+	</section>
+		
+	<!-- Devices-->
+
+	<section name="vcard_sync_failed">
+		<entry name="default">Error fetching remotely configured devices. Check your internet connection and try again or alternatively Contact support if problem persists.</entry>
+		<entry name="fr">Une erreur est survenue lors de la récupération distante des appareils. Vérifier cotre connexion internet et essayez de nouveau ou si le problème persiste contacter le support.</entry>
+		<entry name="bg">Грешка при извличане на отдалечено настроени устройства. Проверете интернет връзката си и опитайте отново или се свържете с екипа по поддръжка, ако проблемът продължава.</entry>
+	</section>
+
+	<section name="no_network">
+		<entry name="default">Device not connected.</entry>
+		<entry name="fr">Appareil non connecté.</entry>
+		<entry name="bg">Устройството не е свързано.</entry>
+	</section>
+
+	
+	<section name="your_device">
+		<entry name="default">Your device</entry>
+		<entry name="fr">Votre appareil</entry>
+		<entry name="pl">Your device</entry>
+		<entry name="de">Ihr Gerät</entry>
+		<entry name="bg">Вашето устройство</entry>
+	</section>
+		
+	<section name="device_info_actions_title">
+		<entry name="default">Action(s) configured</entry>
+		<entry name="fr">Action(s) configurée(s)</entry>
+		<entry name="pl">Skonfigurowane wyjścia przekaźnikowe</entry>
+		<entry name="de">Aktion(en) konfiguriert</entry>
+		<entry name="bg">Настроени действия</entry>
+	</section>
+
+	<section name="device_info_no_actions_title">
+		<entry name="default">No action configured</entry>
+		<entry name="fr">Aucune action configurée</entry>
+		<entry name="pl">Nie skonfigurowano wyjść przekaźnikowych</entry>
+		<entry name="de">Keine Aktionen konfiguriert</entry>
+		<entry name="bg">Няма настроено действие</entry>
+	</section>
+	
+	<section name="delete_device_confirm_message">
+		<entry name="default">Delete device {0} ?</entry>
+		<entry name="fr">Supprimer l'appareil {0} ?</entry>
+		<entry name="pl">Usuń urządzenie {0} ?</entry>
+		<entry name="de">Lösche Gerät {0} ?</entry>
+		<entry name="bg">Изтриване на устройство {0} ?</entry>
+	</section>
+		
+	<section name="devices_empty_list_title">
+		<entry name="default">Configure your IP video doorbells, security cameras and internal units to see what is happening out there or make a call to your home.</entry>
+		<entry name="fr">Configurez vos sonnettes IP, vos caméras de sécurité ou vos écrans de contrôle internes pour voir en vidéo ce qui se passe devant ces appareils ou pour appeler votre maison.</entry>
+		<entry name="pl">Skonfiguruj swój wideo-domofon, kamerę, panel wewnętrzny itp...</entry>
+		<entry name="de">Konfigurieren Sie Ihre IP-Videotürsprechanlage, Überwachungskameras und interne Geräte, um zu sehen, was draußen passiert, oder rufen Sie Ihr Zuhause an.</entry>
+		<entry name="bg">Настройте вашите IP видеодомофони, охранителни камери и вътрешни устройства, за да видите какво се случва навън или да се обадите у дома.</entry>
+	</section>
+	
+	<section name="new_device">
+		<entry name="default">New device</entry>
+		<entry name="fr">Nouvel appareil</entry>
+		<entry name="pl">Nowe urządzenie</entry>
+		<entry name="de">Neues Gerät</entry>
+		<entry name="bg">Ново устройство</entry>
+	</section>
+	
+	<section name="device_name">
+		<entry name="default">Device name</entry>
+		<entry name="fr">Nom de l'appareil</entry>
+		<entry name="pl">Nazwa urządzenia</entry>
+		<entry name="de">Gerät Name</entry>
+		<entry name="bg">Име на устройство</entry>
+	</section>
+	
+	<section name="device_address">
+		<entry name="default">SIP address</entry>
+		<entry name="fr">Adresse SIP</entry>
+		<entry name="pl">Adres SIP</entry>
+		<entry name="de">SIP Adresse</entry>
+		<entry name="bg">SIP адрес</entry>
+	</section>
+
+	<section name="device_address_already_exists">
+		<entry name="default">There is already a device configured with this SIP address ({0}).</entry>
+		<entry name="fr">Un appareil a déjà été configuré avec cette adresse SIP ({0}).</entry>
+		<entry name="pl">Istnieje już urządzenie skonfigurowane z tym adresem SIP ({0}).</entry>
+		<entry name="de">Es ist bereits ein Gerät mit dieser SIP-Adresse ({0}) konfiguriert.</entry>
+		<entry name="bg">Вече има настроено устройство с този SIP адрес ({0}).</entry>
+	</section>
+	
+	<section name="device_address_hint">
+		<entry name="default">ex : sip:1234@sip.linhome.org</entry>
+	</section>
+		
+	<section name="device_type_select">
+		<entry name="default">Select the device type</entry>
+		<entry name="fr">Sélectionner le type d'appareil</entry>
+		<entry name="pl">Wybierz typ urządzenia</entry>
+		<entry name="de">Wähle einen Gerätetyp</entry>
+		<entry name="bg">Изберете вид на устройството</entry>
+	</section>
+	
+	<section name="device_type_select_prompt">
+		<entry name="default">Select the type</entry>
+		<entry name="fr">Sélectionner le type</entry>
+		<entry name="pl">Wybierz typ</entry>
+		<entry name="de">Wähle den Typ</entry>
+		<entry name="bg">Изберете вид</entry>
+	</section>
+	
+	<section name="method_type_select">
+		<entry name="default">Configure action buttons (optional)</entry>
+		<entry name="fr">Configurer les boutons d'action (optionnel)</entry>
+		<entry name="pl">Skonfiguruj przyciski (opcjonalnie)</entry>
+		<entry name="de">Konfiguriere die Aktionstasten (optional)</entry>
+		<entry name="bg">Настройте бутоните за действие (по избор)</entry>
+	</section>
+
+	<section name="action_method">
+		<entry name="default">Method</entry>
+		<entry name="fr">Méthode</entry>
+		<entry name="pl">Metoda</entry>
+		<entry name="de">Methode</entry>
+		<entry name="bg">Метод</entry>
+	</section>
+	
+	<section name="action_method_prompt">
+		<entry name="default">Select the method</entry>
+		<entry name="fr">Sélectionner la méthode</entry>
+		<entry name="pl">Wybierz metodę</entry>
+		<entry name="de">Wähle eine Methode</entry>
+		<entry name="bg">Изберете метод</entry>
+	</section>
+	
+	<section name="method_dtmf_sip_info">
+		<entry name="default">DTMF (SIP INFO)</entry>
+	</section>
+	
+	<section name="method_dtmf_rfc_4733">
+		<entry name="default">DTMF (RFC 4733)</entry>
+	</section>
+	
+	<section name="method_sip_message">
+		<entry name="default">SIP Message</entry>
+		<entry name="fr">Message SIP</entry>
+		<entry name="pl">Message SIP</entry>
+		<entry name="de">SIP Nachricht</entry>
+		<entry name="bg">SIP съобщение</entry>
+	</section>
+	
+	<section name="action">
+		<entry name="default">action</entry>
+		<entry name="fr">action</entry>
+		<entry name="pl">przycisk</entry>
+		<entry name="de">Aktion</entry>
+		<entry name="bg">действие</entry>
+	</section>
+		
+	<section name="action_prompt">
+		<entry name="default">Select an action</entry>
+		<entry name="fr">Sélectionner une action</entry>
+		<entry name="pl">Wybierz ikonę</entry>
+		<entry name="de">Wähle eine Aktion</entry>
+		<entry name="bg">Изберете действие</entry>
+	</section>
+	
+	<section name="action_open_door">
+		<entry name="default">Open the door</entry>
+		<entry name="fr">Ouvrir la porte</entry>
+		<entry name="pl">Otwórz drzwi</entry>
+		<entry name="de">Öffne die Tür</entry>
+		<entry name="bg">Отваряне на вратата</entry>
+	</section>
+	
+	<section name="action_open_gate">
+		<entry name="default">Open the gate</entry>
+		<entry name="fr">Ouvrir le portail</entry>
+		<entry name="pl">Otwórz bramę</entry>
+		<entry name="de">Öffne das Tor</entry>
+		<entry name="bg">Отваряне на портата</entry>
+	</section>
+	
+	<section name="action_lightup">
+		<entry name="default">Switch on the light</entry>
+		<entry name="fr">Allumer la lumière</entry>
+		<entry name="pl">Włącz światło</entry>
+		<entry name="de">Schalte das Licht ein</entry>
+		<entry name="bg">Включване на осветлението</entry>
+	</section>
+
+	<section name="action_unlock">
+		<entry name="default">Unlock</entry>
+		<entry name="fr">Dévérouiller</entry>
+		<entry name="pl">Otwórz</entry>
+		<entry name="de">Öffne</entry>
+		<entry name="bg">Отключване</entry>
+	</section>
+	
+	<section name="action_code">
+		<entry name="default">Code</entry>
+		<entry name="fr">Code</entry>
+		<entry name="pl">Kod</entry>
+		<entry name="de">Schlüssel</entry>
+		<entry name="bg">Код</entry>
+	</section>
+	
+	<section name="action_sent">
+		<entry name="default">"{0}" sent</entry>
+		<entry name="fr">"{0}" envoyé</entry>
+		<entry name="bg">"{0}" изпратено</entry>
+	</section>
+		
+	<section name="device_video_intercom">
+		<entry name="default">Video intercom</entry>
+		<entry name="fr">Interphone vidéo</entry>
+		<entry name="pl">Wideodomofon</entry>
+		<entry name="de">Videotürsprechanlage</entry>
+		<entry name="bg">Видео домофон</entry>
+	</section>
+		
+	<section name="device_audio_intercom">
+		<entry name="default">Audio intercom</entry>
+		<entry name="fr">Interphone audio</entry>
+		<entry name="pl">Domofon</entry>
+		<entry name="de">Audiotürsprechanlage</entry>
+		<entry name="bg">Звуков домофон</entry>
+	</section>
+	
+	<section name="device_security_camera">
+		<entry name="default">SIP security camera</entry>
+		<entry name="fr">Caméra de sécurité SIP</entry>
+		<entry name="pl">Kamera SIP</entry>
+		<entry name="de">SIP Sicherheitskamera</entry>
+		<entry name="bg">SIP охранителна камера</entry>
+	</section>
+	
+	<section name="device_internal_unit">
+		<entry name="default">Internal unit</entry>
+		<entry name="fr">Unité interne</entry>
+		<entry name="pl">Panel wewnętrzny</entry>
+		<entry name="de">Innen Einheit</entry>
+		<entry name="bg">Интериорен панел</entry>
+	</section>
+		
+	<section name="device_action">
+		<entry name="default">Action</entry>
+		<entry name="fr">Action</entry>
+		<entry name="pl">Przycisk</entry>
+		<entry name="de">Aktion</entry>
+		<entry name="bg">Действие</entry>
+	</section>
+	
+	<section name="device_action_select">
+		<entry name="default">Select an action</entry>
+		<entry name="fr">Sélectionner une action</entry>
+		<entry name="pl">Wybierz ikonę</entry>
+		<entry name="de">Wähle eine Aktion</entry>
+		<entry name="bg">Изберете действие</entry>
+	</section>
+	
+	<section name="device_action_add">
+		<entry name="default">Add an action</entry>
+		<entry name="fr">Ajouter une action</entry>
+		<entry name="pl">Dodaj przycisk</entry>
+		<entry name="de">Füge eine Aktion hinzu</entry>
+		<entry name="bg">Добавете действие</entry>
+	</section>
+	
+	<section name="delete_device">
+		<entry name="default">Delete the device</entry>
+		<entry name="fr">Supprimer l'appareil</entry>
+		<entry name="pl">Usuń urządzenie</entry>
+		<entry name="de">Lösche das Gerät</entry>
+		<entry name="bg">Изтрийте устройството</entry>
+	</section>
+		
+	<!-- about -->
+
+	<section name="about_link">
+		<entry name="default">www.linhome.org</entry>
+	</section>
+	
+	<section name="app_version">
+		<entry name="default">{appname} {0} {1}</entry>
+	</section>
+		
+	<section name="sdk_version">
+		<entry name="default">Linphone Core {0}</entry>
+	</section>
+	
+	<section name="license_text">
+		<entry name="default">GNU General Public License V3</entry>
+	</section>
+	
+	<section name="license_link">
+		<entry name="default">https://www.gnu.org/licenses/gpl-3.0.html</entry>
+	</section>
+	
+	<section name="copyright_text">
+		<entry name="default">© Belledonne Communications</entry>
+	</section>
+
+	<section name="privacy_policy_text">
+		<entry name="default">Privacy policy</entry>
+		<entry name="fr">Politique de confidentialité</entry>
+		<entry name="bg">Политика за поверителност</entry>
+	</section>
+   	<section name="privacy_policy_link">
+		<entry name="default">https://www.linhome.org/privacy-policy</entry>
+	</section>
+
+
+
+	<!-- dialogs & generic words -->
+		
+	<section name="message">
+		<entry name="default">message</entry>
+		<entry name="fr">message</entry>
+		<entry name="pl">wiadomość</entry>
+		<entry name="de">Nachricht</entry>
+		<entry name="bg">съобщение</entry>
+	</section>
+		
+	<section name="ok">
+		<entry name="default">Ok</entry>
+	</section>
+	
+	<section name="cancel">
+		<entry name="default">Cancel</entry>
+		<entry name="fr">Annuler</entry>
+		<entry name="pl">Anuluj</entry>
+		<entry name="de">Abbrechen</entry>
+		<entry name="bg">Отказ</entry>
+	</section>
+		
+	<section name="confirm">
+		<entry name="default">Confirm</entry>
+		<entry name="fr">Confirmer</entry>
+		<entry name="pl">Potwierdź</entry>
+		<entry name="de">Bestätigen</entry>
+		<entry name="bg">Потвърди</entry>
+	</section>
+	
+	<section name="yes">
+		<entry name="default">Yes</entry>
+		<entry name="fr">Oui</entry>
+		<entry name="pl">Tak</entry>
+		<entry name="de">Ja</entry>
+		<entry name="bg">Да</entry>
+	</section>
+	
+	<section name="no">
+		<entry name="default">No</entry>
+		<entry name="fr">Non</entry>
+		<entry name="pl">Nie</entry>
+		<entry name="de">Nein</entry>
+		<entry name="bg">Не</entry>
+	</section>
+	
+	<section name="apply">
+		<entry name="default">Apply</entry>
+		<entry name="fr">Appliquer</entry>
+		<entry name="pl">Zastosuj</entry>
+		<entry name="de">Anwenden</entry>
+		<entry name="bg">Приложи</entry>
+	</section>
+
+	<section name="generic_dialog_error_title">
+		<entry name="default">Error</entry>
+		<entry name="fr">Erreur</entry>
+		<entry name="pl">Błąd</entry>
+		<entry name="de">Fehler</entry>
+		<entry name="bg">Грешка</entry>
+	</section>
+
+	<section name="none">
+		<entry name="default">None</entry>
+		<entry name="fr">Aucun</entry>
+		<entry name="pl">Żaden</entry>
+		<entry name="de">Keine</entry>
+		<entry name="bg">Няма</entry>
+	</section>
+	
+	<section name="save">
+		<entry name="default">Save</entry>
+		<entry name="fr">Enregistrer</entry>
+		<entry name="pl">Zapisz</entry>
+		<entry name="de">Speichern</entry>
+		<entry name="bg">Запази</entry>
+	</section>
+
+	<section name="select">
+		<entry name="default">Select</entry>
+		<entry name="fr">Sélectionner</entry>
+		<entry name="pl">Wybierz</entry>
+		<entry name="de">Auswählen</entry>
+		<entry name="bg">Избери</entry>
+	</section>
+	
+	<section name="edit">
+		<entry name="default">Edit</entry>
+		<entry name="fr">Éditer</entry>
+		<entry name="pl">Edytuj</entry>
+		<entry name="de">Bearbeiten</entry>
+		<entry name="bg">Промяна</entry>
+	</section>
+
+	<section name="today">
+		<entry name="default">Today</entry>
+		<entry name="fr">Aujourd'hui</entry>
+		<entry name="pl">Dzisiaj</entry>
+		<entry name="de">Heute</entry>
+		<entry name="bg">Днес</entry>
+	</section>
+
+	<section name="yesterday">
+		<entry name="default">Yesterday</entry>
+		<entry name="fr">Hier</entry>
+		<entry name="pl">Wczoraj</entry>
+		<entry name="de">Gestern</entry>
+		<entry name="bg">Вчера</entry>
+	</section>
+	
+	<!-- Call View -->
+	
+	<section name="incoming_someone_at_your_door">
+		<entry name="default">Someone is ringing your doorbell.</entry>
+		<entry name="fr">Quelqu'un sonne à votre porte.</entry>
+		<entry name="pl">Ktoś dzwoni do drzwi.</entry>
+		<entry name="de">jemand klingelt an Ihrer Tür.</entry>
+		<entry name="bg">Някой звъни на звънеца.</entry>
+	</section>
+
+	<section name="call_button_accept">
+		<entry name="default">Accept</entry>
+		<entry name="fr">Décrocher</entry>
+		<entry name="pl">Odbierz</entry>
+		<entry name="de">Annehmen</entry>
+		<entry name="bg">Приеми</entry>
+	</section>
+
+	<section name="call_button_decline">
+		<entry name="default">Decline</entry>
+		<entry name="fr">Raccrocher</entry>
+		<entry name="pl">Odrzuć</entry>
+		<entry name="de">Ablehnen</entry>
+		<entry name="bg">Откажи</entry>
+	</section>
+	
+	<section name="call_button_cancel">
+		<entry name="default">Cancel</entry>
+		<entry name="fr">Annuler</entry>
+		<entry name="pl">Anuluj</entry>
+		<entry name="de">Abbrechen</entry>
+		<entry name="bg">Отказ</entry>
+	</section>
+			
+	<section name="call_button_hangup">
+		<entry name="default">Hang up</entry>
+		<entry name="fr">Raccrocher</entry>
+		<entry name="pl">Zakończ</entry>
+		<entry name="de">Auflegen</entry>
+		<entry name="bg">Затвори</entry>
+	</section>
+
+	<section name="call_button_mute">
+		<entry name="default">Mute</entry>
+		<entry name="fr">Désactiver</entry>
+		<entry name="pl">Wycisz</entry>
+		<entry name="de">Stumm</entry>
+		<entry name="bg">Без звук</entry>
+	</section>
+	
+	<section name="call_button_unmute">
+		<entry name="default">Unmute</entry>
+		<entry name="fr">Activer</entry>
+		<entry name="pl">Wyłącz wyciszenie</entry>
+		<entry name="de">Mikrophon einschalten</entry>
+		<entry name="bg">Със звук</entry>
+	</section>
+	
+	<section name="call_button_enable_speaker">
+		<entry name="default">Turn on</entry>
+		<entry name="fr">Activer</entry>
+		<entry name="pl">Włącz</entry>
+		<entry name="de">Einschalten</entry>
+		<entry name="bg">Включи</entry>
+	</section>
+	
+	<section name="call_button_disable_speaker">
+		<entry name="default">Turn off</entry>
+		<entry name="fr">Désactiver</entry>
+		<entry name="pl">Wyłącz</entry>
+		<entry name="de">Ausschalten</entry>
+		<entry name="bg">Изключи</entry>
+	</section>
+	
+		<!-- Error -->
+	
+	<section name="unable_to_call_device">
+		<entry name="default">The device could not be reached. Check its configuration or your network connection.</entry>
+		<entry name="fr">L'Appareil n'a pas pu être contacté. Vérifiez qu'il soit bien configuré dans l'application ou votre connexion.</entry>
+		<entry name="pl">Nie można połączyć się z urządzeniem. Sprawdź jego konfigurację.</entry>
+		<entry name="de">Das Gerät konnte nicht erreicht werden. Überprüfen Sie die Konfiguration oder Ihre Netzwerkverbindung.</entry>
+		<entry name="bg">Устройството не може да бъде открито. Проверете настройките му или мрежовата си връзка.</entry>
+	</section>
+	
+	<section name="unable_to_accept_call_gsm_call_in_progress">
+		<entry name="default">Phone call must be terminated before accepting {appname} call</entry>
+		<entry name="fr">L'appel téléphonique doit être terminé avant d'accepter l'appel {appname}</entry>
+		<entry name="bg">Телефонното обаждане трябва да бъде прекратено, преди да се приеме обаждане от {appname}</entry>
+	</section>
+
+	
+	<!-- notification -->
+		
+	<section name="notif_incoming_call">
+		<entry name="default">Incoming call</entry>
+		<entry name="fr">Appel entrant</entry>
+		<entry name="pl">Połączenie przychodzące</entry>
+		<entry name="de">Eingehender Anruf</entry>
+		<entry name="bg">Входящо повикване</entry>
+	</section>
+	
+	<section name="notif_incoming_call_audio">
+		<entry name="default">Audio call</entry>
+		<entry name="fr">Appel audio</entry>
+		<entry name="pl">Połączenie audio</entry>
+		<entry name="de">Audio-Anruf</entry>
+		<entry name="bg">Звуково повикване</entry>
+	</section>
+	
+	<section name="notif_incoming_call_video">
+		<entry name="default">Video call</entry>
+		<entry name="fr">Appel vidéo</entry>
+		<entry name="pl">Połączenie wideo</entry>
+		<entry name="de">Video-Anruf</entry>
+		<entry name="bg">Видео повикване</entry>
+	</section>
+	
+	<section name="notif_missed_call_title">
+		<entry name="default">Missed call(s)</entry>
+		<entry name="fr">Appel(s) manqué(s)</entry>
+		<entry name="pl">Nieodebrane połączenie</entry>
+		<entry name="de">Verpasste Anrufe</entry>
+		<entry name="bg">Пропуснати повиквания</entry>
+	</section>
+	
+	<section name="notif_missed_calls">
+		<entry name="default">{0} missed calls</entry>
+		<entry name="fr">{0} appels manqués</entry>
+		<entry name="pl">{0} nieodebranych połączeń</entry>
+		<entry name="de">{0} verpasste Anrufe</entry>
+		<entry name="bg">{0} пропуснати повиквания</entry>
+	</section>
+	
+	<section name="notif_missed_call">
+		<entry name="default">missed call from {0}</entry>
+		<entry name="fr">appel manqué de {0}</entry>
+		<entry name="pl">nieodebrane połączenie od {0}</entry>
+		<entry name="de">Verpasster Anruf von {0}</entry>
+		<entry name="bg">пропуснато повикване от {0}</entry>
+	</section>
+
+ 	<section name="notif_accepted_elsewhere_call_title">
+		<entry name="default">Call answered on another device.</entry>
+		<entry name="fr">Appel répondu sur un autre appareil.</entry>
+		<entry name="bg">Повикването е прието на друго устройство.</entry>
+	</section>
+
+  	<section name="notif_declined_elsewhere_call_title">
+		<entry name="default">Call declined on another device.</entry>
+		<entry name="fr">Appel décliné sur un autre appareil.</entry>
+		<entry name="bg">Повикването е отхвърлено на друго устройство.</entry>
+	</section>
+
+
+	
+	<section name="notif_outgoing_call">
+		<entry name="default">Outgoing call</entry>
+		<entry name="fr">Appel sortant</entry>
+		<entry name="pl">Połączenie wychodzące</entry>
+		<entry name="de">Ausgehender Anruf</entry>
+		<entry name="bg">Изходящо повикване</entry>
+	</section>
+	
+	<section name="notif_in_call">
+		<entry name="default">Call in progress</entry>
+		<entry name="fr">Appel en cours</entry>
+		<entry name="pl">Połączenie w toku</entry>
+		<entry name="de">Anruf wird geführt</entry>
+		<entry name="bg">Текущ разговор</entry>
+	</section>
+		
+	<!-- Android specific texts start-->
+
+	<section name="linhome_service_id">
+		<entry name="default">linhome_service_id</entry>
+	</section>
+
+	<section name="notification_channel_incoming_call_id">
+		<entry name="default">linhome_notification_channel_incoming_call_id</entry>
+	</section>
+	
+	<section name="notification_channel_service_name">
+		<entry name="default">{appname} service</entry>
+		<entry name="fr">Service {appname}</entry>
+		<entry name="pl">Usługa {appname}</entry>
+		<entry name="de">{appname} Service</entry>
+		<entry name="bg">{appname} услуга</entry>
+	</section>
+
+	<section name="notification_channel_incoming_call_name">
+		<entry name="default">{appname} Incoming call</entry>
+		<entry name="fr">{appname} Appel entrant</entry>
+		<entry name="pl">{appname} Połączenie przychodzące</entry>
+		<entry name="de">{appname} Eingehender Anruf</entry>
+		<entry name="bg">{appname} входящо повикване</entry>
+	</section>
+
+	<section name="service_name">
+		<entry name="default">{appname} Service</entry>
+		<entry name="fr">Service {appname}</entry>
+		<entry name="pl">Usługa {appname}</entry>
+		<entry name="de">{appname} Service</entry>
+		<entry name="bg">{appname} услуга</entry>
+	</section>
+
+	<section name="service_auto_start_description">
+		<entry name="default">{appname} has automatically started.</entry>
+		<entry name="fr">{appname} a démarré automatiquement.</entry>
+		<entry name="pl">Aplikacja {appname} została uruchomiona automatycznie.</entry>
+		<entry name="de">{appname} wurde automatisch gestartet.</entry>
+		<entry name="bg">{appname} стартира автоматично.</entry>
+	</section>
+
+	<section name="service_description">
+		<entry name="default">Without push notifications you will not be able to receive calls while the app is closed or running in the background. However you can still use it to call your devices, or receive calls when your app is opened.</entry>
+		<entry name="fr">Sans notifications push vous ne pourrez pas recevoir d'appels lorsque l'application est fermée ou en arrière-plan. Vous pourrez cependant utiliser l'application pour appeler vos appareils ou recevoir des appels quand l'application est ouverte.</entry>
+		<entry name="pl">Powiadomienia push są wymagane do odbierania połączeń przychodzących, gdy aplikacja jest zamknięta lub działa w tle.</entry>
+		<entry name="de">Ohne Push-Benachrichtigungen können Sie keine Anrufe empfangen, während die App geschlossen oder im Hintergrund ausgeführt wird. Sie können sie jedoch weiterhin verwenden, um Ihre Geräte anzurufen oder Anrufe zu empfangen, wenn Ihre App geöffnet wird.</entry>
+		<entry name="bg">Без известия няма да можете да получавате повиквания, докато приложението е затворено или работи във фонов режим. Можете обаче да го използвате, за да се обаждате на устройствата си или да получавате повиквания, когато приложението е отворено.</entry>
+	</section>
+
+	<section name="linhome_account_created">
+		<entry name="default">Your {appname} account {0} has been created. You will receive a validation e-mail shortly. Click on the link you received by e-mail to finalize the creation of your account.</entry>
+		<entry name="fr">Votre compte {appname} {0} a été crée. Vous allez recevoir un e-mail de validation. Cliquez sur le lien reçu par e-mail pour finaliser la création du compte.</entry>
+		<entry name="pl">Twoje konto {appname} {0} zostało utworzone. Wkrótce otrzymasz e-mail z potwierdzeniem. Kliknij link z otrzymanej wiadomości e-mail, aby sfinalizować tworzenie konta.</entry>
+		<entry name="de">Ihr {appname} Konto {0} wurde erstellt. Sie erhalten in Kürze eine Validierungs-E-Mail. Klicken Sie auf den Link, den Sie per E-Mail erhalten haben, um die Erstellung Ihres Kontos abzuschließen.</entry>
+		<entry name="bg">Вашият {appname} профил {0} е създаден. Скоро ще получите имейл за валидиране. Кликнете върху връзката, която сте получили по имейл, за да финализирате създаването на профила.</entry>
+	</section>
+	
+	<section name="linhome_account_creation_failed">
+		<entry name="default">An error has occurred. Please try again later or contact Linhome's support team. Error code: {0}</entry>
+		<entry name="fr">Une erreur est survenue. Réessayez ultérieurement ou contactez le service de support de Linhome. Code d'erreur: {0}</entry>
+		<entry name="pl">Wystąpił błąd. Spróbuj ponownie później lub skontaktuj się z zespołem pomocy Linhome. Kod błędu: {0}</entry>
+		<entry name="de">Ein Fehler ist aufgetreten. Versuchen Sie es später erneut oder wenden Sie sich an das Supportteam von Linhome. Fehlercode: {0}</entry>
+		<entry name="bg">Възникна грешка. Моля, опитайте отново по-късно или се свържете с екипа за поддръжка на Linhome. Код на грешката: {0}</entry>
+	</section>
+
+	<section name="linhome_account_creation_request_failed">
+		<entry name="default">Request failed. Please try again later or contact Linhome's support team.</entry>
+		<entry name="fr">Une erreur de requête est survenue. Rééssayez ultérieurement ou contactez le service de support de Linhome.</entry>
+		<entry name="pl">Żądanie nie powiodło się. Spróbuj ponownie później lub skontaktuj się z zespołem pomocy Linhome.</entry>
+		<entry name="de">Die Anforderung ist fehlgeschlagen. Versuchen Sie es später erneut oder wenden Sie sich an das Supportteam von Linhome.</entry>
+		<entry name="bg">Заявката не бе успешна. Моля, опитайте отново по-късно или се свържете с екипа за поддръжка на Linhome.</entry>
+	</section>
+	
+	<!-- Android specifics end -->
+
+</config>

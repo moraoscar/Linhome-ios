@@ -26,15 +26,13 @@ class ChunkCallTop: UIViewController {
 	@IBOutlet weak var topLettLine: UIView!
 	@IBOutlet weak var topRightLine: UIView!
 	@IBOutlet weak var linhomeLogo: UIImageView!
-	@IBOutlet weak var linhomeText: UIImageView!
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		
-		topLettLine.backgroundColor = Theme.getColor("color_c")
-		topRightLine.backgroundColor = Theme.getColor("color_c")
-		linhomeLogo.prepare(iconName: "others/linhome_icon", fillColor: "color_c", bgColor: nil)
-		linhomeText.prepare(iconName: "others/linhome_text", fillColor: "color_c", bgColor: nil)
+        topLettLine.backgroundColor = ColorManager.color_background_menu
+		topRightLine.backgroundColor = ColorManager.color_background_menu
+		linhomeLogo.prepare(iconName: "others/linhome_text", fillColor: "color_c", bgColor: nil)
 
 	}
 	

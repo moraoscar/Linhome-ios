@@ -59,7 +59,7 @@ class ActionRow: UIViewController {
 		}
 		
 		actionViewModel.displayIndex.observe { value in
-			spinner.inputTitle.text = "\(Texts.get("action")) \(actionViewModel.displayIndex.value!)".uppercased()
+			spinner.inputTitle.text = "\(Texts.get("action")) \(actionViewModel.displayIndex.value!)"
 		}
 	
 		// Layout constraints

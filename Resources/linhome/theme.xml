@@ -1,0 +1,432 @@
+<config xmlns="http://www.linphone.org/xsds/lpconfig.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.linphone.org/xsds/lpconfig.xsd lpconfig.xsd">
+	<section name="colors">
+		<entry name="color_a">#ffff5e00</entry>
+		<entry name="color_b">#444444</entry>
+		<entry name="color_c">#ffffff</entry>
+		<entry name="color_d">#f4f4f4</entry>
+		<entry name="color_ealpha_10">#19e20000</entry>
+		<entry name="color_e">#e20000</entry>
+		<entry name="color_f">#e6e6e6</entry>
+		<entry name="color_g">#9f9f9f</entry>
+		<entry name="color_h">#c7c7c7</entry>
+		<entry name="color_i">#dddddd</entry>
+		<entry name="color_j">#313131</entry>
+		<entry name="color_k">#67ae63</entry>
+		<entry name="color_l">#000000</entry>
+		<entry name="color_m">#6081c9</entry>
+		<entry name="color_n">#ffdde6f5</entry>
+		<entry name="color_o">#d44e00</entry>
+		<entry name="color_p">#ffc09b</entry>
+		<entry name="color_q">#40793d</entry>
+		<entry name="color_r">#b60000</entry>
+		<entry name="color_s">#ffb863</entry>
+		<entry name="color_t">#ffc9a1</entry> <!-- border of new history items -->
+		<entry name="color_u">#d8d8d8</entry> <!-- background of image place holder in history list -->
+
+		
+		
+		<!-- Android specific -->
+		<entry name="notification_led_color">#ffff5e00</entry>
+		<entry name="progress_bar">#ffb863</entry>
+
+
+	</section>
+
+	<!-- Gradient color gradient-color.<key in app> -->
+
+	<section name="gradient-color.dark_light_vertical_gradient"> <!--Used by launch screen -->
+		<entry name="from">color_a</entry>
+		<entry name="to">color_s</entry>
+		<entry name="orientation">top_bottom</entry> <!--Supported values are : top_bottom (default), bottom_top, right_left, left_right -->
+	</section>
+
+
+	<!-- Button effects DEFAULT/SELECTED/DISABLED selection-effect. One color for default state, one color for selected state <key in app> -->
+
+	<section name="selection-effect.sidemenu_option">
+		<entry name="default">color_b</entry>
+		<entry name="selected">color_a</entry>
+	</section>
+
+	<section name="selection-effect.dropdown_list">
+		<entry name="default">color_d</entry>
+		<entry name="selected">color_i</entry>
+	</section>
+
+	<section name="selection-effect.settings_item">
+		<entry name="default">color_c</entry>
+		<entry name="selected">color_h</entry>
+	</section>
+
+	<section name="selection-effect.primary_color">
+		<entry name="default">color_a</entry>
+		<entry name="selected">color_o</entry>
+		<entry name="disabled">color_a</entry>
+	</section>
+
+	<section name="selection-effect.secondary_color">
+		<entry name="default">color_j</entry>
+		<entry name="selected">color_b</entry>
+	</section>
+	
+	
+	<section name="selection-effect.decline_call_button">
+		<entry name="default">color_e</entry>
+		<entry name="selected">color_r</entry>
+		<entry name="disabled">color_e</entry>
+	</section>
+	
+	<section name="selection-effect.accept_call_button">
+		<entry name="default">color_k</entry>
+		<entry name="selected">color_q</entry>
+		<entry name="disabled">color_k</entry>
+	</section>
+	
+	<section name="selection-effect.incall_call_button">
+		<entry name="default">transparent</entry>
+		<entry name="selected">color_a</entry>
+		<entry name="disabled">transparent</entry>
+	</section>
+
+	<!-- Info bubble -->
+
+	<section name="selection-effect.info_bubble">
+		<entry name="default">color_m</entry>
+		<entry name="selected">color_c</entry>
+		<entry name="disabled">color_m</entry>
+	</section>
+
+	<!-- Segmented control UDP/TCP/TLS -->
+
+	<section name="selection-effect.segmented_control_text">
+		<entry name="default">color_b</entry>
+		<entry name="selected">color_c</entry>
+	</section>
+	<section name="selection-effect.segmented_control_background">
+		<entry name="default">color_f</entry>
+		<entry name="selected">color_g</entry>
+	</section>
+	
+
+	<!-- arbitrary values, used for timer or others UI related parameters -->
+
+	<section name="arbitrary-values">
+		<entry name="splash_display_duration_ms">2000</entry>
+		<entry name="round_rect_button_corner_radius">20</entry>
+		<entry name="segmented_control_corner_radius">10</entry>
+		<entry name="user_input_corner_radius">5</entry> <!-- text input, etc -->
+		<entry name="device_in_device_list_corner_radius">5</entry>
+		<entry name="call_in_history_list_corner_radius">5</entry>
+		<entry name="device_first_image_aspect_ratio">0.75</entry> <!-- 4:3 -->
+		<entry name="store_user_data_in_private_storage">1</entry>
+		<entry name="video_view_corner_radius">20</entry>
+	</section>
+
+	<!-- TextView / UILabel styles textview-style.<key in app> values are optionnal hint-text-color also used for RadioButton in segmented-->
+
+	<section name="textview-style.splash_title">
+		<entry name="text-color">color_c</entry>
+		<entry name="font">Roboto-Regular</entry> <!-- Font name must match name in ZIP or in Asset of the app. Asset is looked up first then zip -->
+		<entry name="size">15</entry>
+		<entry name="align">center</entry> <!--  supported values are : start (default), center, end. -->
+	</section>
+
+
+	<section name="textview-style.about_text">
+		<entry name="text-color">color_c</entry>
+		<entry name="font">Roboto-Bold</entry> <!-- Font name must match name in ZIP or in Asset of the app. Asset is looked up first then zip -->
+		<entry name="size">13</entry>
+		<entry name="align">center</entry> <!--  supported values are : start (default), center, end. -->
+	</section>
+
+
+	<section name="textview-style.about_link">
+		<entry name="text-color">color_a</entry>
+		<entry name="font">Roboto-Bold</entry> <!-- Font name must match name in ZIP or in Asset of the app. Asset is looked up first then zip -->
+		<entry name="size">17</entry>
+		<entry name="align">center</entry> <!--  supported values are : start (default), center, end. -->
+	</section>
+
+	<section name="textview-style.tabbar_option">
+		<entry name="text-color">color_c</entry>
+		<entry name="font">Roboto-Regular</entry>
+		<entry name="size">15</entry>
+		<entry name="align">start</entry>
+	</section>
+	
+	<section name="textview-style.tabbar_unread_count">
+		<entry name="text-color">color_c</entry>
+		<entry name="font">Roboto-Bold</entry>
+		<entry name="size">12</entry>
+		<entry name="align">center</entry>
+	</section>
+
+	<section name="textview-style.sidemenu_option">
+		<entry name="text-color">color_c</entry>
+		<entry name="font">Roboto-Regular</entry>
+		<entry name="size">18</entry>
+		<entry name="align">start</entry>
+	</section>
+
+	<section name="textview-style.toolbar_title">
+		<entry name="text-color">color_c</entry>
+		<entry name="font">Roboto-Bold</entry>
+		<entry name="size">20</entry>
+		<entry name="align">center</entry>
+		<entry name="allcaps">1</entry>
+	</section>
+	
+	<section name="textview-style.toolbar_action">
+		<entry name="text-color">color_c</entry>
+		<entry name="font">Roboto-Regular</entry>
+		<entry name="size">12</entry>
+		<entry name="align">center</entry>
+		<entry name="allcaps">1</entry>
+	</section>
+	
+	<section name="textview-style.round_rect_button">
+		<entry name="text-color">color_c</entry>
+		<entry name="font">Roboto-Bold</entry>
+		<entry name="size">15</entry>
+		<entry name="align">center</entry>
+	</section>
+
+	<section name="textview-style.view_main_title">
+		<entry name="text-color">color_b</entry>
+		<entry name="font">Roboto-Bold</entry>
+		<entry name="size">22</entry>
+		<entry name="align">center</entry>
+	</section>
+
+	<section name="textview-style.view_sub_title">
+		<entry name="text-color">color_b</entry>
+		<entry name="font">Roboto-Bold</entry>
+		<entry name="size">15</entry>
+		<entry name="align">center</entry>
+	</section>
+	
+	<section name="textview-style.view_device_info_type_name">
+		<entry name="text-color">color_b</entry>
+		<entry name="font">Roboto-Italic</entry>
+		<entry name="size">12</entry>
+		<entry name="align">center</entry>
+	</section>
+	
+	
+	<section name="textview-style.view_device_info_actions_title">
+		<entry name="text-color">color_b</entry>
+		<entry name="font">Roboto-Bold</entry>
+		<entry name="size">15</entry>
+		<entry name="align">center</entry>
+	</section>
+	
+	<section name="textview-style.view_device_info_name">
+		<entry name="text-color">color_b</entry>
+		<entry name="font">Roboto-Bold</entry>
+		<entry name="size">22</entry>
+		<entry name="align">center</entry>
+	</section>
+	
+	
+	<section name="textview-style.view_device_info_address">
+		<entry name="text-color">color_b</entry>
+		<entry name="font">Roboto-Regular</entry>
+		<entry name="size">15</entry>
+		<entry name="align">center</entry>
+	</section>
+	
+	<section name="textview-style.view_call_device_name">
+		<entry name="text-color">color_c</entry>
+		<entry name="font">Roboto-Bold</entry>
+		<entry name="size">23</entry>
+		<entry name="align">center</entry>
+	</section>
+	
+	<section name="textview-style.view_call_device_address">
+		<entry name="text-color">color_c</entry>
+		<entry name="font">Roboto-Regular</entry>
+		<entry name="size">15</entry>
+		<entry name="align">center</entry>
+	</section>
+
+
+	<section name="textview-style.form_input_title">
+		<entry name="text-color">color_b</entry>
+		<entry name="font">Roboto-Bold</entry>
+		<entry name="size">10</entry>
+		<entry name="align">start</entry>
+		<entry name="allcaps">1</entry>
+	</section>
+
+	<section name="textedit-style.text_input_text">
+		<entry name="hint-text-color">color_h</entry>
+		<entry name="text-color">color_b</entry>
+		<entry name="background-color">color_d</entry>
+		<entry name="error-text-color">color_e</entry>
+		<entry name="error-background-color">color_ealpha_10</entry>
+		<entry name="font">Roboto-Regular</entry>
+		<entry name="size">15</entry>
+		<entry name="align">start</entry>
+	</section>
+
+	<section name="textview-style.text_input_error">
+		<entry name="text-color">color_e</entry>
+		<entry name="font">Roboto-Regular</entry>
+		<entry name="size">11</entry>
+		<entry name="align">start</entry>
+	</section>
+
+	<section name="textview-style.segmented_control">
+		<entry name="font">Roboto-Bold</entry>
+		<entry name="size">15</entry>
+		<entry name="align">center</entry>
+		<entry name="allcaps">1</entry>
+	</section>
+
+	<section name="textview-style.settings_title">
+		<entry name="text-color">color_b</entry>
+		<entry name="font">Roboto-Regular</entry>
+		<entry name="size">18</entry>
+		<entry name="align">start</entry>
+	</section>
+
+	<section name="textview-style.settings_subtitle">
+		<entry name="text-color">color_b</entry>
+		<entry name="font">Roboto-Italic</entry>
+		<entry name="size">13</entry>
+		<entry name="align">start</entry>
+	</section>
+
+	<section name="textview-style.dropdown_list">
+		<entry name="text-color">color_b</entry>
+		<entry name="font">Roboto-Regular</entry>
+		<entry name="size">15</entry>
+		<entry name="align">start</entry>
+	</section>
+
+	<section name="textview-style.section_title"> <!-- example Select the type of device -->
+		<entry name="text-color">color_b</entry>
+		<entry name="font">Roboto-Bold</entry>
+		<entry name="size">15</entry>
+		<entry name="align">start</entry>
+	</section>
+
+
+	<section name="textview-style.info_bubble"> <!-- example Select the type of device -->
+		<entry name="text-color">color_j</entry>
+		<entry name="font">Roboto-Regular</entry>
+		<entry name="size">10</entry>
+		<entry name="align">center</entry>
+	</section>
+
+
+
+	<section name="textview-style.device_list_device_name">
+		<entry name="text-color">color_b</entry>
+		<entry name="font">Roboto-Bold</entry> <!-- Font name must match name in ZIP or in Asset of the app. Asset is looked up first then zip -->
+		<entry name="size">15</entry>
+		<entry name="align">center</entry> <!--  supported values are : start (default), center, end. -->
+	</section>
+
+	<section name="textview-style.device_list_device_address">
+		<entry name="text-color">color_j</entry>
+		<entry name="font">Roboto-Regular</entry> <!-- Font name must match name in ZIP or in Asset of the app. Asset is looked up first then zip -->
+		<entry name="size">10</entry>
+		<entry name="align">center</entry> <!--  supported values are : start (default), center, end. -->
+	</section>
+
+
+	<section name="textview-style.device_list_device_address">
+		<entry name="text-color">color_j</entry>
+		<entry name="font">Roboto-Regular</entry> <!-- Font name must match name in ZIP or in Asset of the app. Asset is looked up first then zip -->
+		<entry name="size">10</entry>
+		<entry name="align">center</entry> <!--  supported values are : start (default), center, end. -->
+	</section>
+
+	<section name="textview-style.call_action_button">
+		<entry name="text-color">color_c</entry>
+		<entry name="font">Roboto-Regular</entry>
+		<entry name="size">15</entry>
+		<entry name="align">center</entry>
+	</section>
+
+
+	<section name="textview-style.device_info_action_button_tablet">
+		<entry name="text-color">color_b</entry>
+		<entry name="font">Roboto-Regular</entry>
+		<entry name="size">15</entry>
+		<entry name="align">center</entry>
+	</section>
+
+
+	<!-- history -->
+	
+	<section name="textview-style.history_list_day_name">
+		<entry name="text-color">color_b</entry>
+		<entry name="font">Roboto-Bold</entry>
+		<entry name="size">15</entry>
+		<entry name="align">start</entry>
+	</section>
+
+	<section name="textview-style.history_list_device_name">
+		<entry name="text-color">color_b</entry>
+		<entry name="font">Roboto-Bold</entry>
+		<entry name="size">15</entry>
+		<entry name="align">start</entry>
+	</section>
+	
+	<section name="textview-style.history_list_device_address">
+		<entry name="text-color">color_g</entry>
+		<entry name="font">Roboto-Regular</entry>
+		<entry name="size">12</entry>
+		<entry name="align">start</entry>
+	</section>
+	
+	<section name="textview-style.history_no_media_found">
+		<entry name="text-color">color_c</entry>
+		<entry name="font">Roboto-Bold</entry>
+		<entry name="size">12</entry>
+		<entry name="align">center</entry>
+	</section>
+	
+	<section name="textview-style.history_list_call_date">
+		<entry name="text-color">color_g</entry>
+		<entry name="font">Roboto-Regular</entry>
+		<entry name="size">12</entry>
+		<entry name="align">start</entry>
+	</section>
+	
+	<section name="textview-style.history_list_new_tag">
+		<entry name="text-color">color_a</entry>
+		<entry name="font">Roboto-Bold</entry>
+		<entry name="size">10</entry>
+		<entry name="align">end</entry>
+	</section>
+	
+	
+	<!-- Player -->
+	
+	<section name="textview-style.player_time">
+		<entry name="text-color">color_c</entry>
+		<entry name="font">Roboto-Regular</entry>
+		<entry name="size">15</entry>
+		<entry name="align">center</entry>
+	</section>
+
+
+	<!-- Account -->
+	<section name="textview-style.account_info">
+		<entry name="text-color">color_b</entry>
+		<entry name="font">Roboto-Bold</entry>
+		<entry name="size">15</entry>
+		<entry name="align">center</entry>
+	</section>
+	
+	<section name="textview-style.notification_caller_name">
+		<entry name="text-color">color_b</entry>
+		<entry name="font">Roboto-Bold</entry>
+		<entry name="size">23</entry>
+		<entry name="align">center</entry>
+	</section>
+	
+</config>

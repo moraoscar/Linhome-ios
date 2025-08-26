@@ -38,6 +38,12 @@ class LTextInput: UIViewController, UITextFieldDelegate {
 		inputTitle.prepare(styleKey: "form_input_title")
 		inputText.prepare(styleKey: "text_input_text")
 		inputError.prepare(styleKey: "text_input_error")
+        
+        inputTitle.textColor = ColorManager.color_text_label_input
+        inputTitle.font = UIFont.init(name: FontKey.SEMIBOLD.rawValue, size: 14)
+        
+        inputText.textColor = ColorManager.color_secondary
+        inputText.font = UIFont.init(name: FontKey.MEDIUM.rawValue, size: 14)
 	}
 	
 	class func addOne(titleKey:String, targetVC:UIViewController, keyboardType: UIKeyboardType = UIKeyboardType.default, validator:GenericStringValidator,liveInfo:Pair<MutableLiveData<String>,MutableLiveData<Bool>>, inForm form:UIStackView, secure:Bool = false, hintKey:String? = nil) -> LTextInput {
@@ -57,6 +63,7 @@ class LTextInput: UIViewController, UITextFieldDelegate {
 		child.inputTitle.setText(text:Texts.get(titleKey))
 		child.liveString = liveInfo.first
 		child.liveValidity = liveInfo.second
+        child.inputText.backgroundColor = ColorManager.color_c
 		
 		previousSibbling.map{ previous in
 			child.view.snp.makeConstraints { (make) -> Void in

@@ -105,6 +105,8 @@ class HistoryView: MainViewContent, UITableViewDataSource, UITableViewDelegate {
 	
 	override func viewWillAppear(_ animated: Bool) {
 		super.viewWillAppear(animated)
+        NavigationManager.it.showHomeOptions()
+        
 		NavigationManager.it.mainView!.right.prepare(iconName: "icons/delete",effectKey: "primary_color",tintColor: "color_c", textStyleKey: "toolbar_action", text: Texts.get("delete"))
 		NavigationManager.it.mainView!.left.prepare(iconName: "icons/cancel",effectKey: "primary_color",tintColor: "color_c", textStyleKey: "toolbar_action", text: Texts.get("cancel"))
 		NavigationManager.it.mainView?.toolbarViewModel.rightButtonVisible.value = model.history.value!.count > 0
@@ -164,6 +166,7 @@ class HistoryView: MainViewContent, UITableViewDataSource, UITableViewDelegate {
 	}
 	
 	func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        
 		return todayYesterdayRealDay(epochTimeDayUnit: Int(Array(model.historySplit.value!.keys.sorted().reversed())[section]))
 	}
 	

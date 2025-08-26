@@ -26,7 +26,8 @@ class SideMenu: MainViewContent, UITableViewDataSource, UITableViewDelegate {
 	
 	@IBOutlet weak var optionsTableView: UITableView!
 	@IBOutlet weak var disconnectTableView: UITableView!
-	
+    @IBOutlet weak var btnClose: UIButton!
+    
 	var options: [MenuOption] = []
 	let captureTaps = UITapGestureRecognizer()
 	
@@ -38,7 +39,7 @@ class SideMenu: MainViewContent, UITableViewDataSource, UITableViewDelegate {
 		
 		let transition = CATransition()
 		transition.type = CATransitionType.push
-		transition.subtype = CATransitionSubtype.fromLeft
+		transition.subtype = CATransitionSubtype.fromRight
 		transition.duration = 0.2
 		self.view.layer.add(transition, forKey: nil)
 		
@@ -46,8 +47,8 @@ class SideMenu: MainViewContent, UITableViewDataSource, UITableViewDelegate {
 		
 		isRoot = false
 		onTopOfBottomBar = true
-		self.view.backgroundColor = Theme.getColor("color_b")
-		optionsTableView.backgroundColor = Theme.getColor("color_b")
+        self.view.backgroundColor = ColorManager.color_background_menu
+        optionsTableView.backgroundColor = ColorManager.color_background_menu
 		
 		optionsTableView.register(UINib(nibName: "SideMenuCell", bundle: nil), forCellReuseIdentifier: cellReuseIdentifier)
 		disconnectTableView.register(UINib(nibName: "SideMenuCell", bundle: nil), forCellReuseIdentifier: cellReuseIdentifier)
@@ -69,7 +70,7 @@ class SideMenu: MainViewContent, UITableViewDataSource, UITableViewDelegate {
 			}),
 			MenuOption(iconName: "icons/account",textKey: "menu_account",action: {
 				NavigationManager.it.navigateUp(completion: {
-					NavigationManager.it.navigateTo(childClass: AccountView.self)
+					NavigationManager.it.navigateTo(childClass: AccountController.self)
 				})
 			}),
 			MenuOption(iconName: "icons/settings",textKey: "menu_settings",action: {
@@ -86,16 +87,46 @@ class SideMenu: MainViewContent, UITableViewDataSource, UITableViewDelegate {
 		
 		
 	}
+    
+    override func isCallView() -> Bool {
+        return true
+    }
 	
 	override func viewDidAppear(_ animated: Bool) {
-		let leftRatio:Double  = UIDevice.ipad() ? (UIScreen.isLandscape ? 0.3 : 0.5) : 0.75
-		self.view.snp.makeConstraints { (make) in
-			make.width.equalToSuperview().multipliedBy(leftRatio)
-			make.top.bottom.equalToSuperview()
-		}
-		captureTaps.cancelsTouchesInView = true
-		captureTaps.addTarget(self, action: #selector(hideIt))
-		self.view.superview!.addGestureRecognizer(captureTaps)
+        super.viewDidAppear(animated)
+            
+        guard let superview = self.view.superview else {
+            print("Error: El SideMenu no tiene una superview en viewDidAppear.")
+            return
+        }
+        
+        let leftRatio: Double = UIDevice.ipad() ? (UIScreen.isLandscape ? 0.3 : 0.5) : 0.75
+        let width = superview.frame.width * leftRatio
+        
+        // ✅ Posición inicial: completamente a la DERECHA, fuera de la pantalla.
+        self.view.snp.makeConstraints { (make) in
+            make.width.equalTo(width)
+            make.top.bottom.equalToSuperview()
+            // El borde izquierdo (leading) empieza en el borde derecho (trailing) de la superview
+            make.leading.equalTo(superview.snp.trailing)
+        }
+        superview.layoutIfNeeded()
+        
+        // ✅ Posición final: anclado al borde DERECHO de la pantalla.
+        self.view.snp.remakeConstraints { (make) in
+            make.width.equalTo(width)
+            make.top.bottom.equalToSuperview()
+            make.trailing.equalToSuperview() // <-- La clave está aquí
+        }
+        
+        UIView.animate(withDuration: 0.3) {
+                superview.layoutIfNeeded()
+            }
+            
+            // El resto de tu lógica para capturar taps
+            captureTaps.cancelsTouchesInView = true
+            captureTaps.addTarget(self, action: #selector(hideIt))
+            superview.addGestureRecognizer(captureTaps)
 	}
 	
 	override func viewWillDisappear(_ animated: Bool) {
@@ -116,4 +147,7 @@ class SideMenu: MainViewContent, UITableViewDataSource, UITableViewDelegate {
 		NavigationManager.it.navigateUp()
 	}
 	
+    @IBAction func closeMenu(_ sender: Any) {
+        NavigationManager.it.navigateUp()
+    }
 }

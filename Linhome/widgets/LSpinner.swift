@@ -42,12 +42,15 @@ class LSpinner : UIViewController, UITableViewDataSource, UITableViewDelegate {
 		super.viewDidLoad()
 		inputTitle.prepare(styleKey: "form_input_title")
 		inputError.prepare(styleKey: "text_input_error")
+        
+        inputTitle.textColor = ColorManager.color_text_label_input
+        inputTitle.font = UIFont.init(name: FontKey.SEMIBOLD.rawValue, size: 14)
 
 		chevron.prepare(iconName: "icons/chevron_down", fillColor: nil, bgColor: nil)
 		selectedValue.delegate = self
 		selectedValue.dataSource = self
 		selectedValue.register(UINib(nibName: "LSpinnerCell", bundle: nil), forCellReuseIdentifier: "LSpinnerCell")
-		selectedValue.backgroundColor = Theme.getColor("color_i")
+		selectedValue.backgroundColor = ColorManager.color_c
 		selectedValue.layer.cornerRadius = CGFloat(Customisation.it.themeConfig.getFloat(section: "arbitrary-values", key: "user_input_corner_radius", defaultValue: 0.0))
 
 	}
@@ -90,8 +93,8 @@ class LSpinner : UIViewController, UITableViewDataSource, UITableViewDelegate {
 		}
 		
 		child.dropDown?.selectRow(liveIndex.value!-1)
-		child.dropDown?.backgroundColor = Theme.getColor("color_d")
-		child.dropDown?.selectionBackgroundColor = Theme.getColor("color_i")
+		child.dropDown?.backgroundColor = ColorManager.color_c
+		child.dropDown?.selectionBackgroundColor = ColorManager.color_c
 
 		child.dropDown?.selectionAction = { [unowned child] (index: Int, item: String) in
 			liveIndex.value = index+1

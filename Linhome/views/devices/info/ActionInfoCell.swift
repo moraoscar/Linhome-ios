@@ -28,13 +28,29 @@ class ActionInfoCell: UITableViewCell {
 	@IBOutlet var actionCode: UILabel!
 	@IBOutlet weak var topSep: UIView!
 	@IBOutlet weak var botSep: UIView!
-	
+    @IBOutlet weak var containerView: UIView!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
 		actionName.prepare(styleKey: "dropdown_list")
 		actionCode.prepare(styleKey: "dropdown_list")
-		topSep.backgroundColor = Theme.getColor("color_h")
-		botSep.backgroundColor = Theme.getColor("color_h")
+		topSep.backgroundColor = Theme.getColor("color_c")
+		botSep.backgroundColor = Theme.getColor("color_c")
+        topSep.isHidden = true
+        botSep.isHidden = true
+        
+        self.backgroundColor = .clear
+        self.contentView.backgroundColor = .clear
+        
+        containerView.backgroundColor = Theme.getColor("bg_cell")
+        
+        containerView.layer.cornerRadius = 12
+        containerView.clipsToBounds = true
+        
+        actionName.prepare(styleKey: "dropdown_list")
+        actionCode.prepare(styleKey: "dropdown_list")
+        topSep.backgroundColor = Theme.getColor("color_c")
+        botSep.backgroundColor = Theme.getColor("color_c")
 	}
     
 }

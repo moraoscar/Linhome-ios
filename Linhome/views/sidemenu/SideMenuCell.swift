@@ -33,12 +33,13 @@ class SideMenuCell: UITableViewCell {
 		Theme.selectionEffectColors(effectKey: "sidemenu_option").map { colors in
 			backgroundColor = colors[0]
 			let bgColorView = UIView()
-			bgColorView.backgroundColor = colors[1]
+            bgColorView.backgroundColor = ColorManager.color_background_menu
 			selectedBackgroundView = bgColorView
 		}
 		
-		topSeparator.backgroundColor = Theme.getColor("color_h")
-		bottomSeparator.backgroundColor = Theme.getColor("color_h")
+        topSeparator.backgroundColor = ColorManager.color_separator_menu
+		bottomSeparator.backgroundColor = ColorManager.color_separator_menu
+        self.backgroundColor = ColorManager.color_background_menu
     }
 	
 	func brand() {
