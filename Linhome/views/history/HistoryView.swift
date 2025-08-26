@@ -55,7 +55,7 @@ class HistoryView: MainViewContent, UITableViewDataSource, UITableViewDelegate {
 		selectAll.onClick {
 			self.model.toggleSelectAllForDeletion()
 		}
-		
+
 		model.selectedForDeletion.observe { (items) in
 			selectAll.setTitle(items!.count == self.model.history.value!.count ? Texts.get("history_deselect_all") : Texts.get("history_select_all"), for: .normal)
 			if (self.model.editing.value! && items!.count == 0) {
@@ -83,6 +83,8 @@ class HistoryView: MainViewContent, UITableViewDataSource, UITableViewDelegate {
 		NavigationManager.it.mainView!.tabbarViewModel.unreadCount.observe { _ in
 			self.eventsTable.reloadData()
 		}
+        
+        eventsTable.rowHeight = 100
 		
 	}
 	

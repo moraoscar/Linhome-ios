@@ -54,11 +54,6 @@
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                     <state key="normal" title="Button"/>
                                 </button>
-                                <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gDS-Fg-mXu" userLabel="right">
-                                    <rect key="frame" x="287" y="48" width="78" height="59"/>
-                                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES"/>
-                                    <state key="normal" title="Button"/>
-                                </button>
                                 <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xfI-3q-gWq">
                                     <rect key="frame" x="86" y="56" width="202" height="43"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
@@ -91,6 +86,11 @@
                                     <rect key="frame" x="308" y="55" width="39" height="39"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES"/>
                                     <state key="normal" image="burger_menu"/>
+                                </button>
+                                <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gDS-Fg-mXu" userLabel="right">
+                                    <rect key="frame" x="222" y="48" width="78" height="59"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES"/>
+                                    <state key="normal" title="Button"/>
                                 </button>
                             </subviews>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

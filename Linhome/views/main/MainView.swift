@@ -64,16 +64,17 @@ class MainView: ViewWithModel, UIDynamicAnimatorDelegate {
 			make.left.right.top.equalToSuperview()
 		}
 		
-		bottomBar.snp.makeConstraints { (make) in
-			make.size.height.equalTo(UIDevice.hasNotch() ? 94 : 60)
-			make.left.right.bottom.equalToSuperview()
-		}
-		
-		content.snp.makeConstraints { (make) in
-			make.top.equalTo(topBar.snp.bottom)
-			make.bottom.equalTo(bottomBar.snp.top)
-			make.left.right.equalToSuperview()
-		}
+        bottomBar.snp.makeConstraints { (make) in
+            make.size.height.equalTo(UIDevice.hasNotch() ? 84 : 50)
+            make.left.right.equalToSuperview()
+            make.top.equalTo(topBar.snp.bottom)
+        }
+
+        content.snp.makeConstraints { (make) in
+            make.top.equalTo(bottomBar.snp.bottom)
+            make.bottom.equalToSuperview()
+            make.left.right.equalToSuperview()
+        }
 		
 		// Top / Status bar
 		
@@ -105,9 +106,16 @@ class MainView: ViewWithModel, UIDynamicAnimatorDelegate {
             self.burger.isHidden = !visible!
             
             let newHeight = visible! ? (UIDevice.hasNotch() ? 174 : 117) : 100
+            let newHeightBottombar = visible! ? (UIDevice.hasNotch() ? 74 : 50) : 0
             self.topBar.snp.remakeConstraints { (make) in
                 make.top.left.right.equalToSuperview()
                 make.height.equalTo(newHeight)
+            }
+            
+            self.bottomBar.snp.remakeConstraints { (make) in
+                make.size.height.equalTo(newHeightBottombar)
+                make.left.right.equalToSuperview()
+                make.top.equalTo(self.topBar.snp.bottom)
             }
             self.view.layoutIfNeeded()
         }
@@ -116,9 +124,9 @@ class MainView: ViewWithModel, UIDynamicAnimatorDelegate {
 //		toolbarViewModel.backButtonVisible.observe { (visible) in
 //			self.back.isHidden = !visible!
 //		}
-//		toolbarViewModel.rightButtonVisible.observe { (visible) in
-//			self.right.isHidden = !visible!
-//		}
+		toolbarViewModel.rightButtonVisible.observe { (visible) in
+			self.right.isHidden = !visible!
+		}
 		
 		left.onClick {
 			self.toobarButtonClickedListener.map{$0.onToolbarLeftButtonClicked()}

@@ -88,11 +88,7 @@ class HistoryCell: UITableViewCell {
         
         separatorView.backgroundColor = ColorManager.color_separator_history
 		
-		contentView.snp.makeConstraints { (make) in
-			make.edges.equalToSuperview().inset(5)
-			make.height.greaterThanOrEqualTo(110)
-			make.centerX.equalToSuperview()
-		}
+		
 		
 	}
 	

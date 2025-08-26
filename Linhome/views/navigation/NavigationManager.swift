@@ -148,13 +148,13 @@ class NavigationManager {
 			
 			current.view.translatesAutoresizingMaskIntoConstraints = false
 			
-			mainView!.content.snp.removeConstraints()
-			mainView!.content.snp.makeConstraints { (make) in
-				make.right.left.equalToSuperview()
-				make.top.equalTo(mainView!.topBar.snp.bottom)
-				make.bottom.equalTo(current.onTopOfBottomBar ? mainView!.view.snp.bottom: mainView!.bottomBar.snp.top)
-				mainView!.bottomBar.isHidden = current.onTopOfBottomBar
-			}
+            mainView!.content.snp.removeConstraints()
+            mainView!.content.snp.makeConstraints { (make) in
+                make.right.left.equalToSuperview()
+                make.top.equalTo(mainView!.bottomBar.snp.bottom)
+                make.bottom.equalToSuperview()
+                mainView!.bottomBar.isHidden = current.onTopOfBottomBar
+            }
 			
 			if (type(of: current) == DevicesView.self || type(of: current) == HistoryView.self ) {
 				enterRootFragment()

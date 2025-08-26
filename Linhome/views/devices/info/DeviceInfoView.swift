@@ -218,7 +218,7 @@ class DeviceInfoView: MainViewContent, UITableViewDataSource, UITableViewDelegat
 	func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 		let action = device!.actions![indexPath.row]
 		let cell:ActionInfoCell = tableView.dequeueReusableCell(withIdentifier: "ActionInfoCell") as! ActionInfoCell
-		cell.actionType.prepare(iconName: ActionTypes.it.iconNameForActionType(typeKey: action.type!), fillColor: nil, bgColor: nil)
+		cell.actionType.prepare(iconName: ActionTypes.it.iconNameForActionType(typeKey: action.type!), fillColor: "color_secondary", bgColor: nil)
 		cell.actionName.text = action.typeName()
 		cell.actionCode.text = action.code
 		cell.topSep.isHidden = indexPath.row != 0

@@ -32,7 +32,8 @@ class DeviceEditorView: MainViewContentWithScrollableForm {
     var saveButton: UIButton!
     var cancelButton: UIButton!
     var bottomContainerView: UIView?
-
+    var actionsContainerView: UIView!
+    var actionsStackView: UIStackView!
     
 	override func viewDidLoad() {
 		super.viewDidLoad()
@@ -93,6 +94,25 @@ class DeviceEditorView: MainViewContentWithScrollableForm {
 		actionsTitle.prepare(styleKey: "section_title",textKey:"method_type_select")
 		let _ = LSpinner.addOne(titleKey: "action_method", targetVC: self, options:model.availableMethodTypes, liveIndex: model.actionsMethod, form:landScapeIpad ? formSecondColumn : form)
 		
+        
+        
+        actionsContainerView = UIView()
+        actionsContainerView.backgroundColor = UIColor(white: 0.95, alpha: 1.0)
+        actionsContainerView.layer.cornerRadius = 12
+        actionsContainerView.clipsToBounds = true
+        
+        (landScapeIpad ? formSecondColumn : form).addArrangedSubview(actionsContainerView)
+
+        actionsStackView = UIStackView()
+        actionsStackView.axis = .vertical
+        actionsStackView.spacing = 10 // Espacio entre cada fila de acción
+        actionsContainerView.addSubview(actionsStackView)
+        
+        // 3. Posiciona el StackView DENTRO del contenedor con el padding de 16
+        actionsStackView.snp.makeConstraints { make in
+            make.edges.equalToSuperview().inset(16)
+        }
+    
         let newAction = UIRoundRectButton(container:contentView, placedBelow: landScapeIpad ? formSecondColumn : form, effectKey: "primary_color", tintColor: "color_c", textKey: "device_action_add", topMargin: 27, width: 200, alignment: .right)
 		newAction.onClick {
 			self.doAddAction(action: nil, model: self.model, form: landScapeIpad ? self.formSecondColumn : self.form)
@@ -140,18 +160,18 @@ class DeviceEditorView: MainViewContentWithScrollableForm {
         NavigationManager.it.hiddenHomeOptions()
 	}
 	
-	private func doAddAction(action: Action?, model: DeviceEditorViewModel, form:UIStackView) {
-		let actionViewModel = DeviceEditorActionViewModel(owningViewModel: model, displayIndex: MutableLiveData(model.actionsViewModels.count + 1))
-		if (action != nil) {
-			actionViewModel.code.first.value = action!.code
-			actionViewModel.type.value = model.availableActionTypes.firstIndex{$0.backingKey == action!.type}
-		}
-		model.actionsViewModels.append(actionViewModel)
-		actionViewModel.actionRow = ActionRow.addOne(targetVC: self, actionViewModel:actionViewModel, form:form)
-		model.refreshActions.value = true
-		
-		
-	}
+    private func doAddAction(action: Action?, model: DeviceEditorViewModel, form: UIStackView) {
+        let actionViewModel = DeviceEditorActionViewModel(owningViewModel: model, displayIndex: MutableLiveData(model.actionsViewModels.count + 1))
+        if (action != nil) {
+            actionViewModel.code.first.value = action!.code
+            actionViewModel.type.value = model.availableActionTypes.firstIndex{$0.backingKey == action!.type}
+        }
+        model.actionsViewModels.append(actionViewModel)
+        
+        actionViewModel.actionRow = ActionRow.addOne(targetVC: self, actionViewModel:actionViewModel, form: self.actionsStackView)
+        
+        model.refreshActions.value = true
+    }
 	
 	override func viewWillAppear(_ animated: Bool) {
 		super.viewWillAppear(animated)
