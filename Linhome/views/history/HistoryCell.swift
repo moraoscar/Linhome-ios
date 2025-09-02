@@ -63,6 +63,7 @@ class HistoryCell: UITableViewCell {
         
         newtag.textColor = .white
         newtag.font = UIFont(name: FontKey.MEDIUM.rawValue, size: 10)
+        newtag.text = Texts.get("history_call_new")
         
 		address.prepare(styleKey: "history_list_device_address")
         

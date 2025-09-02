@@ -176,6 +176,7 @@ class NavigationManager {
         mainView!.toolbarViewModel.leftButtonVisible.value = false
         mainView!.toolbarViewModel.titleVisible.value = false
         mainView!.toolbarViewModel.burgerButtonVisible.value = false
+        mainView!.btnDeleteItems.isHidden = true
     }
     
     func showHomeOptions() {
@@ -183,6 +184,7 @@ class NavigationManager {
         mainView!.toolbarViewModel.leftButtonVisible.value = false
         mainView!.toolbarViewModel.titleVisible.value = true
         mainView!.toolbarViewModel.burgerButtonVisible.value = true
+        mainView!.btnDeleteItems.isHidden = false
     }
 	
 	func resumeNavigation() {

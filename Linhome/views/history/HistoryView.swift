@@ -28,23 +28,27 @@ class HistoryView: MainViewContent, UITableViewDataSource, UITableViewDelegate {
 	@IBOutlet weak var eventsTable: UITableView!
 	
 	var model = HistoryViewModel()
-	
+    var bottomContainerView: UIView?
+    var cancelButton: UIButton!
+    var deleteButton: UIButton!
+    var selectedAll: UIButton!
+    
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		
 		isRoot = true
 		onTopOfBottomBar = false
 		titleTextKey = "history"
-		
+        
 		manageModel(model)
 		
 		noHistory.prepare(styleKey: "view_sub_title",textKey: "history_empty_list_title")
 		noHistory.isHidden = model.history.value!.count != 0
 		
-		let selectAll = UIButton()
-		selectAll.prepareRoundRect(effectKey : "secondary_color", tintColor: "color_c", textKey: "history_select_all")
-		self.view.addSubview(selectAll)
-		selectAll.snp.makeConstraints { (make) in
+		selectedAll = UIButton()
+        selectedAll.prepareRoundRect(effectKey : "secondary_color", tintColor: "color_c", textKey: "history_select_all")
+		self.view.addSubview(selectedAll)
+        selectedAll.snp.makeConstraints { (make) in
 			make.bottom.equalToSuperview().offset(-20)
 			make.centerX.equalToSuperview()
 			make.height.equalTo(40)
@@ -52,29 +56,44 @@ class HistoryView: MainViewContent, UITableViewDataSource, UITableViewDelegate {
 			make.width.lessThanOrEqualTo(320)
 		}
 		
-		selectAll.onClick {
+        selectedAll.onClick {
 			self.model.toggleSelectAllForDeletion()
 		}
 
 		model.selectedForDeletion.observe { (items) in
-			selectAll.setTitle(items!.count == self.model.history.value!.count ? Texts.get("history_deselect_all") : Texts.get("history_select_all"), for: .normal)
+            
 			if (self.model.editing.value! && items!.count == 0) {
-				NavigationManager.it.mainView?.right.isEnabled = false
-				NavigationManager.it.mainView?.right.alpha = 0.5
+                self.deleteButton.isEnabled = false
 			} else {
-				NavigationManager.it.mainView?.right.isEnabled = true
-				NavigationManager.it.mainView?.right.alpha = 1.0
+                self.deleteButton.isEnabled = true
 			}
+            
+            if #available(iOS 15.0, *) {
+                guard var currentConfig = self.selectedAll.configuration else { return }
+                if items!.count == self.model.history.value!.count {
+                    currentConfig.title = Texts.get("history_select_all")
+                    currentConfig.image = UIImage(named: "checkbox_ticked")
+                } else {
+                    currentConfig.title = Texts.get("history_select_all")
+                    currentConfig.image = UIImage(named: "checkbox_unticked")
+                }
+                
+                currentConfig.image = currentConfig.image?.withConfiguration(UIImage.SymbolConfiguration(pointSize: 14))
+                
+                self.selectedAll.configuration = currentConfig
+            }
+            
+            self.deleteButton.prepareRoundRectWihIcon(effectKey: self.deleteButton.isEnabled ? "delete_device" : "delete_device_disable", tintColor: self.deleteButton.isEnabled ? "text_delete_btn" : "color_text_label_input", textKey: items!.count == 0 ? "\(Texts.get("delete_history")) \(Texts.get("delete_history_event"))" : "\(Texts.get("delete_history")) \(self.model.selectedForDeletion.value!.count) \(Texts.get("delete_history_event"))", iconName: "icons/trash", iconSizeWidth: 18, iconSizeHeight: 18)
 		}
 		
 		model.history.observe { (list) in
 			self.noHistory.isHidden = list!.count != 0
-			NavigationManager.it.mainView?.toolbarViewModel.rightButtonVisible.value = list!.count != 0
+            NavigationManager.it.mainView?.toolbarViewModel.btnDeleteItemVisible.value = list!.count != 0
 			self.eventsTable.reloadData()
 		}
 		
 		model.editing.readCurrentAndObserve { (editing) in
-			selectAll.isHidden = !editing!
+            self.selectedAll.isHidden = !editing!
 		}
 		
 		eventsTable.register(UINib(nibName: "HistoryCell", bundle: nil), forCellReuseIdentifier: "HistoryCell")
@@ -94,12 +113,34 @@ class HistoryView: MainViewContent, UITableViewDataSource, UITableViewDelegate {
 				self.model.deleteSelection()
 				self.eventsTable.reloadData()
 				NavigationManager.it.mainView!.tabbarViewModel.updateUnreadCount()
+                NavigationManager.it.mainView?.activeOrDisableDeleteItems(forceDisable: true)
 				self.exitEdition()
 			})
 		} else {
 			enterEdition()
 		}
 	}
+    
+    override func onBtnExitDeleteItemClicked() {
+        exitEdition()
+    }
+    
+    override func onBtnDeleteItemClicked() {
+        if (model.editing.value!) {
+            if (model.selectedForDeletion.value!.count == 0) {
+                exitEdition()
+                return
+            }
+            DialogUtil.confirm(messageTextKey: "delete_history_confirm_message",oneArg: "\(model.selectedForDeletion.value!.count)", confirmAction: {
+                self.model.deleteSelection()
+                self.eventsTable.reloadData()
+                NavigationManager.it.mainView!.tabbarViewModel.updateUnreadCount()
+                self.exitEdition()
+            })
+        } else {
+            enterEdition()
+        }
+    }
 	
 	override func onToolbarLeftButtonClicked() {
 		exitEdition()
@@ -108,10 +149,7 @@ class HistoryView: MainViewContent, UITableViewDataSource, UITableViewDelegate {
 	override func viewWillAppear(_ animated: Bool) {
 		super.viewWillAppear(animated)
         NavigationManager.it.showHomeOptions()
-        
-		NavigationManager.it.mainView!.right.prepare(iconName: "icons/delete",effectKey: "primary_color",tintColor: "color_c", textStyleKey: "toolbar_action", text: Texts.get("delete"))
 		NavigationManager.it.mainView!.left.prepare(iconName: "icons/cancel",effectKey: "primary_color",tintColor: "color_c", textStyleKey: "toolbar_action", text: Texts.get("cancel"))
-		NavigationManager.it.mainView?.toolbarViewModel.rightButtonVisible.value = model.history.value!.count > 0
 		NotificationCenter.default.addObserver(self,
 											   selector: #selector(applicationDidBecomeActive),
 											   name: UIApplication.didBecomeActiveNotification,
@@ -120,16 +158,26 @@ class HistoryView: MainViewContent, UITableViewDataSource, UITableViewDelegate {
 	}
 	
 	func enterEdition() {
-		NavigationManager.it.mainView?.toolbarViewModel.leftButtonVisible.value = true
+        let bottomPadding: CGFloat = 150
+        self.eventsTable.contentInset.bottom = bottomPadding
+        self.eventsTable.scrollIndicatorInsets.bottom = bottomPadding
+        
+        if #available(iOS 15.0, *) {
+            self.setupBottomButtons()
+        }
 		model.editing.value = true
 		model.notifyDeleteSelectionListUpdated()
 	}
 	
 	func exitEdition() {
+        let bottomPadding: CGFloat = 0
+        self.eventsTable.contentInset.bottom = bottomPadding
+        self.eventsTable.scrollIndicatorInsets.bottom = bottomPadding
 		NavigationManager.it.mainView?.toolbarViewModel.leftButtonVisible.value = false
 		model.editing.value = false
 		model.selectedForDeletion.value!.removeAll()
 		model.notifyDeleteSelectionListUpdated()
+        bottomContainerView!.removeFromSuperview()
 	}
 	
 	
@@ -216,7 +264,6 @@ class HistoryView: MainViewContent, UITableViewDataSource, UITableViewDelegate {
 		if (UIDevice.ipad()) {
 			coordinator.animate(alongsideTransition: { context in
 				self.eventsTable.reloadData()
-				NavigationManager.it.mainView?.toolbarViewModel.rightButtonVisible.value = self.model.history.value!.count > 0
 			}, completion: { context in
 			})
 			
@@ -228,6 +275,123 @@ class HistoryView: MainViewContent, UITableViewDataSource, UITableViewDelegate {
 			self.model.refresh()
 		}
 	}
+    
+    @available(iOS 15.0, *)
+    func setupBottomButtons(add: Bool = true) {
+        if !add {
+            bottomContainerView?.removeFromSuperview()
+            return
+        }
+        
+        let container = UIView()
+        container.backgroundColor = .white
+        self.view.addSubview(container)
+        self.bottomContainerView = container
+
+        container.layer.cornerRadius = 24
+        container.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
+        
+        container.layer.shadowColor = UIColor.black.cgColor
+        container.layer.shadowOpacity = 0.1
+        container.layer.shadowOffset = CGSize(width: 0, height: -3)
+        container.layer.shadowRadius = 4
+        container.layer.masksToBounds = false
+        
+        container.snp.makeConstraints { make in
+            make.left.right.bottom.equalToSuperview()
+        }
+
+        let mainStackView = UIStackView()
+        mainStackView.axis = .vertical
+        mainStackView.spacing = 8
+        container.addSubview(mainStackView)
+        
+        mainStackView.snp.makeConstraints { make in
+            make.top.equalToSuperview().offset(10)
+            make.left.equalToSuperview().offset(25)
+            make.right.equalToSuperview().offset(-25)
+            make.bottom.equalTo(view.safeAreaLayoutGuide.snp.bottom).offset(-16)
+        }
+        
+        selectedAll = UIButton(type: .system)
+        
+        var config = UIButton.Configuration.filled()
+        config.title = Texts.get("history_select_all")
+        config.image = UIImage.init(named: "checkbox_unticked")?.withConfiguration(UIImage.SymbolConfiguration(pointSize: 14)) // Icono del sistema
+        config.imagePadding = 8
+        config.imagePlacement = .leading
+        config.baseBackgroundColor = .clear
+        config.baseForegroundColor = .label
+        config.cornerStyle = .medium
+        config.titleAlignment = .leading
+        config.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 0)
+        selectedAll.configuration = config
+        selectedAll.contentHorizontalAlignment = .leading
+        
+        selectedAll.titleLabel?.font = UIFont(name: FontKey.SEMIBOLD.rawValue, size: 16)!
+        mainStackView.addArrangedSubview(selectedAll)
+        
+        selectedAll.snp.makeConstraints { make in
+            make.height.equalTo(40)
+        }
+
+        let bottomButtonsStackView = UIStackView()
+        bottomButtonsStackView.axis = .horizontal
+        bottomButtonsStackView.spacing = 16
+        bottomButtonsStackView.distribution = .fill
+        mainStackView.addArrangedSubview(bottomButtonsStackView)
+        
+        deleteButton = UIButton(type: .custom)
+        deleteButton.setTitle(Texts.get("save"), for: .normal)
+        deleteButton.titleLabel?.font = UIFont(name: FontKey.SEMIBOLD.rawValue, size: 16)!
+        
+        deleteButton.isEnabled = false
+        deleteButton.prepareRoundRectWihIcon(effectKey: deleteButton.isEnabled ? "delete_device" : "delete_device_disable", tintColor: deleteButton.isEnabled ? "text_delete_btn" : "color_text_label_input", textKey: "\(Texts.get("delete_history")) \(Texts.get("delete_history_event"))", iconName: "icons/trash", iconSizeWidth: 18, iconSizeHeight: 18)
+        
+        deleteButton.layer.cornerRadius = 12
+        
+                
+        cancelButton = UIButton(type: .custom)
+        cancelButton.setTitle(Texts.get("cancel"), for: .normal)
+        cancelButton.setTitleColor(ColorManager.color_primary, for: .normal)
+        cancelButton.backgroundColor = ColorManager.color_background_primary_button
+        cancelButton.layer.cornerRadius = 12
+        cancelButton.titleLabel?.font = UIFont(name: FontKey.SEMIBOLD.rawValue, size: 16)!
+        
+        
+        bottomButtonsStackView.addArrangedSubview(cancelButton)
+        bottomButtonsStackView.addArrangedSubview(deleteButton)
+        
+        
+        cancelButton.snp.makeConstraints { make in
+            make.width.equalTo(142)
+        }
+        
+        deleteButton.snp.makeConstraints { make in
+            make.height.equalTo(56)
+        }
+        
+        selectedAll.addTarget(self, action: #selector(didTapSelectedAll), for: .touchUpInside)
+        deleteButton.addTarget(self, action: #selector(didTapDeleteButton), for: .touchUpInside)
+        cancelButton.addTarget(self, action: #selector(didTapCancelButton), for: .touchUpInside)
+    }
+    
+    @objc private func didTapSelectedAll() {
+        print("is dele: didTapSelectedAll")
+        self.model.toggleSelectAllForDeletion()
+    }
+    
+    @objc private func didTapDeleteButton() {
+        print("is dele: didTapDeleteButton")
+        self.onToolbarRightButtonClicked()
+    }
+    
+    @objc private func didTapCancelButton() {
+        print("is dele: didTapCancelButton")
+        NavigationManager.it.mainView?.activeOrDisableDeleteItems(forceDisable: true)
+        
+        self.exitEdition()
+    }
 	
 	
 }

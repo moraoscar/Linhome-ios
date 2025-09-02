@@ -7,4 +7,6 @@ class ToolbarViewModel : ViewModel {
     var rightButtonVisible = MutableLiveData(false)
     var titleVisible = MutableLiveData(true)
     var welcomeVisible = MutableLiveData(true)
+    var btnDeleteItemVisible = MutableLiveData(false)
+    var editingItemVisible = MutableLiveData(false)
 }

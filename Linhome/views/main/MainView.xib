@@ -15,6 +15,7 @@
                 <outlet property="borderDevices" destination="J4S-LQ-60A" id="EPO-wN-cRp"/>
                 <outlet property="borderHistory" destination="DoL-jD-9OR" id="Ly9-4h-ze2"/>
                 <outlet property="bottomBar" destination="nbN-AC-8lz" id="cwf-wT-fCO"/>
+                <outlet property="btnDeleteItems" destination="zaP-08-RqZ" id="eAf-mT-PlW"/>
                 <outlet property="burger" destination="ax4-KM-4b3" id="erd-iQ-3a6"/>
                 <outlet property="content" destination="xyR-9c-aG0" id="jkK-Fv-aEO"/>
                 <outlet property="devicesLabel" destination="Smt-r0-eIZ" id="MnD-gH-HQv"/>
@@ -92,6 +93,11 @@
                                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES"/>
                                     <state key="normal" title="Button"/>
                                 </button>
+                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zaP-08-RqZ" userLabel="deleteItem">
+                                    <rect key="frame" x="243" y="55" width="39" height="39"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES"/>
+                                    <state key="normal" image="delete_items"/>
+                                </button>
                             </subviews>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         </view>
@@ -108,8 +114,8 @@
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oIu-aM-LXI">
-                                                    <rect key="frame" x="33" y="-6" width="20" height="20"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <rect key="frame" x="179" y="12.5" width="20" height="20"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -186,6 +192,7 @@
     <resources>
         <image name="back" width="33" height="33"/>
         <image name="burger_menu" width="39" height="39"/>
+        <image name="delete_items" width="39" height="39"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

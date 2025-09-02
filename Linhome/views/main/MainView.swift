@@ -44,14 +44,14 @@ class MainView: ViewWithModel, UIDynamicAnimatorDelegate {
     @IBOutlet weak var welcomeDescriptionLabel: UILabel!
     @IBOutlet weak var borderHistory: UIView!
     @IBOutlet weak var borderDevices: UIView!
-    
+    @IBOutlet weak var btnDeleteItems: UIButton!
     
     
 	var toolbarViewModel = ToolbarViewModel()
 	var tabbarViewModel = TabbarViewModel()
 	var toobarButtonClickedListener: ToobarButtonClickedListener? = nil
 	private var observer: MutableLiveDataOnChangeClosure<GlobalState>? = nil
-	
+	var isDeletingItems: Bool = false
 	
 	
 	override func viewDidLoad() {
@@ -127,10 +127,18 @@ class MainView: ViewWithModel, UIDynamicAnimatorDelegate {
 		toolbarViewModel.rightButtonVisible.observe { (visible) in
 			self.right.isHidden = !visible!
 		}
+        
+        toolbarViewModel.btnDeleteItemVisible.observe { (visible) in
+            self.btnDeleteItems.isHidden = !visible!
+        }
 		
 		left.onClick {
 			self.toobarButtonClickedListener.map{$0.onToolbarLeftButtonClicked()}
 		}
+        
+        btnDeleteItems.onClick {
+            self.activeOrDisableDeleteItems()
+        }
 		
 		right.onClick {
 			self.toobarButtonClickedListener.map{$0.onToolbarRightButtonClicked()}
@@ -163,7 +171,7 @@ class MainView: ViewWithModel, UIDynamicAnimatorDelegate {
         devicesLabel.textAlignment = .center
         historyLabel.textAlignment = .center
         
-		unreadCount.backgroundColor = Theme.getColor("color_a")
+		unreadCount.backgroundColor = Theme.getColor("primary")
 		unreadCount.layer.masksToBounds = true
 		unreadCount.layer.cornerRadius = 10.0
 		
@@ -175,11 +183,10 @@ class MainView: ViewWithModel, UIDynamicAnimatorDelegate {
 			if (unread! > 0) {
 				self.unreadCount.isHidden = false
 				self.unreadCount.text = unread! < 100 ? String(unread!) : "99+"
-				self.unreadCount.startBouncing(offset: 7)
+//				self.unreadCount.startBouncing(offset: 6)
 				
 			} else {
 				self.unreadCount.isHidden = true
-				self.unreadCount.stopAnimations()
 			}
 		}
 		
@@ -190,6 +197,8 @@ class MainView: ViewWithModel, UIDynamicAnimatorDelegate {
             self.historyLabel.textColor = ColorManager.color_secondary
             self.borderHistory.isHidden = true
             self.borderDevices.isHidden = false
+            self.activeOrDisableDeleteItems(forceDisable: true)
+            self.btnDeleteItems.isHidden = true
 		}
 		historyTab.onClick {
             NavigationManager.it.navigateTo(childClass: HistoryView.self)
@@ -197,11 +206,9 @@ class MainView: ViewWithModel, UIDynamicAnimatorDelegate {
             self.devicesLabel.textColor = ColorManager.color_secondary
             self.borderHistory.isHidden = false
             self.borderDevices.isHidden = true
+            self.btnDeleteItems.isHidden = false
 		}
-		
-		
-		
-		
+        
 		// Content
 		
         self.content.backgroundColor = ColorManager.color_c
@@ -257,6 +264,24 @@ class MainView: ViewWithModel, UIDynamicAnimatorDelegate {
 	override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
 		super.viewWillTransition(to: size, with: coordinator)
 	}
+    
+    func activeOrDisableDeleteItems(forceDisable: Bool = false) {
+        if (forceDisable || isDeletingItems) {
+            self.btnDeleteItems.setImage(UIImage(named: "delete_items"), for: .normal)
+            self.isDeletingItems = false
+            self.toobarButtonClickedListener.map{$0.onBtnExitDeleteItemClicked()}
+            return
+        }
+        self.toobarButtonClickedListener.map{$0.onBtnDeleteItemClicked()}
+        self.isDeletingItems = !self.isDeletingItems
+        print("is deleting items: \(self.isDeletingItems)")
+        
+        if (!self.isDeletingItems) { //ocultamos
+            self.btnDeleteItems.setImage(UIImage(named: "delete_items"), for: .normal)
+        } else {
+            self.btnDeleteItems.setImage(UIImage(named: "delete_items_active"), for: .normal)
+        }
+    }
 	
 	
 }

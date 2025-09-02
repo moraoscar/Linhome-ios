@@ -105,7 +105,7 @@ extension UIView {
 	
 	func startBouncing(offset:CGFloat) {
 		var r = self.frame
-		r.origin.y = -6
+		r.origin.y = r.origin.y - 10
 		self.frame = r
 		UIView.setAnimationsEnabled(true)
 		UIView.animate(withDuration:0.4, delay:0 ,
