@@ -20,6 +20,7 @@ struct ColorManager {
     static var color_background_primary_button = UIColor.init(hexString: "#FFDEEB")
     static var color_background_danger_button = UIColor.init(hexString: "#FFDFE0")
     static var color_text_danger_button = UIColor.init(hexString: "#EC4245")
+    static var color_view_title = UIColor.init(hexString: "#2B2B2D")
     
     static var color_text_label_input = UIColor.init(hexString: "#B1B1B1")
     

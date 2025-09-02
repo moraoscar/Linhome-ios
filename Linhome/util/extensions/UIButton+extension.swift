@@ -25,11 +25,11 @@ import UIKit
 extension UIButton {
 	
 	func setText(text:String) {
-		setTitle(titleLabel?.tag == 1 ? text.uppercased() : text, for: .normal)
+		setTitle(titleLabel?.tag == 1 ? text : text, for: .normal)
 	}
 	
 	func setTextKey(textKey:String) {
-		setTitle(titleLabel?.tag == 1 ? Texts.get(textKey).uppercased() :  Texts.get(textKey), for: .normal)
+		setTitle(titleLabel?.tag == 1 ? Texts.get(textKey) :  Texts.get(textKey), for: .normal)
 	}
 	
 	func prepare( iconName:String,  tintColor:String) { // ! only works with buttonType = custom (set in nib)
@@ -52,7 +52,7 @@ extension UIButton {
 		if (hasText) {
 			setTitleColor(tintColor, for: .normal)
 			titleLabel?.prepare(styleKey: textStyleKey!)
-			setTitle(titleLabel?.tag == 1 ? text?.uppercased() : text, for: .normal)
+			setTitle(titleLabel?.tag == 1 ? text : text, for: .normal)
 			titleSize = titleLabel!.text!.size(withAttributes: [
 				NSAttributedString.Key.font: titleLabel!.font ?? UIFont.systemFont(ofSize: 12.0)
 			])

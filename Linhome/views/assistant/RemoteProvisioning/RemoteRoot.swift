@@ -48,6 +48,7 @@ class RemoteRoot: MainViewContentWithScrollableForm {
 		}
 		self.view.addSubview(infoButton)
 
+        NavigationManager.it.hiddenHomeOptions()
 		
 		infoButton.snp.makeConstraints { (make) in
 			make.left.equalTo(viewTitle.snp.right).offset(-20)
@@ -63,12 +64,12 @@ class RemoteRoot: MainViewContentWithScrollableForm {
 		}
 		
 		
-		let url = UIRoundRectButton(container:contentView, placedBelow:form, effectKey: "secondary_color", tintColor: "color_c", textKey: "assistant_remote_url", topMargin: 0)
-		let qrCode = UIRoundRectButton(container:contentView, placedBelow:url, effectKey: "secondary_color", tintColor: "color_c", textKey: "assistant_remote_qr", topMargin: 23, isLastInContainer: true)
+		let url = UIRoundRectButton(container:contentView, placedBelow:form, effectKey: "primary_color", tintColor: "color_c", textKey: "assistant_remote_url", topMargin: 0)
+		let qrCode = UIRoundRectButton(container:contentView, placedBelow:url, effectKey: "primary_color", tintColor: "color_c", textKey: "assistant_remote_qr", topMargin: 23, isLastInContainer: true)
 			
 		
-		url.prepareRoundRect(effectKey: "secondary_color", tintColor: "color_c", textKey: "assistant_remote_url")
-		qrCode.prepareRoundRect(effectKey: "secondary_color", tintColor: "color_c", textKey: "assistant_remote_qr")
+		url.prepareRoundRect(effectKey: "primary_color", tintColor: "color_c", textKey: "assistant_remote_url")
+		qrCode.prepareRoundRect(effectKey: "primary_color", tintColor: "color_c", textKey: "assistant_remote_qr")
 		
 		url.onClick {
 			NavigationManager.it.navigateTo(childClass: RemoteUrlView.self)

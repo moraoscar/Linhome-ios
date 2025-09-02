@@ -31,27 +31,32 @@ class AssistantRoot: MainViewContentWithScrollableForm {
 		isRoot = false
 		onTopOfBottomBar = true
 		titleTextKey = "assistant"
-		
+        
 		viewTitle.setText(textKey: "assistant_welcome_title")
 		viewSubtitle.setText(textKey: "assistant_welcome_subtitle")
+        
+        viewTitle.textAlignment = .left
+        viewSubtitle.textAlignment = .left
 		
-		let createLinhomeAccount = UIRoundRectButton(container:contentView, placedBelow:form, effectKey: "secondary_color", tintColor: "color_c", textKey: "assistant_create_linhome_account", topMargin: 0)
-		let loginLinhome = UIRoundRectButton(container:contentView, placedBelow:createLinhomeAccount, effectKey: "secondary_color", tintColor: "color_c", textKey: "assistant_use_linhome_account", topMargin: 23)
-		let loginSip = UIRoundRectButton(container:contentView, placedBelow:loginLinhome, effectKey: "secondary_color", tintColor: "color_c", textKey: "assistant_use_sip_account", topMargin: 23)
-		let remoteConfig = UIRoundRectButton(container:contentView, placedBelow:loginSip, effectKey: "secondary_color", tintColor: "color_c", textKey: "assistant_remote_prov", topMargin: 23, isLastInContainer : true)
+//		let createLinhomeAccount = UIRoundRectButton(container:contentView, placedBelow:form, effectKey: "bg_secondary_btn", tintColor: "primary", textKey: "assistant_create_linhome_account", topMargin: 5)
+//		let loginLinhome = UIRoundRectButton(container:contentView, placedBelow:createLinhomeAccount, effectKey: "bg_secondary_btn", tintColor: "primary", textKey: "assistant_use_linhome_account", topMargin: 23)
+//		let loginSip = UIRoundRectButton(container:contentView, placedBelow:loginLinhome, effectKey: "bg_secondary_btn", tintColor: "primary", textKey: "assistant_use_sip_account", topMargin: 23)
 		
+        let remoteConfig = UIRoundRectButton(container:contentView, placedBelow:form, effectKey: "bg_secondary_btn", tintColor: "primary", textKey: "assistant_remote_prov", topMargin: 5, isLastInContainer : true)
 		
-		createLinhomeAccount.onClick {
-			self.navigateToComponent(childClass: CreateLinhomeAccountView.self)
-		}
-		
-		loginLinhome.onClick {
-			self.navigateToComponent(childClass: LoginLinhomeAccountView.self)
-		}
-		
-		loginSip.onClick {
-			self.navigateToComponent(childClass: LoginSipAccountView.self)
-		}
+        NavigationManager.it.hiddenHomeOptions()
+        
+//		createLinhomeAccount.onClick {
+//			self.navigateToComponent(childClass: CreateLinhomeAccountView.self)
+//		}
+//		
+//		loginLinhome.onClick {
+//			self.navigateToComponent(childClass: LoginLinhomeAccountView.self)
+//		}
+//		
+//		loginSip.onClick {
+//			self.navigateToComponent(childClass: LoginSipAccountView.self)
+//		}
 		
 		remoteConfig.onClick {
 			self.navigateToComponent(childClass: RemoteRoot.self)

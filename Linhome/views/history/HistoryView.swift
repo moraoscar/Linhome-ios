@@ -161,6 +161,9 @@ class HistoryView: MainViewContent, UITableViewDataSource, UITableViewDelegate {
 			headerView.contentView.backgroundColor = .clear
 			headerView.backgroundView?.backgroundColor = .clear
 			headerView.textLabel?.prepare(styleKey: "history_list_day_name")
+            
+            headerView.textLabel?.text = headerView.textLabel?.text?.capitalized
+            
 			model.editing.readCurrentAndObserve { (editing) in
 				headerView.alpha = editing! ? 0.3 : 1.0
 			}
@@ -171,6 +174,14 @@ class HistoryView: MainViewContent, UITableViewDataSource, UITableViewDelegate {
         
 		return todayYesterdayRealDay(epochTimeDayUnit: Int(Array(model.historySplit.value!.keys.sorted().reversed())[section]))
 	}
+    
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        if section == 0 {
+            return 25.0
+        } else {
+            return 30.0
+        }
+    }
 	
 	func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 		let cell:HistoryCell = tableView.dequeueReusableCell(withIdentifier: UIDevice.ipad() && UIScreen.isLandscape ? "HistoryCellLand" : "HistoryCell") as! HistoryCell

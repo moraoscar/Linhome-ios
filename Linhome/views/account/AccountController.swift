@@ -34,6 +34,9 @@ class AccountController: MainViewContent {
     @IBOutlet weak var lblConnectionValue: UILabel!
     @IBOutlet weak var btnRefresh: UIButton!
     @IBOutlet weak var btnDisconnect: UIButton!
+    @IBOutlet weak var viewConnection: UIView!
+    
+    
     var model: AccountViewModel = AccountViewModel()
     
 	override func viewDidLoad() {
@@ -45,6 +48,7 @@ class AccountController: MainViewContent {
         titleTextKey = "My account"
         lblTitle.text = titleTextKey
         lblTitle.font = UIFont(name: FontKey.SEMIBOLD.rawValue, size: 26)
+        lblTitle.textColor = ColorManager.color_view_title
         
         lblTitleDescription.text = "This assistant will help you configure your account"
         lblTitleDescription.font = UIFont(name: FontKey.REGULAR.rawValue, size: 14)
@@ -91,17 +95,61 @@ class AccountController: MainViewContent {
         
         btnRefresh.layer.cornerRadius = 16
         btnDisconnect.layer.cornerRadius = 16
-        
         model.accountDesc.readCurrentAndObserve { (text) in
-            let components1 = text!.components(separatedBy: "\rSIP connection: ")
-            let connectionValue = components1.count > 1 ? components1[1] : ""
-            let accountPart = components1[0]
-            let accountValue = accountPart.replacingOccurrences(of: "Account: ", with: "")
-            self.lblAccountValue.text = accountValue
-            self.lblConnectionValue.text = connectionValue
+            guard let text = text else { return }
+            // se toma de los idiomas
+            let separators = [
+                "\rSIP connection: ",
+                "\rConnexion SIP: ",
+                "\rConexión SIP: ",
+                "\rPołączenie SIP: ",
+                "\rSIP Verbindung: ",
+                "\rSIP връзка: "
+            ]
+            
+            let prefixes = [
+                "Account: ",
+                "Compte: ",
+                "Cuenta: ",
+                "Konto: ",
+                "Профил: "
+            ]
+
+            var components: [String]?
+            // Busca el separador que funcione
+            for separator in separators {
+                if text.contains(separator) {
+                    components = text.components(separatedBy: separator)
+                    break
+                }
+            }
+            
+            if let components = components, components.count > 1 {
+                let connectionValue = components[1]
+                let accountPart = components[0]
+                
+                var accountValue = accountPart
+                for prefix in prefixes {
+                    if accountValue.hasPrefix(prefix) {
+                        accountValue = accountValue.replacingOccurrences(of: prefix, with: "")
+                        break
+                    }
+                }
+                
+                self.lblAccountValue.text = accountValue
+                self.lblConnectionValue.text = connectionValue
+            } else {
+                self.lblAccountValue.text = text
+                self.lblConnectionValue.text = ""
+            }
         }
 		
 		if (model.account != nil) {
+            btnRefresh.isHidden = false
+            btnDisconnect.isHidden = false
+            viewConnection.isHidden = false
+            lblConnection.isHidden = false
+            
 //			let refresh = UIRoundRectButton(container:contentView, placedBelow:form, effectKey: "secondary_color", tintColor: "color_c", textKey: "refresh_registers", topMargin: 0)
 //			var deleteaccount : UIRoundRectButton? = nil
             
@@ -128,7 +176,12 @@ class AccountController: MainViewContent {
 //					NavigationManager.it.navigateUp()
 //				})
 //			}
-		}
+        } else {
+            btnRefresh.isHidden = true
+            btnDisconnect.isHidden = true
+            viewConnection.isHidden = true
+            lblConnection.isHidden = true
+        }
 	}
 	
     override func isCallView() -> Bool {

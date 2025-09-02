@@ -48,8 +48,26 @@ class ActionRow: UIViewController {
 		let spinner = LSpinner.addOne(titleText: "\(Texts.get("action")) \(actionViewModel.displayIndex.value!)", targetVC: child, options: actionViewModel.owningViewModel.availableActionTypes, liveIndex: actionViewModel.type, form: child.actionForm)
 		child.code = LTextInput.addOne(titleKey: "action_code", targetVC: child, keyboardType: UIKeyboardType.phonePad, validator: ValidatorFactory.actionCode, liveInfo: actionViewModel.code, inForm: child.actionForm)
 		let delete = UIButton()
-		delete.frame = CGRect(x: 0,y: 0,width: 20,height: 20)
-		delete.prepare(iconName:"icons/delete",effectKey:"primary_color", effectIsFg: true, tintColor:"color_c", padding: 0)
+		delete.frame = CGRect(x: 0,y: 0,width: 30,height: 30)
+		delete.prepare(iconName:"icons/delete",effectKey:"delete_action", effectIsFg: true, tintColor:"text_delete_btn", padding: 0)
+        
+//        
+//        let delete = UIButton()
+//        delete.frame = CGRect(x: 0,y: 0,width: 20,height: 20)
+//        delete.prepare(iconName:"icons/delete_action",effectKey:"delete_action", effectIsFg: true, tintColor:"color_c", padding: 0)
+//        
+//        delete.prepareRoundIcon(effectKey: "delete_action",
+//                                tintColor: "color_c",
+//                                iconName: "icons/delete",
+//                                padding: 5)
+//        delete.backgroundColor = ColorManager.color_text_danger_button
+//        child.actionForm.addArrangedSubview(delete)
+//        
+//        delete.snp.makeConstraints { (make) -> Void in
+//            make.width.height.equalTo(20)
+//            make.left.equalTo(child.code!.view.snp.right).offset(10)
+//            make.right.equalTo(child.actionForm.snp.right)
+//        }
 		child.actionForm.addArrangedSubview(delete)
 		
 		delete.onClick {

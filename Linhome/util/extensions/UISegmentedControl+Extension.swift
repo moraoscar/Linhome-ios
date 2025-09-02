@@ -26,7 +26,7 @@ extension UISegmentedControl {
 	func setSegments(segments: Array<String>) {
 		self.removeAllSegments()
 		for segment in segments {
-			self.insertSegment(withTitle: Texts.get(segment).uppercased(), at: self.numberOfSegments, animated: false)
+			self.insertSegment(withTitle: Texts.get(segment), at: self.numberOfSegments, animated: false)
 		}
 	}
 

@@ -38,13 +38,6 @@ extension UILabel {
 			self.backgroundColor = Theme.getColor(color)
 		}
 		
-//		if let caps = config?.getBool(section: section, key: "allcaps", defaultValue : false) {
-//			if (caps) {
-//				self.text = self.text?.uppercased()
-//				tag = 1
-//			}
-//		}
-		
 		if let align = config?.getString(section: section, key: "align") {
 			if case "start" = align {
 				self.textAlignment = .natural
@@ -91,17 +84,11 @@ extension UILabel {
 	
 	func setText(text:String) {
 		self.text = text
-//		if (tag == 1) {
-//			self.text = self.text?.uppercased()
-//		}
 	}
 	
 	func setText(textKey:String?) {
 		if (textKey != nil ) {
 			self.text = Texts.get(textKey!)
-//			if (tag == 1) {
-//				self.text = self.text?.uppercased()
-//			}
 		} else {
 			self.text = nil
 		}

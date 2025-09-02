@@ -41,18 +41,15 @@ class UIRoundRectButton : UIButton {
                      alignment: HorizontalAlignment = .center) {
         self.init()
         container.addSubview(self)
-        
+        self.layer.cornerRadius = 16
         self.snp.makeConstraints { make in
             make.top.equalTo(placedBelow.snp.bottom).offset(topMargin)
-            make.height.equalTo(40)
+            make.height.equalTo(56)
             
             switch alignment {
             case .center:
                 make.centerX.equalTo(container.snp.centerX)
-                make.width.lessThanOrEqualTo(width!)
-                make.leftMargin.greaterThanOrEqualTo(20)
-                make.rightMargin.lessThanOrEqualTo(-20)
-                
+                make.leftMargin.rightMargin.equalTo(20)
             case .left:
                 make.leading.equalToSuperview().offset(20)
                 if let fixedWidth = width {

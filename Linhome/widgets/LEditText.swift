@@ -89,7 +89,7 @@ extension LEditText {
 		
 		if let caps = config?.getBool(section: section, key: "allcaps", defaultValue : false) {
 			if (caps) {
-				self.text = self.text?.uppercased()
+				self.text = self.text
 				tag = 1
 			}
 		}
@@ -144,7 +144,7 @@ extension LEditText {
 	func setText(text:String) {
 		self.text = text
 		if (tag == 1) {
-			self.text = self.text?.uppercased()
+			self.text = self.text
 		}
 	}
 	
@@ -152,7 +152,7 @@ extension LEditText {
 		if (textKey != nil ) {
 			self.text = Texts.get(textKey!)
 			if (tag == 1) {
-				self.text = self.text?.uppercased()
+				self.text = self.text
 			}
 		} else {
 			self.text = nil

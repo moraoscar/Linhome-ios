@@ -60,14 +60,14 @@ class MainViewContentWithScrollableForm : MainViewContent {
 		
 		contentView.addSubview(viewTitle)
 		viewTitle.snp.makeConstraints { make in
-			make.top.equalTo(contentView).offset(40)
+			make.top.equalTo(contentView).offset(20)
 			make.left.equalTo(contentView).offset(23)
 			make.right.equalTo(contentView).offset(-23)
 		}
 		
 		contentView.addSubview(viewSubtitle)
 		viewSubtitle.snp.makeConstraints { make in
-			make.top.equalTo(viewTitle.snp.bottom).offset(33)
+			make.top.equalTo(viewTitle.snp.bottom).offset(0)
 			make.centerX.equalTo(view.snp.centerX)
 			make.left.equalTo(contentView).offset((23))
 			make.right.equalTo(contentView).offset(-23)
@@ -88,6 +88,11 @@ class MainViewContentWithScrollableForm : MainViewContent {
 		
 		viewTitle.prepare(styleKey: "view_main_title")
 		viewSubtitle.prepare(styleKey: "view_sub_title")
+        
+        viewTitle.font = UIFont.init(name: FontKey.SEMIBOLD.rawValue, size: 26)
+        viewSubtitle.font = UIFont.init(name: FontKey.REGULAR.rawValue, size: 14)
+        viewTitle.textColor = ColorManager.color_view_title
+        viewSubtitle.textColor = ColorManager.color_secondary
 	}
 	
 	required init?(coder: NSCoder) {

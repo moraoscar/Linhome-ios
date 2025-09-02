@@ -92,10 +92,42 @@ class DeviceEditorView: MainViewContentWithScrollableForm {
 			make.height.equalTo(landScapeIpad ? 80 : 30)
 		}
 		actionsTitle.prepare(styleKey: "section_title",textKey:"method_type_select")
+        
+        let spacerView = UIView()
+        spacerView.snp.makeConstraints { make in
+            make.height.equalTo(20)
+        }
+        (landScapeIpad ? formSecondColumn : form).addArrangedSubview(spacerView)
+        
 		let _ = LSpinner.addOne(titleKey: "action_method", targetVC: self, options:model.availableMethodTypes, liveIndex: model.actionsMethod, form:landScapeIpad ? formSecondColumn : form)
-		
+        actionsTitle.font = UIFont.init(name: FontKey.SEMIBOLD.rawValue, size: 16)
         
+        let actionsAddTitle = UILabel()
+        (landScapeIpad ? formSecondColumn : form).addArrangedSubview(actionsAddTitle)
+        actionsAddTitle.snp.makeConstraints { (make) -> Void in
+            make.top.equalTo(actionsTitle).offset(140)
+            make.height.equalTo(30)
+        }
+        actionsAddTitle.prepare(styleKey: "section_title",textKey:"device_info_actions")
+        actionsAddTitle.textColor = ColorManager.color_text_label_input
+
         
+//        let stackviewAddAction = UIStackView()
+//        stackviewAddAction.axis = .horizontal
+//        stackviewAddAction.alignment = .center // Alinea verticalmente el título y el botón
+//
+//        // 2. Añade esta nueva fila al formulario principal
+//        let mainForm = landScapeIpad ? formSecondColumn : form
+//        mainForm.addArrangedSubview(stackviewAddAction)
+//
+//        // 3. Aplica la restricción de altura que pediste a la fila
+//        stackviewAddAction.snp.makeConstraints { make in
+//            make.left.right.bottom.equalToSuperview()
+//        }
+//        
+//        stackviewAddAction.backgroundColor = .yellow
+
+    
         actionsContainerView = UIView()
         actionsContainerView.backgroundColor = UIColor(white: 0.95, alpha: 1.0)
         actionsContainerView.layer.cornerRadius = 12
@@ -117,6 +149,9 @@ class DeviceEditorView: MainViewContentWithScrollableForm {
 		newAction.onClick {
 			self.doAddAction(action: nil, model: self.model, form: landScapeIpad ? self.formSecondColumn : self.form)
 		}
+        
+//        stackviewAddAction.addArrangedSubview(actionsAddTitle)
+//        stackviewAddAction.addArrangedSubview(newAction)
 		
 		let delete = UIRoundRectButton(container:contentView, placedBelow:newAction, effectKey: "primary_color", tintColor: "color_c", textKey: "delete_device", topMargin: 40, isLastInContainer: true)
 //        LINEA ORIGINAL

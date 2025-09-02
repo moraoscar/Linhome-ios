@@ -47,7 +47,6 @@ class DeviceInfoView: MainViewContent, UITableViewDataSource, UITableViewDelegat
         editButton.titleLabel?.font = UIFont(name: FontKey.SEMIBOLD.rawValue, size: 16)!
         view.addSubview(editButton)
         
-        
         deleteButton = UIButton(type: .custom)
         deleteButton.backgroundColor = ColorManager.color_background_danger_button
         deleteButton.titleLabel?.font = UIFont(name: FontKey.SEMIBOLD.rawValue, size: 16)!
@@ -161,7 +160,9 @@ class DeviceInfoView: MainViewContent, UITableViewDataSource, UITableViewDelegat
 		
 		NavigationManager.it.mainView!.right.prepare(iconName: "icons/edit",effectKey: "primary_color",tintColor: "color_c", textStyleKey: "toolbar_action", text: Texts.get("edit"))
 		
-        NavigationManager.it.mainView?.toolbarViewModel.rightButtonVisible.value = !device.isRemotelyProvisionned
+        editButton.isHidden = device.isRemotelyProvisionned
+        
+        NavigationManager.it.mainView?.toolbarViewModel.rightButtonVisible.value = false
 		NavigationManager.it.mainView?.toolbarViewModel.leftButtonVisible.value = false
         NavigationManager.it.mainView?.toolbarViewModel.titleVisible.value = false
 		

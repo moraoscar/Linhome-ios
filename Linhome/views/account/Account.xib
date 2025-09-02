@@ -22,6 +22,7 @@
                 <outlet property="lblTitle" destination="6JV-UP-V4Y" id="c6v-ec-iph"/>
                 <outlet property="lblTitleDescription" destination="RS4-6B-sr4" id="GJ9-Wp-xN0"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+                <outlet property="viewConnection" destination="NNd-er-2zd" id="f4H-2d-ylb"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
@@ -58,7 +59,7 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4UM-9b-Hat">
                     <rect key="frame" x="23" y="199.5" width="368" height="44.5"/>
                     <subviews>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lSq-ug-8QJ">
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lSq-ug-8QJ">
                             <rect key="frame" x="16" y="12" width="336" height="20.5"/>
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                             <nil key="textColor"/>
@@ -73,6 +74,12 @@
                         <constraint firstItem="lSq-ug-8QJ" firstAttribute="leading" secondItem="4UM-9b-Hat" secondAttribute="leading" constant="16" id="wbE-3f-PTU"/>
                     </constraints>
                 </view>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nxh-s3-EtK" userLabel="Lbl Connection">
+                    <rect key="frame" x="23" y="259" width="368" height="20.5"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NNd-er-2zd">
                     <rect key="frame" x="23" y="284.5" width="368" height="44.5"/>
                     <subviews>
@@ -91,12 +98,6 @@
                         <constraint firstAttribute="bottom" secondItem="SiY-CG-e8k" secondAttribute="bottom" constant="12" id="shL-Vf-JT4"/>
                     </constraints>
                 </view>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nxh-s3-EtK" userLabel="Lbl Connection">
-                    <rect key="frame" x="23" y="259" width="368" height="20.5"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                    <nil key="textColor"/>
-                    <nil key="highlightedColor"/>
-                </label>
                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="tOP-fG-LEW">
                     <rect key="frame" x="23" y="751" width="368" height="122"/>
                     <subviews>
