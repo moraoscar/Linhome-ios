@@ -31,7 +31,6 @@ class Support: MainViewContent {
     @IBOutlet weak var appVersion: UILabel!
     @IBOutlet weak var linhomeOrg: UILabel!
     @IBOutlet weak var lblTitle: UILabel!
-    @IBOutlet weak var headerView: UIView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,11 +39,9 @@ class Support: MainViewContent {
         onTopOfBottomBar = true
         titleTextKey = Texts.get("menu_support_module")
         
-        headerView.backgroundColor = ColorManager.color_primary
-        
         lblTitle.text = titleTextKey
-        lblTitle.font = UIFont(name: FontKey.SEMIBOLD.rawValue, size: 20)
-        lblTitle.textColor = ColorManager.color_a
+        lblTitle.font = UIFont(name: FontKey.SEMIBOLD.rawValue, size: 26)
+        
 
         linhomeTitle.text = Texts.get("support_information")
         linhomeTitle.textColor = ColorManager.color_secondary

@@ -32,18 +32,18 @@
                     </connections>
                 </button>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="About" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6JV-UP-V4Y">
-                    <rect key="frame" x="23" y="108" width="368" height="21"/>
+                    <rect key="frame" x="23" y="108" width="368" height="20.5"/>
                     <viewLayoutGuide key="safeArea" id="8XQ-IP-yNM"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="nuo_large_brand" translatesAutoresizingMaskIntoConstraints="NO" id="wHs-NX-Wec">
-                    <rect key="frame" x="84" y="309" width="247" height="36"/>
+                    <rect key="frame" x="83.5" y="258.5" width="247" height="36"/>
                 </imageView>
                 <view contentMode="scaleToFill" id="8GZ-YC-sLy">
                     <rect key="frame" x="20" y="598" width="374" height="264"/>
-                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" heightSizable="YES"/>
+                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES" flexibleMaxY="YES"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ihy-eY-8b6">
                             <rect key="frame" x="0.0" y="0.0" width="374" height="21"/>
@@ -65,7 +65,7 @@
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 </view>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="top" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="wordWrap" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mkM-Gf-XYp">
-                    <rect key="frame" x="72" y="369.5" width="270" height="75"/>
+                    <rect key="frame" x="72" y="319.5" width="270" height="75"/>
                     <attributedString key="attributedText">
                         <fragment content="NÜO WyM es la aplicación que te permite hacer y recibir llamadas de tus videointercomunicadores">
                             <attributes>
@@ -88,7 +88,7 @@
                 <constraint firstItem="6JV-UP-V4Y" firstAttribute="top" secondItem="9ma-iC-SHq" secondAttribute="bottom" constant="24" id="NgG-Me-N7v"/>
                 <constraint firstItem="9ma-iC-SHq" firstAttribute="top" secondItem="96u-hU-XDS" secondAttribute="top" constant="3" id="Uwb-MY-67P"/>
                 <constraint firstItem="9ma-iC-SHq" firstAttribute="leading" secondItem="96u-hU-XDS" secondAttribute="leading" constant="23" id="bbp-Pt-a89"/>
-                <constraint firstItem="wHs-NX-Wec" firstAttribute="top" secondItem="6JV-UP-V4Y" secondAttribute="bottom" constant="180" id="dCc-xm-V7W"/>
+                <constraint firstItem="wHs-NX-Wec" firstAttribute="top" secondItem="6JV-UP-V4Y" secondAttribute="bottom" constant="130" id="dCc-xm-V7W"/>
                 <constraint firstItem="mkM-Gf-XYp" firstAttribute="top" secondItem="wHs-NX-Wec" secondAttribute="bottom" constant="25" id="gh3-oV-hfk"/>
                 <constraint firstItem="96u-hU-XDS" firstAttribute="trailing" secondItem="6JV-UP-V4Y" secondAttribute="trailing" constant="23" id="sW7-mI-csO"/>
             </constraints>
