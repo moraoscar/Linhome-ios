@@ -46,7 +46,7 @@ class MainView: ViewWithModel, UIDynamicAnimatorDelegate {
     @IBOutlet weak var borderDevices: UIView!
     @IBOutlet weak var btnDeleteItems: UIButton!
     
-    
+    var actualTab: String = "history"
 	var toolbarViewModel = ToolbarViewModel()
 	var tabbarViewModel = TabbarViewModel()
 	var toobarButtonClickedListener: ToobarButtonClickedListener? = nil
@@ -199,6 +199,7 @@ class MainView: ViewWithModel, UIDynamicAnimatorDelegate {
             self.borderDevices.isHidden = false
             self.activeOrDisableDeleteItems(forceDisable: true)
             self.btnDeleteItems.isHidden = true
+            self.actualTab = "devices"
 		}
 		historyTab.onClick {
             NavigationManager.it.navigateTo(childClass: HistoryView.self)
@@ -207,6 +208,7 @@ class MainView: ViewWithModel, UIDynamicAnimatorDelegate {
             self.borderHistory.isHidden = false
             self.borderDevices.isHidden = true
             self.btnDeleteItems.isHidden = false
+            self.actualTab = "history"
 		}
         
 		// Content

@@ -184,7 +184,7 @@ class NavigationManager {
         mainView!.toolbarViewModel.leftButtonVisible.value = false
         mainView!.toolbarViewModel.titleVisible.value = true
         mainView!.toolbarViewModel.burgerButtonVisible.value = true
-        mainView!.btnDeleteItems.isHidden = false
+        mainView!.btnDeleteItems.isHidden = mainView!.actualTab == "history" ? false : true
     }
 	
 	func resumeNavigation() {
