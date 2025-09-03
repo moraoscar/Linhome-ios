@@ -63,6 +63,11 @@ class SideMenu: MainViewContent, UITableViewDataSource, UITableViewDelegate {
 		})
 		
 		options = [
+            MenuOption(iconName: "icons/assistant",textKey: "menu_support",action: {
+                NavigationManager.it.navigateUp(completion: {
+                    NavigationManager.it.navigateTo(childClass: Support.self)
+                })
+            }),
 			MenuOption(iconName: "icons/assistant",textKey: "menu_assistant",action: {
 				NavigationManager.it.navigateUp(completion: {
 					NavigationManager.it.navigateTo(childClass: AssistantRoot.self)

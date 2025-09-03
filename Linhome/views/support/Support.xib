@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="23094" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23084"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="Support" customModule="Linhome" customModuleProvider="target">
+            <connections>
+                <outlet property="appVersion" destination="Ihy-eY-8b6" id="CfV-UO-iXF"/>
+                <outlet property="headerView" destination="2iE-SS-TkU" id="HfW-oV-W7A"/>
+                <outlet property="lblTitle" destination="6JV-UP-V4Y" id="tQQ-UX-Bew"/>
+                <outlet property="linhomeIcon" destination="wHs-NX-Wec" id="hIu-Ec-GbF"/>
+                <outlet property="linhomeOrg" destination="gCd-vR-Bes" id="Cpb-qr-k3x"/>
+                <outlet property="linhomeTitle" destination="mkM-Gf-XYp" id="DIL-yM-5i3"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2iE-SS-TkU">
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="128"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="128" id="3Sw-C8-omP"/>
+                    </constraints>
+                </view>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9ma-iC-SHq" userLabel="burger">
+                    <rect key="frame" x="23" y="51" width="33" height="33"/>
+                    <state key="normal" image="back_support"/>
+                    <connections>
+                        <action selector="back:" destination="-1" eventType="touchUpInside" id="bAP-RJ-VrF"/>
+                    </connections>
+                </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="About" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6JV-UP-V4Y">
+                    <rect key="frame" x="23" y="57.5" width="368" height="20.5"/>
+                    <viewLayoutGuide key="safeArea" id="8XQ-IP-yNM"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="nuo_large_brand" translatesAutoresizingMaskIntoConstraints="NO" id="wHs-NX-Wec">
+                    <rect key="frame" x="83.5" y="258" width="247" height="36"/>
+                </imageView>
+                <view contentMode="scaleToFill" id="8GZ-YC-sLy">
+                    <rect key="frame" x="20" y="598" width="374" height="264"/>
+                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" heightSizable="YES"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ihy-eY-8b6">
+                            <rect key="frame" x="0.0" y="0.0" width="374" height="21"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
+                            <viewLayoutGuide key="safeArea" id="qj7-Lf-AiX"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gCd-vR-Bes">
+                            <rect key="frame" x="0.0" y="19" width="374" height="35"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <viewLayoutGuide key="safeArea" id="5Xt-DW-rw0"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                </view>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="top" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="wordWrap" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mkM-Gf-XYp">
+                    <rect key="frame" x="72" y="319" width="270" height="75"/>
+                    <attributedString key="attributedText">
+                        <fragment content="NÜO WyM es la aplicación que te permite hacer y recibir llamadas de tus videointercomunicadores">
+                            <attributes>
+                                <font key="NSFont" metaFont="system" size="17"/>
+                                <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" lineSpacing="1.47" minimumLineHeight="24" tighteningFactorForTruncation="0.0"/>
+                            </attributes>
+                        </fragment>
+                    </attributedString>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="96u-hU-XDS"/>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="wHs-NX-Wec" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="BUX-IH-AeU"/>
+                <constraint firstItem="mkM-Gf-XYp" firstAttribute="leading" secondItem="96u-hU-XDS" secondAttribute="leading" constant="72" id="CNQ-nb-gs4"/>
+                <constraint firstItem="2iE-SS-TkU" firstAttribute="trailing" secondItem="96u-hU-XDS" secondAttribute="trailing" id="CxI-ph-HnO"/>
+                <constraint firstItem="6JV-UP-V4Y" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="D6X-TK-aIq"/>
+                <constraint firstItem="96u-hU-XDS" firstAttribute="trailing" secondItem="mkM-Gf-XYp" secondAttribute="trailing" constant="72" id="GQb-O1-KGX"/>
+                <constraint firstItem="2iE-SS-TkU" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="PrZ-7H-G4N"/>
+                <constraint firstItem="9ma-iC-SHq" firstAttribute="top" secondItem="96u-hU-XDS" secondAttribute="top" constant="3" id="Uwb-MY-67P"/>
+                <constraint firstItem="9ma-iC-SHq" firstAttribute="leading" secondItem="96u-hU-XDS" secondAttribute="leading" constant="23" id="bbp-Pt-a89"/>
+                <constraint firstItem="wHs-NX-Wec" firstAttribute="top" secondItem="6JV-UP-V4Y" secondAttribute="bottom" constant="180" id="dCc-xm-V7W"/>
+                <constraint firstItem="mkM-Gf-XYp" firstAttribute="top" secondItem="wHs-NX-Wec" secondAttribute="bottom" constant="25" id="gh3-oV-hfk"/>
+                <constraint firstItem="6JV-UP-V4Y" firstAttribute="centerY" secondItem="9ma-iC-SHq" secondAttribute="centerY" id="qiq-mh-zgx"/>
+                <constraint firstItem="96u-hU-XDS" firstAttribute="trailing" secondItem="6JV-UP-V4Y" secondAttribute="trailing" constant="23" id="sW7-mI-csO"/>
+                <constraint firstItem="2iE-SS-TkU" firstAttribute="leading" secondItem="96u-hU-XDS" secondAttribute="leading" id="szR-13-GPf"/>
+            </constraints>
+            <point key="canvasLocation" x="131.8840579710145" y="126.5625"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="back_support" width="33" height="33"/>
+        <image name="nuo_large_brand" width="247" height="36"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

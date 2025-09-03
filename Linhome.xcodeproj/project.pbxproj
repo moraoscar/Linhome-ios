@@ -15,6 +15,8 @@
 		460D36AB2E4B581500B0D5AD /* Inter-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 460D36A62E4B581500B0D5AD /* Inter-SemiBold.ttf */; };
 		464F34C52E4B415A00B0ECC3 /* ColorsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 464F34C42E4B415A00B0ECC3 /* ColorsManager.swift */; };
 		464F34F62E4B4CC700B0ECC3 /* FontManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 464F34F52E4B4CC700B0ECC3 /* FontManager.swift */; };
+		46579F512E68525600B8AB8F /* Support.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46579F502E68525600B8AB8F /* Support.swift */; };
+		46579F532E68527200B8AB8F /* Support.xib in Resources */ = {isa = PBXBuildFile; fileRef = 46579F522E68527200B8AB8F /* Support.xib */; };
 		465AEA1A2E5CB6D00048F47C /* Account.xib in Resources */ = {isa = PBXBuildFile; fileRef = 465AEA192E5CB6D00048F47C /* Account.xib */; };
 		465AEA1C2E5CB71D0048F47C /* AccountController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 465AEA1B2E5CB71D0048F47C /* AccountController.swift */; };
 		46A5C41A2E39044F00EE6E7B /* GitVersion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46A5C4192E39044C00EE6E7B /* GitVersion.swift */; };
@@ -314,6 +316,8 @@
 		460D36A62E4B581500B0D5AD /* Inter-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-SemiBold.ttf"; sourceTree = "<group>"; };
 		464F34C42E4B415A00B0ECC3 /* ColorsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorsManager.swift; sourceTree = "<group>"; };
 		464F34F52E4B4CC700B0ECC3 /* FontManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontManager.swift; sourceTree = "<group>"; };
+		46579F502E68525600B8AB8F /* Support.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Support.swift; sourceTree = "<group>"; };
+		46579F522E68527200B8AB8F /* Support.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Support.xib; sourceTree = "<group>"; };
 		465AEA192E5CB6D00048F47C /* Account.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Account.xib; sourceTree = "<group>"; };
 		465AEA1B2E5CB71D0048F47C /* AccountController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountController.swift; sourceTree = "<group>"; };
 		46A5C4192E39044C00EE6E7B /* GitVersion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitVersion.swift; sourceTree = "<group>"; };
@@ -575,6 +579,15 @@
 			path = Fonts;
 			sourceTree = "<group>";
 		};
+		46579F4F2E68524600B8AB8F /* support */ = {
+			isa = PBXGroup;
+			children = (
+				46579F522E68527200B8AB8F /* Support.xib */,
+				46579F502E68525600B8AB8F /* Support.swift */,
+			);
+			path = support;
+			sourceTree = "<group>";
+		};
 		72AE357133F0AFC024E5F893 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -673,6 +686,7 @@
 		C641EC1A249B3F1E00672832 /* views */ = {
 			isa = PBXGroup;
 			children = (
+				46579F4F2E68524600B8AB8F /* support */,
 				C6E7B47024E967F400D7D8E2 /* account */,
 				C648F9EF24A123E700D9B92D /* about */,
 				C648F9FA24A1DB3D00D9B92D /* assistant */,
@@ -1268,6 +1282,7 @@
 				C6DBA15125101C6E00C2CFBD /* DevicesView~ipad.xib in Resources */,
 				C6EC9F8824A9D30400F08AA9 /* SettingsView.xib in Resources */,
 				C6FB382E24A0684A007A6E7B /* SideMenu.xib in Resources */,
+				46579F532E68527200B8AB8F /* Support.xib in Resources */,
 				C68992C6251255C900B62F70 /* MainView~ipad.xib in Resources */,
 				C646853E24A65DFF0045AA4D /* RemoteQr.xib in Resources */,
 				C6DBA153251091A100C2CFBD /* DeviceCell~ipad.xib in Resources */,
@@ -1634,6 +1649,7 @@
 				464F34C52E4B415A00B0ECC3 /* ColorsManager.swift in Sources */,
 				C62709C524B4C968000E43D2 /* AudioHelper.swift in Sources */,
 				C6EC9F8324A9D1BC00F08AA9 /* SettingButton.swift in Sources */,
+				46579F512E68525600B8AB8F /* Support.swift in Sources */,
 				C648FA3224A228E400D9B92D /* NSRegularExpression+Extension.swift in Sources */,
 				C62709C124B484D1000E43D2 /* CallLog+extension.swift in Sources */,
 				C62709AD24AF7BB8000E43D2 /* CallInProgressView.swift in Sources */,

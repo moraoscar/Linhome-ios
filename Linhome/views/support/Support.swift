@@ -23,53 +23,57 @@ import UIKit
 import linphonesw
 import Foundation
 
-class About: MainViewContent {
+class Support: MainViewContent {
 
-	@IBOutlet weak var linhomeIcon: UIImageView!
-	@IBOutlet weak var linhomeText: UIImageView!
-	@IBOutlet weak var linhomeTitle: UILabel!
-	@IBOutlet weak var appVersion: UILabel!
-	@IBOutlet weak var linhomeOrg: UILabel!
-    @IBOutlet weak var btnBack: UIButton!
+    @IBOutlet weak var linhomeIcon: UIImageView!
+    @IBOutlet weak var linhomeText: UIImageView!
+    @IBOutlet weak var linhomeTitle: UILabel!
+    @IBOutlet weak var appVersion: UILabel!
+    @IBOutlet weak var linhomeOrg: UILabel!
     @IBOutlet weak var lblTitle: UILabel!
+    @IBOutlet weak var headerView: UIView!
     
-	override func viewDidLoad() {
+    override func viewDidLoad() {
         super.viewDidLoad()
-		
-		isRoot = false
-		onTopOfBottomBar = true
-        titleTextKey = Texts.get("menu_about")
-		
+        
+        isRoot = false
+        onTopOfBottomBar = true
+        titleTextKey = Texts.get("menu_support_module")
+        
+        headerView.backgroundColor = ColorManager.color_primary
+        
         lblTitle.text = titleTextKey
-        lblTitle.font = UIFont(name: FontKey.SEMIBOLD.rawValue, size: 26)
+        lblTitle.font = UIFont(name: FontKey.SEMIBOLD.rawValue, size: 20)
+        lblTitle.textColor = ColorManager.color_a
 
-        linhomeTitle.text = Texts.get("about_information_app")
+        linhomeTitle.text = Texts.get("support_information")
         linhomeTitle.textColor = ColorManager.color_secondary
         linhomeTitle.font = UIFont(name: FontKey.REGULAR.rawValue, size: 14)
     
 
-        appVersion.text = "\(Texts.get("about_version_app")) \(GIT_VERSION)"
+        appVersion.text = "soporte@nuoplanet.com"
         appVersion.font = UIFont(name: FontKey.REGULAR.rawValue, size: 14)
-        appVersion.textColor = ColorManager.color_secondary
+        appVersion.textColor = ColorManager.color_primary
+        appVersion.font = UIFont(name: FontKey.BOLD.rawValue, size: 14)
         
         linhomeOrg.font = UIFont(name: FontKey.BOLD.rawValue, size: 14)
         linhomeOrg.textColor = ColorManager.color_primary
-        linhomeOrg.text =  Texts.get("about_link")
-		
-		linhomeOrg.onClick {
-			self.linhomeOrg.text.map { urlString in
-				if let url = URL(string: urlString.hasPrefix("http") ? urlString :  "https://\(urlString)") {
-					UIApplication.shared.open(url)
-				}
-			}
-		}
-		
+        linhomeOrg.text =  "+34 918 707 193"
+        
+        linhomeOrg.onClick {
+            self.linhomeOrg.text.map { urlString in
+                if let url = URL(string: urlString.hasPrefix("http") ? urlString :  "https://\(urlString)") {
+                    UIApplication.shared.open(url)
+                }
+            }
+        }
+        
     }
     
     override func isCallView() -> Bool {
         return true
     }
-	
+    
     @IBAction func back(_ sender: Any) {
         NavigationManager.it.navigateUp()
     }
