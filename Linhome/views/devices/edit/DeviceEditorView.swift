@@ -110,23 +110,6 @@ class DeviceEditorView: MainViewContentWithScrollableForm {
         }
         actionsAddTitle.prepare(styleKey: "section_title",textKey:"device_info_actions")
         actionsAddTitle.textColor = ColorManager.color_text_label_input
-
-        
-//        let stackviewAddAction = UIStackView()
-//        stackviewAddAction.axis = .horizontal
-//        stackviewAddAction.alignment = .center // Alinea verticalmente el título y el botón
-//
-//        // 2. Añade esta nueva fila al formulario principal
-//        let mainForm = landScapeIpad ? formSecondColumn : form
-//        mainForm.addArrangedSubview(stackviewAddAction)
-//
-//        // 3. Aplica la restricción de altura que pediste a la fila
-//        stackviewAddAction.snp.makeConstraints { make in
-//            make.left.right.bottom.equalToSuperview()
-//        }
-//        
-//        stackviewAddAction.backgroundColor = .yellow
-
     
         actionsContainerView = UIView()
         actionsContainerView.backgroundColor = UIColor(white: 0.95, alpha: 1.0)

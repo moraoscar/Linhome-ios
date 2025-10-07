@@ -14,6 +14,7 @@
                 <outlet property="disconnectTableView" destination="baw-5a-Vzv" id="h9c-eJ-Beh"/>
                 <outlet property="optionsTableView" destination="LCU-xK-hD5" id="mCY-Nf-p3p"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+                <outlet property="viewBackground" destination="NnP-5u-8us" id="XSv-BY-Z8b"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
@@ -25,7 +26,7 @@
                     <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                     <subviews>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f3W-jK-ESi" userLabel="close">
-                            <rect key="frame" x="345" y="43" width="39" height="39"/>
+                            <rect key="frame" x="345" y="55" width="39" height="39"/>
                             <state key="normal" image="close_menu"/>
                             <connections>
                                 <action selector="closeMenu:" destination="-1" eventType="touchUpInside" id="bUG-bc-ghT"/>
@@ -51,12 +52,12 @@
                             </connections>
                         </tableView>
                     </subviews>
-                    <color key="backgroundColor" red="0.0039215688589999999" green="0.0039215688589999999" blue="0.0039215688589999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
                         <constraint firstItem="LCU-xK-hD5" firstAttribute="leading" secondItem="NnP-5u-8us" secondAttribute="leading" constant="30" id="9nJ-fH-myv"/>
                         <constraint firstItem="baw-5a-Vzv" firstAttribute="leading" secondItem="NnP-5u-8us" secondAttribute="leading" constant="20" id="A4j-tV-jeg"/>
-                        <constraint firstItem="LCU-xK-hD5" firstAttribute="top" secondItem="f3W-jK-ESi" secondAttribute="bottom" constant="34" id="Ej1-Wy-pX0"/>
-                        <constraint firstItem="f3W-jK-ESi" firstAttribute="top" secondItem="NnP-5u-8us" secondAttribute="top" constant="43" id="Utp-Sf-EcA"/>
+                        <constraint firstItem="LCU-xK-hD5" firstAttribute="top" secondItem="f3W-jK-ESi" secondAttribute="bottom" constant="22" id="Ej1-Wy-pX0"/>
+                        <constraint firstItem="f3W-jK-ESi" firstAttribute="top" secondItem="NnP-5u-8us" secondAttribute="top" constant="55" id="Utp-Sf-EcA"/>
                         <constraint firstAttribute="bottom" secondItem="baw-5a-Vzv" secondAttribute="bottom" constant="20" id="aiQ-Pj-QRu"/>
                         <constraint firstAttribute="trailing" secondItem="f3W-jK-ESi" secondAttribute="trailing" constant="30" id="cKk-tv-38s"/>
                         <constraint firstItem="baw-5a-Vzv" firstAttribute="centerX" secondItem="LCU-xK-hD5" secondAttribute="centerX" id="hu3-g1-CRL"/>

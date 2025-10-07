@@ -15,7 +15,7 @@ struct ColorManager {
     static var color_primary = UIColor.init(hexString: "#EC4286")
     static var color_secondary = UIColor.init(hexString: "#575757")
     static var color_tertiary = UIColor.init(hexString: "#2A2A2A")
-    static var color_background_menu = UIColor.init(hexString: "#010101")
+    static var color_background_menu = UIColor.init(hexString: "#232427")
     static var color_separator_menu = UIColor.init(hexString: "#575757")
     static var color_background_primary_button = UIColor.init(hexString: "#FFDEEB")
     static var color_background_danger_button = UIColor.init(hexString: "#FFDFE0")

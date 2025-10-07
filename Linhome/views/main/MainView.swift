@@ -21,6 +21,7 @@
 
 import UIKit
 import linphonesw
+import AVFoundation
 
 class MainView: ViewWithModel, UIDynamicAnimatorDelegate {
 	
@@ -129,6 +130,10 @@ class MainView: ViewWithModel, UIDynamicAnimatorDelegate {
 		}
         
         toolbarViewModel.btnDeleteItemVisible.observe { (visible) in
+            if (!visible! == false && self.actualTab == "devices") {
+                self.btnDeleteItems.isHidden = true
+                return
+            }
             self.btnDeleteItems.isHidden = !visible!
         }
 		
@@ -236,16 +241,41 @@ class MainView: ViewWithModel, UIDynamicAnimatorDelegate {
             self.historyTab.performTap()
 		}
         
-        self.historyTab.performTap()
-        self.historyTab.performTap()
-        
+        self.devicesTab.performTap()
+        self.devicesTab.performTap()
         NavigationManager.it.showHomeOptions()
 		// Configuración inicial no realizada de momento comentada TODO
-//		if (!LinhomeAccount.it.configured()) {
-//			DispatchQueue.main.asyncAfter(deadline: .now() + .milliseconds(20)) {
-//				NavigationManager.it.navigateTo(childClass: AssistantRoot.self)
-//			}
-//		}
+        
+//        let device = Device(
+//            type: "device_video_intercom",
+//            name: "MI PUERTA",
+//            address: "sip:doorb7b3b@88.11.161.98:50001",
+//            actionsMethodType: "method_dtmf_sip_info",
+//            actions: [Action](),
+//            isRemotelyProvisionned:false
+//        )
+//        device.actions?.append(Action(
+//            type: "action_open_door",
+//            code: "A"
+//        ))
+//        DeviceStore.it.persistDevice(device: device)
+//        DeviceStore.it.saveLocalDevices()
+        
+		if (!LinhomeAccount.it.configured()) {
+			DispatchQueue.main.asyncAfter(deadline: .now() + .milliseconds(20)) {
+                (UIApplication.shared.delegate as! AppDelegate).preventEnterinBackground = true
+                AVCaptureDevice.requestAccess(for: AVMediaType.video) { granted in
+                    DispatchQueue.main.async {
+                        (UIApplication.shared.delegate as! AppDelegate).preventEnterinBackground = false
+                        if granted {
+                            NavigationManager.it.navigateTo(childClass: RemoteQr.self)
+                        } else {
+                            DialogUtil.error("camera_permission_denied")
+                        }
+                    }
+                }
+			}
+        }
 	}
 	
 	override func viewWillDisappear(_ animated: Bool) {

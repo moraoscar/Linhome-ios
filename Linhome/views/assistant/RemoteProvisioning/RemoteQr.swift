@@ -36,36 +36,23 @@ class RemoteQr: MainViewContentWithScrollableForm {
 		titleTextKey = "assistant"
 		
 		viewTitle.setText(textKey: "assistant_remote_from_qr")
+        viewTitle.font = UIFont(name:FontKey.SEMIBOLD.rawValue, size: 26)
 		viewSubtitle.setText(textKey: "assistant_remote_from_qr_desc")
+        viewSubtitle.textColor = Theme.getColor("color_secondary")
+        
+        viewTitle.textAlignment = .justified
+        viewSubtitle.textAlignment = .justified
+        
+        var paragraphStyle = NSMutableParagraphStyle()
+        paragraphStyle.lineHeightMultiple = 1.42
+        viewSubtitle.attributedText = NSMutableAttributedString(string: viewSubtitle.text!, attributes: [NSAttributedString.Key.paragraphStyle: paragraphStyle])
 
-	
-		let infoText = UILabel(frame:CGRect(x: 0,y: 0,width: 200,height: 100))
-		infoText.numberOfLines = 6
-		infoText.prepare(styleKey: "info_bubble", textKey: "assistant_remote_prov_from_qr_infobubble", backgroundColorKey: "color_n")
-		infoText.isHidden = true
-		self.view.addSubview(infoText)
-		
-		let  infoButton = UIButton(frame:CGRect(x: 0,y: 0,width: 20,height: 20))
-		infoButton.prepareRoundIcon(effectKey: "info_bubble", tintColor: "color_c", iconName: "icons/informations")
-		infoButton.onClick {
-			infoText.isHidden = !infoText.isHidden
-		}
-		self.view.addSubview(infoButton)
 
-		
-		infoButton.snp.makeConstraints { (make) in
-			make.left.equalTo(viewTitle.snp.right).offset(-20)
-			make.bottom.equalTo(viewTitle.snp.top)
-		}
-		
-		infoText.snp.makeConstraints { (make) in
-			make.right.equalTo(infoButton.snp.left)
-			make.top.equalTo(infoButton.snp.bottom)
-			make.height.equalTo(100)
-			make.width.equalTo(200)
-
-		}
-		
+        NavigationManager.it.hiddenHomeOptions()
+        
+        viewSubtitle.snp.updateConstraints { (make) in
+            make.top.equalTo(viewTitle.snp.bottom).offset(6)
+        }
 		
 		let model = RemoteAnyViewModel()
 		manageModel(model)
@@ -93,10 +80,6 @@ class RemoteQr: MainViewContentWithScrollableForm {
 		})
 		
 		addMask()
-		
-		view.onClick {
-			infoText.isHidden = true
-		}
 	}
 	
 	func setBackCamera() {

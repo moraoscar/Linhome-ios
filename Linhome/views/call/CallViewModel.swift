@@ -228,12 +228,41 @@ class CallViewModel : ViewModel {
 	}
 	
 	func extendedAccept() {
+        saveDevice()
 		if (GSMActivityHelper.it.ongoingGSMCall.value == true) {
 			DialogUtil.toast(textKey: "unable_to_accept_call_gsm_call_in_progress")
 		} else {
 			call.extendedAccept(core : Core.get())
 		}
 	}
+    
+    func saveDevice() {
+        let address: String = self.call.remoteAddressAsString!
+        
+        let parts = address.components(separatedBy: " <")
+
+        if parts.count == 2 {
+            let name = parts[0].replacingOccurrences(of: "\"", with: "")
+            let sipAddress = parts[1].replacingOccurrences(of: ">", with: "")
+        
+            let device = Device(
+                type: "device_video_intercom",
+                name: name,
+                address: sipAddress,
+                actionsMethodType: "method_dtmf_sip_info",
+                actions: [Action](),
+                isRemotelyProvisionned:false
+            )
+            device.actions?.append(Action(
+                type: "action_open_door",
+                code: "A"
+            ))
+            Log.info("[Device] created: \(name) \(sipAddress) device_video_intercom method_dtmf_sip_info")
+            DeviceStore.it.persistDevice(device: device)
+        } else {
+            print("El formato del string de entrada no es el esperado.")
+        }
+    }
 	
 	
 }

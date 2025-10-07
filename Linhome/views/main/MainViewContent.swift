@@ -48,7 +48,7 @@ class MainViewContent : ViewWithModel, ToobarButtonClickedListener {
 	}
 	
 	func showProgress() {
-		SVProgressHUD.setForegroundColor(Theme.getColor("color_a"))
+		SVProgressHUD.setForegroundColor(Theme.getColor("primary"))
 		SVProgressHUD.show()
 	}
 	

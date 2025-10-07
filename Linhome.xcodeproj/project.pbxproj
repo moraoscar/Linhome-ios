@@ -1187,7 +1187,7 @@
 				TargetAttributes = {
 					C62D3DEC24067A1800328486 = {
 						CreatedOnToolsVersion = 10.3;
-						DevelopmentTeam = XYENYZRRJZ;
+						DevelopmentTeam = LXPWY647CX;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.ApplicationGroups.iOS = {
@@ -1197,7 +1197,7 @@
 					};
 					C676AD7324040F6C0048C504 = {
 						CreatedOnToolsVersion = 10.3;
-						DevelopmentTeam = XYENYZRRJZ;
+						DevelopmentTeam = LXPWY647CX;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.ApplicationGroups.iOS = {
@@ -1213,7 +1213,7 @@
 					};
 					C6DA269E240FA94400CDF3D7 = {
 						CreatedOnToolsVersion = 10.3;
-						DevelopmentTeam = XYENYZRRJZ;
+						DevelopmentTeam = LXPWY647CX;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -1769,13 +1769,13 @@
 				CODE_SIGN_ENTITLEMENTS = LinhomeContentExtension/LinhomeNotifContentExtension.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 16;
-				DEVELOPMENT_TEAM = XYENYZRRJZ;
+				DEVELOPMENT_TEAM = LXPWY647CX;
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = "$(SRCROOT)/LinhomeContentExtension/notifcontent-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				MARKETING_VERSION = 1.2;
-				PRODUCT_BUNDLE_IDENTIFIER = "org.linhome.test1.content-extension";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.linhome.tns.content-extension";
 				PRODUCT_NAME = LinhomeContentExtension;
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;
@@ -1793,13 +1793,13 @@
 				CODE_SIGN_ENTITLEMENTS = LinhomeContentExtension/LinhomeNotifContentExtension.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 16;
-				DEVELOPMENT_TEAM = XYENYZRRJZ;
+				DEVELOPMENT_TEAM = LXPWY647CX;
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = "$(SRCROOT)/LinhomeContentExtension/notifcontent-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				MARKETING_VERSION = 1.2;
-				PRODUCT_BUNDLE_IDENTIFIER = "org.linhome.test1.content-extension";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.linhome.tns.content-extension";
 				PRODUCT_NAME = LinhomeContentExtension;
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;
@@ -1932,16 +1932,19 @@
 				APPLICATION_EXTENSION_API_ONLY = NO;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = Linhome/Linhome.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = XYENYZRRJZ;
+				DEVELOPMENT_TEAM = LXPWY647CX;
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = "Linhome/app-Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "Nüo";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MARKETING_VERSION = 1.3.1;
-				PRODUCT_BUNDLE_IDENTIFIER = org.linhome.test1;
+				PRODUCT_BUNDLE_IDENTIFIER = org.linhome.tns;
 				PRODUCT_NAME = Linhome;
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_INSTALL_OBJC_HEADER = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1956,16 +1959,19 @@
 				APPLICATION_EXTENSION_API_ONLY = NO;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = Linhome/Linhome.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = XYENYZRRJZ;
+				DEVELOPMENT_TEAM = LXPWY647CX;
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = "Linhome/app-Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "Nüo";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MARKETING_VERSION = 1.3.1;
-				PRODUCT_BUNDLE_IDENTIFIER = org.linhome.test1;
+				PRODUCT_BUNDLE_IDENTIFIER = org.linhome.tns;
 				PRODUCT_NAME = Linhome;
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_INSTALL_OBJC_HEADER = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1980,12 +1986,12 @@
 				CODE_SIGN_ENTITLEMENTS = LinhomeServiceExtension/LinhomeServiceExtension.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 16;
-				DEVELOPMENT_TEAM = XYENYZRRJZ;
+				DEVELOPMENT_TEAM = LXPWY647CX;
 				INFOPLIST_FILE = "LinhomeServiceExtension/notifservice-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				MARKETING_VERSION = 1.2;
-				PRODUCT_BUNDLE_IDENTIFIER = "org.linhome.test1.service-extension";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.linhome.tns.service-extension";
 				PRODUCT_NAME = LinhomeServiceExtension;
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;
@@ -2001,12 +2007,12 @@
 				CODE_SIGN_ENTITLEMENTS = LinhomeServiceExtension/LinhomeServiceExtension.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 16;
-				DEVELOPMENT_TEAM = XYENYZRRJZ;
+				DEVELOPMENT_TEAM = LXPWY647CX;
 				INFOPLIST_FILE = "LinhomeServiceExtension/notifservice-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				MARKETING_VERSION = 1.2;
-				PRODUCT_BUNDLE_IDENTIFIER = "org.linhome.test1.service-extension";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.linhome.tns.service-extension";
 				PRODUCT_NAME = LinhomeServiceExtension;
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;

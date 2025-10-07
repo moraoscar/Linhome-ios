@@ -21,12 +21,14 @@
 
 import UIKit
 import linphonesw
+import AVFoundation
 
 class SideMenu: MainViewContent, UITableViewDataSource, UITableViewDelegate {
 	
 	@IBOutlet weak var optionsTableView: UITableView!
 	@IBOutlet weak var disconnectTableView: UITableView!
     @IBOutlet weak var btnClose: UIButton!
+    @IBOutlet weak var viewBackground: UIView!
     
 	var options: [MenuOption] = []
 	let captureTaps = UITapGestureRecognizer()
@@ -47,6 +49,7 @@ class SideMenu: MainViewContent, UITableViewDataSource, UITableViewDelegate {
 		
 		isRoot = false
 		onTopOfBottomBar = true
+        self.viewBackground.backgroundColor = ColorManager.color_background_menu
         self.view.backgroundColor = ColorManager.color_background_menu
         optionsTableView.backgroundColor = ColorManager.color_background_menu
 		
@@ -63,33 +66,45 @@ class SideMenu: MainViewContent, UITableViewDataSource, UITableViewDelegate {
 		})
 		
 		options = [
-            MenuOption(iconName: "icons/assistant",textKey: "menu_support",action: {
+            MenuOption(iconName: "icons/account",textKey: "menu_account",action: {
+                NavigationManager.it.navigateUp(completion: {
+                    NavigationManager.it.navigateTo(childClass: AccountController.self)
+                })
+            }),
+            MenuOption(iconName: "icons/assistant",textKey: "menu_assistant",action: {
+                NavigationManager.it.navigateUp(completion: {
+//                    NavigationManager.it.navigateTo(childClass: AssistantRoot.self)
+                    (UIApplication.shared.delegate as! AppDelegate).preventEnterinBackground = true
+                    AVCaptureDevice.requestAccess(for: AVMediaType.video) { granted in
+                        DispatchQueue.main.async {
+                            (UIApplication.shared.delegate as! AppDelegate).preventEnterinBackground = false
+                            if granted {
+                                NavigationManager.it.navigateTo(childClass: RemoteQr.self)
+                            } else {
+                                DialogUtil.error("camera_permission_denied")
+                            }
+                        }
+                    }
+                })
+            }),
+            MenuOption(iconName: "icons/about",textKey: "menu_about",action: {
+                NavigationManager.it.navigateUp(completion: {
+                    NavigationManager.it.navigateTo(childClass: About.self)
+                })
+            }),
+            MenuOption(iconName: "icons/support",textKey: "menu_support",action: {
                 NavigationManager.it.navigateUp(completion: {
                     NavigationManager.it.navigateTo(childClass: Support.self)
                 })
             }),
-			MenuOption(iconName: "icons/assistant",textKey: "menu_assistant",action: {
-				NavigationManager.it.navigateUp(completion: {
-					NavigationManager.it.navigateTo(childClass: AssistantRoot.self)
-				})
-			}),
-			MenuOption(iconName: "icons/account",textKey: "menu_account",action: {
-				NavigationManager.it.navigateUp(completion: {
-					NavigationManager.it.navigateTo(childClass: AccountController.self)
-				})
-			}),
 //			MenuOption(iconName: "icons/settings",textKey: "menu_settings",action: {
 //				NavigationManager.it.navigateUp(completion: {
 //					NavigationManager.it.navigateTo(childClass: SettingsView.self)
 //				})
 //			}),
-			MenuOption(iconName: "icons/about",textKey: "menu_about",action: {
-				NavigationManager.it.navigateUp(completion: {
-					NavigationManager.it.navigateTo(childClass: About.self)
-				})
-			}),
 		]
 		
+        optionsTableView.rowHeight = 70
 		
 	}
     
@@ -145,9 +160,9 @@ class SideMenu: MainViewContent, UITableViewDataSource, UITableViewDelegate {
 	func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 		let isOption = tableView == optionsTableView
 		let cell:SideMenuCell = tableView.dequeueReusableCell(withIdentifier: cellReuseIdentifier) as! SideMenuCell
-		return cell.prepare(option: isOption ? options[indexPath.row] : disconnectOption!, hideTopSeparator: isOption, hideBottomSeparator: !isOption)
+        return cell.prepare(option: isOption ? options[indexPath.row] : disconnectOption!, hideTopSeparator: isOption ? isOption : true, hideBottomSeparator: !isOption)
 	}
-	
+    
 	@objc func hideIt() {
 		NavigationManager.it.navigateUp()
 	}

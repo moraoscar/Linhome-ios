@@ -54,7 +54,7 @@ extension Config {
 	}
 	
 	// Apple related
-	static let appGroupName = "group.org.linhome.test1" // Needs to be the same name in App Group (capabilities in ALL targets - app & extensions - content + service), can't be stored in the Config itself the Config needs this value to get created
+	static let appGroupName = "group.org.linhome.tns" // Needs to be the same name in App Group (capabilities in ALL targets - app & extensions - content + service), can't be stored in the Config itself the Config needs this value to get created
 	static let teamID = Config.get().getString(section: "app", key: "team_id", defaultString: "")
 	static let earlymediaContentExtensionCagetoryIdentifier = Config.get().getString(section: "app", key: "extension_category", defaultString: "")
 	
@@ -66,7 +66,7 @@ extension Config {
 	// Push related
 	static let pushNotificationsInterval =  Config.get().getInt(section: "net", key: "pn-call-remote-push-interval", defaultValue: 3)
 	static let PUSH_GW_ID_KEY = "linhome_pushgateway"
-#if DEBUG
+#if !DEBUG
 		static let pushProvider = "apns.dev"
 #else
 		static let pushProvider = "apns"
