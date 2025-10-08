@@ -61,7 +61,7 @@ class DevicesView: MainViewContent, UITableViewDataSource, UITableViewDelegate  
         newDeviceViewContent.layer.cornerRadius = 25
         newDeviceViewContent.layer.masksToBounds = false
         
-        newDeviceViewContent.isHidden = false
+        newDeviceViewContent.isHidden = true
         
 		if (UIDevice.ipad()) {
 			

@@ -160,7 +160,7 @@ class DeviceInfoView: MainViewContent, UITableViewDataSource, UITableViewDelegat
 		
 //		NavigationManager.it.mainView!.right.prepare(iconName: "icons/edit",effectKey: "primary_color",tintColor: "color_c", textStyleKey: "toolbar_action", text: Texts.get("edit"))
 		
-        editButton.isHidden = device.isRemotelyProvisionned
+        editButton.isHidden = true
         
         NavigationManager.it.mainView?.toolbarViewModel.rightButtonVisible.value = false
 		NavigationManager.it.mainView?.toolbarViewModel.leftButtonVisible.value = false

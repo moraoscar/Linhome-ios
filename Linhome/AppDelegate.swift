@@ -42,6 +42,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
 	var historyNotifTapped = false
 	
 	var preventEnterinBackground = false
+    
+    static var isCallActive: Bool = false
 	
 	func displayWaitIndicatorIfFromPush() -> Bool {
 		var fromPush = false
@@ -87,6 +89,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
 			},
 			onCallStateChanged : { (lc: linphonesw.Core, call: linphonesw.Call, cstate: linphonesw.Call.State, message: String) -> Void in
 				
+                AppDelegate.isCallActive = lc.callsNb > 0
+                
 				Log.error("onCallStateChanged \(cstate)")
 				
 				if let callId = call.callLog?.callId {
@@ -258,6 +262,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
 	// UNUserNotificationCenterDelegate functions
 	
 	func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
+        
+        if AppDelegate.isCallActive {
+            Log.info("IGNORANDO PUSH: Ya hay una llamada activa.")
+            completionHandler([])
+            return
+        }
+        
 		Log.info("willPresentnotification : \(notification.request.content.userInfo)")
 		if let aps = notification.request.content.userInfo["aps"] as? [String: Any], let alert = aps["alert"] as? [String: Any], let locKey = alert["loc-key"] as? String, locKey == "IC_MSG" {
 			if  let callId = notification.request.content.userInfo["call-id"] as! String? {

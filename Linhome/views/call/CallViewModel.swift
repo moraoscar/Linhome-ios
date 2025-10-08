@@ -149,14 +149,20 @@ class CallViewModel : ViewModel {
 	
 	
 	func decline() {
+        CallManager.shared.isCallActive = false
+        CallManager.shared.callState = .none
 		try?call.decline(reason: .Declined)
 	}
 	
 	func cancel() {
+        CallManager.shared.isCallActive = false
+        CallManager.shared.callState = .none
 		try?call.terminate()
 	}
 	
 	func terminate() {
+        CallManager.shared.isCallActive = false
+        CallManager.shared.callState = .none
 		try?call.terminate()
 	}
 	
@@ -229,6 +235,8 @@ class CallViewModel : ViewModel {
 	
 	func extendedAccept() {
         saveDevice()
+        CallManager.shared.isCallActive = true
+        CallManager.shared.callState = .active
 		if (GSMActivityHelper.it.ongoingGSMCall.value == true) {
 			DialogUtil.toast(textKey: "unable_to_accept_call_gsm_call_in_progress")
 		} else {
@@ -257,6 +265,11 @@ class CallViewModel : ViewModel {
                 type: "action_open_door",
                 code: "A"
             ))
+            
+            DeviceStore.it.findDeviceByAddress(address: self.call.remoteAddress!).map { it in
+                DeviceStore.it.removeDevice(device: it)
+            }
+            
             Log.info("[Device] created: \(name) \(sipAddress) device_video_intercom method_dtmf_sip_info")
             DeviceStore.it.persistDevice(device: device)
         } else {

@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 46;
+	objectVersion = 70;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -525,6 +525,10 @@
 		F4B904C5D82D8A034B3AD393 /* Pods_LinhomeContentExtension.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LinhomeContentExtension.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		46077B7A2E9567A600AF4AA9 /* Manager */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = Manager; sourceTree = "<group>"; };
+/* End PBXFileSystemSynchronizedRootGroup section */
+
 /* Begin PBXFrameworksBuildPhase section */
 		C62D3DEA24067A1800328486 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
@@ -941,6 +945,7 @@
 		C676AD7624040F6C0048C504 /* Linhome */ = {
 			isa = PBXGroup;
 			children = (
+				46077B7A2E9567A600AF4AA9 /* Manager */,
 				464F34F42E4B4C3700B0ECC3 /* Fonts */,
 				46A5C4192E39044C00EE6E7B /* GitVersion.swift */,
 				C62D3E1524068CF800328486 /* app-Info.plist */,
@@ -1151,6 +1156,9 @@
 			dependencies = (
 				C6ECA09B240C7BCE0033EF78 /* PBXTargetDependency */,
 				C6DA26A5240FA94400CDF3D7 /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				46077B7A2E9567A600AF4AA9 /* Manager */,
 			);
 			name = Linhome;
 			productName = VideoNotifDemo;
@@ -1773,7 +1781,11 @@
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = "$(SRCROOT)/LinhomeContentExtension/notifcontent-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
 				MARKETING_VERSION = 1.2;
 				PRODUCT_BUNDLE_IDENTIFIER = "org.linhome.tns.content-extension";
 				PRODUCT_NAME = LinhomeContentExtension;
@@ -1797,7 +1809,11 @@
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = "$(SRCROOT)/LinhomeContentExtension/notifcontent-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
 				MARKETING_VERSION = 1.2;
 				PRODUCT_BUNDLE_IDENTIFIER = "org.linhome.tns.content-extension";
 				PRODUCT_NAME = LinhomeContentExtension;
@@ -1919,7 +1935,8 @@
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
-				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
@@ -1940,7 +1957,10 @@
 				INFOPLIST_FILE = "Linhome/app-Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = "Nüo";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				MARKETING_VERSION = 1.3.1;
 				PRODUCT_BUNDLE_IDENTIFIER = org.linhome.tns;
 				PRODUCT_NAME = Linhome;
@@ -1967,7 +1987,10 @@
 				INFOPLIST_FILE = "Linhome/app-Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = "Nüo";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				MARKETING_VERSION = 1.3.1;
 				PRODUCT_BUNDLE_IDENTIFIER = org.linhome.tns;
 				PRODUCT_NAME = Linhome;
@@ -1989,7 +2012,11 @@
 				DEVELOPMENT_TEAM = LXPWY647CX;
 				INFOPLIST_FILE = "LinhomeServiceExtension/notifservice-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
 				MARKETING_VERSION = 1.2;
 				PRODUCT_BUNDLE_IDENTIFIER = "org.linhome.tns.service-extension";
 				PRODUCT_NAME = LinhomeServiceExtension;
@@ -2010,7 +2037,11 @@
 				DEVELOPMENT_TEAM = LXPWY647CX;
 				INFOPLIST_FILE = "LinhomeServiceExtension/notifservice-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
 				MARKETING_VERSION = 1.2;
 				PRODUCT_BUNDLE_IDENTIFIER = "org.linhome.tns.service-extension";
 				PRODUCT_NAME = LinhomeServiceExtension;

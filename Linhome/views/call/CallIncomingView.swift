@@ -33,6 +33,8 @@ class CallIncomingView: GenericCallView {
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
+        CallManager.shared.isCallActive = true
+        CallManager.shared.callState = .active
 				
 		let chunkVideoOrIconContraintMaker : (ConstraintMaker) -> Void = { (make) in // Center the Video or Icon
 						make.center.equalToSuperview()
@@ -76,7 +78,6 @@ class CallIncomingView: GenericCallView {
 			make.centerX.equalToSuperview().offset(100)
 			make.bottom.equalToSuperview().offset(-20)
 		}
-		
 	}
 	
 	override func viewWillAppear(_ animated: Bool) {

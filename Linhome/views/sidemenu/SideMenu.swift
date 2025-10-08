@@ -37,6 +37,8 @@ class SideMenu: MainViewContent, UITableViewDataSource, UITableViewDelegate {
 	let cellReuseIdentifier = "SideMenuCell"
 	var disconnectOption : MenuOption?
 	
+    private var backdropView: UIView?
+    
 	override func viewDidLoad() {
 		
 		let transition = CATransition()
@@ -120,37 +122,47 @@ class SideMenu: MainViewContent, UITableViewDataSource, UITableViewDelegate {
             return
         }
         
+        if backdropView == nil {
+            backdropView = UIView()
+            backdropView?.backgroundColor = UIColor(white: 1.0/255.0, alpha: 0.4)
+            backdropView?.alpha = 0
+            
+            superview.insertSubview(backdropView!, belowSubview: self.view)
+            backdropView?.snp.makeConstraints { (make) in
+                make.edges.equalToSuperview()
+            }
+        }
+        
         let leftRatio: Double = UIDevice.ipad() ? (UIScreen.isLandscape ? 0.3 : 0.5) : 0.75
         let width = superview.frame.width * leftRatio
         
-        // ✅ Posición inicial: completamente a la DERECHA, fuera de la pantalla.
         self.view.snp.makeConstraints { (make) in
             make.width.equalTo(width)
             make.top.bottom.equalToSuperview()
-            // El borde izquierdo (leading) empieza en el borde derecho (trailing) de la superview
             make.leading.equalTo(superview.snp.trailing)
         }
         superview.layoutIfNeeded()
         
-        // ✅ Posición final: anclado al borde DERECHO de la pantalla.
         self.view.snp.remakeConstraints { (make) in
             make.width.equalTo(width)
             make.top.bottom.equalToSuperview()
-            make.trailing.equalToSuperview() // <-- La clave está aquí
+            make.trailing.equalToSuperview()
         }
         
         UIView.animate(withDuration: 0.3) {
-                superview.layoutIfNeeded()
-            }
-            
-            // El resto de tu lógica para capturar taps
-            captureTaps.cancelsTouchesInView = true
-            captureTaps.addTarget(self, action: #selector(hideIt))
-            superview.addGestureRecognizer(captureTaps)
+            self.backdropView?.alpha = 1.0
+            superview.layoutIfNeeded()
+        }
+        
+        captureTaps.cancelsTouchesInView = true
+        captureTaps.addTarget(self, action: #selector(hideIt))
+        superview.addGestureRecognizer(captureTaps)
 	}
 	
 	override func viewWillDisappear(_ animated: Bool) {
 		self.view.superview!.removeGestureRecognizer(captureTaps)
+        self.backdropView?.removeFromSuperview()
+        self.backdropView = nil
 	}
 	
 	func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

@@ -42,7 +42,19 @@ class ChunkNameAddress: UIViewController {
 			make.left.right.equalToSuperview()
 		}
 		name.prepare(styleKey: "view_call_device_name")
-		name.text = callViewModel.device != nil ? callViewModel.device?.name : callViewModel.call.remoteAddress?.username
+        let deviceAddress: String = callViewModel.call.remoteAddressAsString!
+        let parts = deviceAddress.components(separatedBy: " <")
+
+        if parts.count == 2 {
+            let deviceName = parts[0].replacingOccurrences(of: "\"", with: "")
+            let sipAddress = parts[1].replacingOccurrences(of: ">", with: "")
+        
+            name.text = callViewModel.device != nil ? callViewModel.device?.name : deviceName
+        } else {
+            name.text = callViewModel.device != nil ? callViewModel.device?.name : callViewModel.call.remoteAddress?.username
+        }
+        
+		
 		
         name.font = UIFont.init(name: FontKey.SEMIBOLD.rawValue, size: 32)
         
