@@ -103,14 +103,15 @@ class DeviceCell: UITableViewCell {
 		if (device.hasThumbNail() && !UIDevice.ipad()) {
 			deviceImage?.image = UIImage(contentsOfFile: device.thumbNail)
 			deviceImage?.isHidden = false
-			if let thumb = UIImage(contentsOfFile: device.thumbNail) {
+			if let _ = UIImage(contentsOfFile: device.thumbNail) {
 				contentView.snp.updateConstraints { (make) in
 					make.height.greaterThanOrEqualTo(158)
 				}
 			}
 		} else {
-			deviceImage?.isHidden = true
-			contentView.snp.updateConstraints { (make) in
+			deviceImage?.isHidden = false
+            deviceImage?.image = UIImage(named: "empty_device_history")
+            contentView.snp.updateConstraints { (make) in
 				make.height.greaterThanOrEqualTo(158)
 			}
 		}

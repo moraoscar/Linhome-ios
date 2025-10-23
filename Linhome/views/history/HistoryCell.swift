@@ -113,7 +113,7 @@ class HistoryCell: UITableViewCell {
 		name.text =  model.device != nil ?  model.device!.name : Texts.get("history_unregistered_device")
 		address.text = model.callLog.remoteAddress!.asStringUriOnly()
 		typedate.text = model.callTypeAndDate()
-		
+        
 		typeicon.image = Theme.svgToUiImage(model.callTypeIcon(),CGSize(width: typeicon.frame.size.width*2, height: typeicon.frame.size.height*2))?.resized(to: typeicon.frame.size) // SVG renderer does not work too well on small sizes.
 		
 		model.historyViewModel.editing.observe { (_) in

@@ -33,7 +33,7 @@ class AssistantRoot: MainViewContentWithScrollableForm {
 		titleTextKey = "assistant"
         
 		viewTitle.setText(textKey: "assistant_welcome_title")
-		viewSubtitle.setText(textKey: "assistant_welcome_subtitle")
+		viewSubtitle.setText(textKey: "my_account_subtitle")
         
         viewTitle.textAlignment = .left
         viewSubtitle.textAlignment = .left

@@ -1,2 +1,2 @@
 import Foundation
-let GIT_VERSION = "v1.0.0.198+458285f"
+let GIT_VERSION = "v1.0.0.199+6e4ed65"

@@ -154,11 +154,11 @@ class MainView: ViewWithModel, UIDynamicAnimatorDelegate {
         nuoTitle.font = UIFont(name: FontKey.SEMIBOLD.rawValue, size: 16)
         
         welcomeLabel.textColor = ColorManager.color_tertiary
-        welcomeLabel.text = "Bienvenido"
+        welcomeLabel.text = Texts.get("welcome")
         welcomeLabel.font = UIFont(name: FontKey.BOLD.rawValue, size: 30)
         
         welcomeDescriptionLabel.textColor = ColorManager.color_secondary
-        welcomeDescriptionLabel.text = "Consulta tus dispositivos y tu historial"
+        welcomeDescriptionLabel.text = Texts.get("welcome_subtitle")
         welcomeDescriptionLabel.font = UIFont(name: FontKey.REGULAR.rawValue, size: 14)
         
         self.borderHistory.backgroundColor = ColorManager.color_primary

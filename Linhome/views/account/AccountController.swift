@@ -45,21 +45,21 @@ class AccountController: MainViewContent {
 		
 		isRoot = false
         
-        titleTextKey = "My account"
+        titleTextKey = Texts.get("menu_account")
         lblTitle.text = titleTextKey
         lblTitle.font = UIFont(name: FontKey.SEMIBOLD.rawValue, size: 26)
         lblTitle.textColor = ColorManager.color_view_title
         
-        lblTitleDescription.text = "This assistant will help you configure your account"
+        lblTitleDescription.text = Texts.get("my_account_subtitle")
         lblTitleDescription.font = UIFont(name: FontKey.REGULAR.rawValue, size: 14)
         lblTitleDescription.textColor = ColorManager.color_secondary
         
         lblAccount.font = UIFont(name: FontKey.SEMIBOLD.rawValue, size: 14)
-        lblAccount.text = "Account"
+        lblAccount.text = Texts.get("account")
         lblAccount.textColor = ColorManager.color_text_label_input
         
         lblConnection.font = UIFont(name: FontKey.SEMIBOLD.rawValue, size: 14)
-        lblConnection.text = "SIP connection"
+        lblConnection.text = Texts.get("sip_connection")
         lblConnection.textColor = ColorManager.color_text_label_input
 		
         manageModel(self.model)

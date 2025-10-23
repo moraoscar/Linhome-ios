@@ -19,5 +19,9 @@ class CallManager {
     var callState: CallState = .none
     
     private init() {}
+    
+    static func saveCallId(callId: String) {
+        print("saveOrCallId \(callId)")
+    }
 }
 

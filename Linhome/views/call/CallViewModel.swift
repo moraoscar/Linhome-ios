@@ -237,6 +237,7 @@ class CallViewModel : ViewModel {
         saveDevice()
         CallManager.shared.isCallActive = true
         CallManager.shared.callState = .active
+        print("our callID atention \(call.callLog?.callId)")
 		if (GSMActivityHelper.it.ongoingGSMCall.value == true) {
 			DialogUtil.toast(textKey: "unable_to_accept_call_gsm_call_in_progress")
 		} else {

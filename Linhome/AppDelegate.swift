@@ -263,6 +263,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
 	
 	func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
         
+        if  let callId = notification.request.content.userInfo["call-id"] as! String? {
+            print("our callID notification", callId)
+            completionHandler([])
+            return
+        }
+        
+       
+        
         if AppDelegate.isCallActive {
             Log.info("IGNORANDO PUSH: Ya hay una llamada activa.")
             completionHandler([])
