@@ -107,7 +107,7 @@ class DeviceStore {
 		self.saveLocalDevices()
 		self.readDevicesFromFriends()
 		try? FileManager.default.removeItem(atPath: self.devicesXml)
-		fetchVCards()
+//		fetchVCards()
 		Log.info("[DeviceStore] migration done")
 	}
 	

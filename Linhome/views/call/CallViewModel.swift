@@ -247,17 +247,26 @@ class CallViewModel : ViewModel {
     
     func saveDevice() {
         let address: String = self.call.remoteAddressAsString!
-        
         let parts = address.components(separatedBy: " <")
-
         if parts.count == 2 {
             let name = parts[0].replacingOccurrences(of: "\"", with: "")
             let sipAddress = parts[1].replacingOccurrences(of: ">", with: "")
-        
+            
+            let sipAddressComponents = sipAddress.components(separatedBy: "@")
+            let sipAddressPortComponents = sipAddressComponents[1].components(separatedBy: ":")
+             
+            let user = sipAddressComponents[0].trimmingCharacters(in: .whitespacesAndNewlines)
+            let domain = LinhomeAccount.it.get()?.core?.defaultAccount?.params?.domain ?? ""
+            var port = ""
+            if sipAddressPortComponents.count > 1 {
+                let portValue = sipAddressPortComponents[1].trimmingCharacters(in: .whitespacesAndNewlines)
+                port = ":\(portValue)"
+            }
+            let finalAddress = "\(user)@\(domain)\(port)"
             let device = Device(
                 type: "device_video_intercom",
                 name: name,
-                address: sipAddress,
+                address: finalAddress,
                 actionsMethodType: "method_dtmf_sip_info",
                 actions: [Action](),
                 isRemotelyProvisionned:false
@@ -267,11 +276,10 @@ class CallViewModel : ViewModel {
                 code: "A"
             ))
             
-            DeviceStore.it.findDeviceByAddress(address: self.call.remoteAddress!).map { it in
+            DeviceStore.it.findDeviceByAddress(address: finalAddress).map { it in
                 DeviceStore.it.removeDevice(device: it)
             }
             
-            Log.info("[Device] created: \(name) \(sipAddress) device_video_intercom method_dtmf_sip_info")
             DeviceStore.it.persistDevice(device: device)
         } else {
             print("El formato del string de entrada no es el esperado.")

@@ -47,10 +47,17 @@ class MainViewContent : ViewWithModel, ToobarButtonClickedListener {
 		IQKeyboardManager.shared().resignFirstResponder()
 	}
 	
-	func showProgress() {
-		SVProgressHUD.setForegroundColor(Theme.getColor("primary"))
-		SVProgressHUD.show()
-	}
+    func showProgress() {
+        SVProgressHUD.setForegroundColor(Theme.getColor("primary"))
+        SVProgressHUD.setOffsetFromCenter(UIOffset.zero)
+        if let keyWindow = UIApplication.shared.keyWindow {
+            SVProgressHUD.setContainerView(keyWindow)
+        } else {
+           
+            SVProgressHUD.setContainerView(nil)
+        }
+        SVProgressHUD.show()
+    }
 	
 	func hideProgress() {
 		SVProgressHUD.dismiss()

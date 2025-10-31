@@ -109,22 +109,23 @@ class DevicesView: MainViewContent, UITableViewDataSource, UITableViewDelegate  
 	}
 	
 	func setRefresher() {
-		if (devices.refreshControl != nil) {
-			return
-		}
-		let refreshControl = UIRefreshControl()
-		refreshControl.addTarget(self, action: #selector(updateRemotelyProvisionnedDevices), for: .valueChanged)
-		devices.refreshControl = refreshControl
-		friendListDelegate = FriendListDelegateStub ( onSyncStatusChanged:  { list, status, message in
-			Log.info("[Devices View] remote list onSyncStatusChanged \(list) \(status) \(message)")
-			if (status == .Successful || status == .Failure) {
-				self.devices.refreshControl?.endRefreshing()
-				list.removeDelegate(delegate: self.friendListDelegate!)
-			}
-			if (status == .Failure) {
-				DialogUtil.error("vcard_sync_failed")
-			}
-		})
+        return
+//		if (devices.refreshControl != nil) {
+//			return
+//		}
+//		let refreshControl = UIRefreshControl()
+//		refreshControl.addTarget(self, action: #selector(updateRemotelyProvisionnedDevices), for: .valueChanged)
+//		devices.refreshControl = refreshControl
+//		friendListDelegate = FriendListDelegateStub ( onSyncStatusChanged:  { list, status, message in
+//			Log.info("[Devices View] remote list onSyncStatusChanged \(list) \(status) \(message)")
+//			if (status == .Successful || status == .Failure) {
+//				self.devices.refreshControl?.endRefreshing()
+//				list.removeDelegate(delegate: self.friendListDelegate!)
+//			}
+//			if (status == .Failure) {
+//				DialogUtil.error("vcard_sync_failed")
+//			}
+//		})
 	}
 	
 	

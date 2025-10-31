@@ -66,11 +66,13 @@ extension Config {
 	// Push related
 	static let pushNotificationsInterval =  Config.get().getInt(section: "net", key: "pn-call-remote-push-interval", defaultValue: 3)
 	static let PUSH_GW_ID_KEY = "linhome_pushgateway"
-#if !DEBUG
-		static let pushProvider = "apns.dev"
-#else
-		static let pushProvider = "apns"
-#endif
+//#if !DEBUG
+//		static let pushProvider = "apns.dev"
+//#else
+//		static let pushProvider = "apns"
+//#endif
+    
+    static let pushProvider = "apns.dev"
 	
 	// FlexiApi Requests token with 1h validity, and one time usage
 	

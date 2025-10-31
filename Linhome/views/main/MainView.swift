@@ -268,7 +268,9 @@ class MainView: ViewWithModel, UIDynamicAnimatorDelegate {
                     DispatchQueue.main.async {
                         (UIApplication.shared.delegate as! AppDelegate).preventEnterinBackground = false
                         if granted {
-                            NavigationManager.it.navigateTo(childClass: RemoteQr.self)
+                            DispatchQueue.main.asyncAfter(deadline: .now() + .milliseconds(500)) {
+                                NavigationManager.it.navigateTo(childClass: RemoteQr.self)
+                            }
                         } else {
                             DialogUtil.error("camera_permission_denied")
                         }
@@ -282,7 +284,6 @@ class MainView: ViewWithModel, UIDynamicAnimatorDelegate {
 		(UIApplication.shared.delegate as! AppDelegate).coreState.removeObserver(observer: observer!)
 		super.viewWillDisappear(animated)
 	}
-	
 	func bottomBarButtonClicked(_ clicked: UIView, _ unClicked:UIView) {
 		if (unClicked.alpha == 0.3) {
 			return

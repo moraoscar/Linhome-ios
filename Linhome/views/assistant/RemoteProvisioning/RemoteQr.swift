@@ -120,6 +120,7 @@ class RemoteQr: MainViewContentWithScrollableForm {
 		Core.get().nativePreviewWindowId = nil
 		Core.get().qrcodeVideoPreviewEnabled = false
 		Core.get().videoPreviewEnabled = false
+    self.hideProgress()
 		super.viewWillDisappear(animated)
 	}
 	
